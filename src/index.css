@@ -2814,6 +2814,15 @@ html.light .footer-master {
   align-items: start;
 }
 
+.footer-side-col {
+  display: contents;
+}
+
+.footer-col.brand-col { order: 1; }
+.footer-col.nav-col { order: 2; }
+.footer-col.services-col { order: 3; }
+.footer-col.contact-col { order: 4; }
+
 /* 1. Brand Column */
 .footer-logo {
   margin-bottom: 12px;
@@ -3390,29 +3399,35 @@ html.light .footer-scroll-top-btn {
   }
 
   .footer-main-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 22px 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
     margin-bottom: 20px;
   }
 
-  .footer-col.brand-col {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    width: 100%;
+  .footer-side-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 50%;
+    min-width: 0;
   }
 
-  .footer-col.nav-col {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+  .footer-side-left {
+    gap: 4px;
+  }
+
+  .footer-side-right {
+    gap: 14px;
+  }
+
+  .footer-col.brand-col {
+    width: 100%;
+    margin-bottom: 0;
   }
 
   .footer-col.contact-col {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
     width: 100%;
-    margin-top: 0;
+    margin-top: 4px;
     padding-top: 0;
     border-top: none;
   }
@@ -3421,9 +3436,12 @@ html.light .footer-scroll-top-btn {
     border-top: none;
   }
 
+  .footer-col.nav-col {
+    width: 100%;
+  }
+
   .footer-col.services-col {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    width: 100%;
   }
 
   .footer-brand-desc {
