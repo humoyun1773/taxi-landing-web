@@ -33,38 +33,31 @@ export const Navbar: React.FC = () => {
       className={`header ${isScrolled ? 'scrolled' : ''}`}
     >
       <div className="container nav-container">
-        {/* Left Side: Logo + Desktop Navigation Links */}
-        <div className="nav-left-group">
-          <a href="#home" className="logo">
-            <div className="logo-icon-wrapper">
-              <div className="logo-glow"></div>
-              <SpiderLogo size={32} />
-            </div>
-            <div className="logo-title-group">
-              <span className="logo-brand">
-                URGIMCHAK<span className="brand-accent">TAXI</span>
-              </span>
-            </div>
-          </a>
+        {/* Brand Logo */}
+        <a href="#home" className="logo">
+          <div className="logo-icon-wrapper">
+            <div className="logo-glow"></div>
+            <SpiderLogo size={30} />
+          </div>
+          <div className="logo-title-group">
+            <span className="logo-brand">
+              URGIMCHAK<span className="brand-accent">TAXI</span>
+            </span>
+          </div>
+        </a>
 
-          {/* Clean Desktop Navigation immediately next to Logo */}
-          <nav className="desktop-nav">
-            <ul className="nav-list">
-              {navLinks.map((link, idx) => (
-                <motion.li
-                  key={link.href}
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + idx * 0.04, duration: 0.35 }}
-                >
-                  <a href={link.href} className="nav-link">
-                    {link.label}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </nav>
-        </div>
+        {/* Center Desktop Navigation */}
+        <nav className="desktop-nav">
+          <ul className="nav-list">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="nav-link">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         {/* Right Side: Language Selector, Theme Toggle, Phone */}
         <div className="nav-actions">

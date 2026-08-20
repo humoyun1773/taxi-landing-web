@@ -351,16 +351,10 @@ button, input, select {
   width: 100%;
 }
 
-.nav-left-group {
-  display: flex;
-  align-items: center;
-  gap: clamp(24px, 3.5vw, 44px);
-}
-
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex-shrink: 0;
   text-decoration: none;
 }
@@ -374,11 +368,11 @@ button, input, select {
 
 .logo-glow {
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background: var(--gold-500);
-  filter: blur(14px);
-  opacity: 0.5;
+  filter: blur(12px);
+  opacity: 0.4;
 }
 
 .logo-title-group {
@@ -387,7 +381,7 @@ button, input, select {
 }
 
 .logo-brand {
-  font-size: 1.25rem;
+  font-size: 1.22rem;
   font-weight: 900;
   letter-spacing: 0.5px;
   color: var(--text-white);
@@ -395,45 +389,46 @@ button, input, select {
 }
 
 .brand-accent {
-  color: var(--gold-400);
+  color: #FFD21F;
   margin-left: 2px;
 }
 
 .desktop-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .desktop-nav .nav-list {
   display: flex;
   align-items: center;
-  gap: clamp(16px, 2vw, 28px);
+  gap: clamp(20px, 2.5vw, 36px);
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .nav-link {
-  position: relative;
   font-size: 0.94rem;
   font-weight: 600;
   color: var(--text-secondary);
-  padding: 6px 2px;
+  padding: 6px 0;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease;
   text-decoration: none;
   display: inline-block;
-  border-bottom: 2px solid transparent;
 }
 
 .nav-link:hover {
   color: #FFD21F;
-  border-bottom-color: #FFD21F;
+}
+
+html.light .nav-link {
+  color: #475569;
 }
 
 html.light .nav-link:hover {
   color: #D97706;
-  border-bottom-color: #D97706;
 }
 
 .nav-actions {
