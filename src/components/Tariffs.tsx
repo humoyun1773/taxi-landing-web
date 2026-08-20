@@ -1,14 +1,27 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { tariffsData } from '../data/mockData';
-import { Check, Sparkles, CarFront } from 'lucide-react';
+import { Check, Sparkles, CarFront, Zap, Crown, PackageCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
 
 export const Tariffs: React.FC = () => {
   const { t } = useTranslation();
   const [selectedTariff, setSelectedTariff] = useState('comfort');
+
+  const getTariffIcon = (id: string) => {
+    switch (id) {
+      case 'eco':
+        return <Zap size={20} className="text-yellow-400" />;
+      case 'comfort':
+        return <Sparkles size={20} className="text-yellow-400" />;
+      case 'business':
+        return <Crown size={20} className="text-yellow-400" />;
+      case 'delivery':
+        return <PackageCheck size={20} className="text-yellow-400" />;
+      default:
+        return <Zap size={20} className="text-yellow-400" />;
+    }
+  };
 
   return (
     <section className="tariffs section light-dark-bg" id="tariffs">
@@ -25,64 +38,70 @@ export const Tariffs: React.FC = () => {
             return (
               <motion.div
                 key={tariff.id}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-30px' }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                transition={{ duration: 0.45, delay: idx * 0.1 }}
                 whileHover={{ y: -6 }}
                 onClick={() => setSelectedTariff(tariff.id)}
+                className={`tariff-card-master ${tariff.isPopular ? 'popular' : ''} ${
+                  isSelected ? 'selected' : ''
+                }`}
               >
-                <Card
-                  className={`shadcn-tariff-card relative cursor-pointer ${
-                    tariff.isPopular ? 'popular-card' : ''
-                  } ${isSelected ? 'selected-card' : ''}`}
-                >
-                  {tariff.isPopular && (
-                    <div className="popular-ribbon">
-                      <Sparkles size={12} /> {t('tariffs.popular')}
+                {tariff.isPopular && (
+                  <div className="popular-badge-pill">
+                    <Sparkles size={12} />
+                    <span>{t('tariffs.popular')}</span>
+                  </div>
+                )}
+
+                {/* Header */}
+                <div className="tariff-card-header">
+                  <div className="tariff-header-top">
+                    <div className="tariff-icon-wrap">
+                      {getTariffIcon(tariff.id)}
                     </div>
-                  )}
+                    <span className="tariff-badge-tag">{tariff.badge}</span>
+                  </div>
 
-                  <CardHeader className="pb-3 pt-6 px-6">
-                    <div className="flex items-center justify-between gap-2">
-                      <CardTitle className="text-xl font-bold">{tariff.name}</CardTitle>
-                      <Badge variant="gold" className="text-[11px] font-semibold py-0.5 px-2.5">
-                        {tariff.cars.split(',')[0]}
-                      </Badge>
+                  <h3 className="tariff-title-name">{tariff.name}</h3>
+
+                  <div className="tariff-pricing-box">
+                    <div className="pricing-number-row">
+                      <span className="price-digits">{tariff.startPrice}</span>
+                      <span className="price-currency-unit">{t('tariffs.from')}</span>
                     </div>
+                    <span className="price-sub-note">{tariff.baseDistance}</span>
+                  </div>
 
-                    <div className="tariff-price-wrap pt-3">
-                      <span className="price-val text-3xl font-black">{tariff.startPrice}</span>
-                      <span className="price-cur text-sm text-muted-foreground ml-1 font-medium">
-                        {t('tariffs.from')}
-                      </span>
-                    </div>
+                  <p className="tariff-description-text">{tariff.description}</p>
+                </div>
 
-                    <CardDescription className="text-xs text-muted-foreground line-clamp-2 leading-relaxed pt-2">
-                      {tariff.description}
-                    </CardDescription>
-                  </CardHeader>
-
-                  <CardContent className="px-6 pb-6 pt-2">
-                    <div className="shadcn-features-list space-y-2.5 border-t border-border/40 pt-4">
-                      {tariff.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2.5 text-xs text-secondary-foreground">
-                          <div className="check-bullet shrink-0">
-                            <Check size={12} />
-                          </div>
-                          <span>{feat}</span>
+                {/* Complete Features List (Toliq Shartlar) */}
+                <div className="tariff-specs-list">
+                  <div className="specs-section-heading">Tarif afzalliklari:</div>
+                  <ul>
+                    {tariff.features.map((feat, fIdx) => (
+                      <li key={fIdx} className="spec-item-row">
+                        <div className="spec-check-icon">
+                          <Check size={13} />
                         </div>
-                      ))}
+                        <span className="spec-item-text">{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                      <div className="flex items-center gap-2.5 text-xs text-secondary-foreground pt-1.5">
-                        <div className="check-bullet car-bullet shrink-0">
-                          <CarFront size={12} />
-                        </div>
-                        <span className="truncate font-medium">{tariff.cars}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                {/* Fleet Models Footer Box */}
+                <div className="tariff-models-footer">
+                  <div className="models-icon-box">
+                    <CarFront size={16} />
+                  </div>
+                  <div className="models-info-wrap">
+                    <span className="models-label">Avtopark modellari:</span>
+                    <strong className="models-names">{tariff.cars}</strong>
+                  </div>
+                </div>
               </motion.div>
             );
           })}

@@ -3,8 +3,10 @@ export interface Tariff {
   name: string;
   badge?: string;
   startPrice: string;
+  baseDistance: string;
   perKm: string;
   freeWait: string;
+  amenities: string;
   description: string;
   cars: string;
   features: string[];
