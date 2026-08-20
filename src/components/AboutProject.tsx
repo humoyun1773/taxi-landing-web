@@ -39,7 +39,7 @@ export const AboutProject: React.FC = () => {
 
               <div className="about-metric">
                 <div className="metric-icon-wrap">
-                  <Users size={22} className="text-emerald" />
+                  <Users size={22} className="text-gold" />
                 </div>
                 <div>
                   <strong>{t('about.m2_title')}</strong>
@@ -67,8 +67,8 @@ export const AboutProject: React.FC = () => {
             <div className="about-card-showcase">
               <div className="about-feature-box">
                 <div className="feat-header">
-                  <div className="feat-icon">
-                    <Cpu size={24} />
+                  <div className="feat-icon gold">
+                    <Cpu size={22} />
                   </div>
                   <h4>{t('about.f1_title')}</h4>
                 </div>
@@ -78,7 +78,7 @@ export const AboutProject: React.FC = () => {
               <div className="about-feature-box">
                 <div className="feat-header">
                   <div className="feat-icon gold">
-                    <Zap size={24} />
+                    <Zap size={22} />
                   </div>
                   <h4>{t('about.f2_title')}</h4>
                 </div>
@@ -87,8 +87,8 @@ export const AboutProject: React.FC = () => {
 
               <div className="about-feature-box">
                 <div className="feat-header">
-                  <div className="feat-icon green">
-                    <ShieldCheck size={24} />
+                  <div className="feat-icon gold">
+                    <ShieldCheck size={22} />
                   </div>
                   <h4>{t('about.f3_title')}</h4>
                 </div>
