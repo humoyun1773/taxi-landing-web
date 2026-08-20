@@ -99,18 +99,19 @@
     "desc": "Bir necha soniyada manzilni belgilang va 3 daqiqada qulay safarni boshlang"
   },
   "regions": {
-    "subtitle": "Butun O'zbekiston Bo'ylab",
-    "title": "Shaharlararo va Viloyatlararo Qamrov",
-    "desc": "Qaysi viloyatda bo'lishingizdan qat'i nazar, Urgimchak Taxi tarmog'i butun respublika bo'ylab faoliyat yuritadi",
-    "active_tag": "Faol Hudud",
-    "center": "Markaz",
-    "cars_on_road": "Hozir yo'lda mashinalar",
-    "avg_arrival": "O'rtacha yetib kelish",
-    "p1": "Shaharlararo qulay va arzon bron qilish",
-    "p2": "Yuk va posilkalarni viloyatga yetkazish",
-    "p3": "Doimiy konditsionerli yangi avtomobillar",
-    "btn": "Viloyatlararo Qatnovlar Haqida",
-    "quick_select": "Tezkor viloyat tanlash:"
+    "subtitle": "Hududiy Integratsiya",
+    "title": "Butun O'zbekiston Bo'ylab Yagona Transport Tarmog'i",
+    "desc": "Urgimchak Taxi barcha 12 viloyat markazlari o'rtasida ishonchli, xavfsiz va arzon shaharlararo transport aloqasini yaratishni maqsad qilgan.",
+    "network_title": "Hududiy Qamrov Xaritasi",
+    "legend1": "Rejalashtirilgan Hududiy Markazlar",
+    "legend2": "Shaharlararo Logistika Yo'laklari",
+    "hub_title": "Viloyat Markazi",
+    "hub_desc": "Ushbu viloyatda yagona dispetcherlik, mahalliy haydovchilar bilan hamkorlik va shaharlararo qatnovlar integratsiya qilinadi.",
+    "p1": "Toshkent va viloyatlar o'rtasida qulay transport",
+    "p2": "Tezkor viloyatlararo posilka va yuk logistikasi",
+    "p3": "Mahalliy haydovchilar uchun 5% eng past komissiya",
+    "p4": "24/7 AI orqali real vaqtli xavfsizlik nazorati",
+    "quick_select": "Viloyat markazlari:"
   },
   "safety": {
     "subtitle": "Xavfsizlik Standartlari",

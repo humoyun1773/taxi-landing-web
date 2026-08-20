@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { regionsData } from '../data/mockData';
-import { MapPin, Car, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
+import { MapPin, CheckCircle2, Globe2, Compass } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { RegionData } from '../types';
 
@@ -78,16 +78,16 @@ export const RegionsMap: React.FC = () => {
             <div className="map-legend">
               <div className="legend-item">
                 <span className="legend-dot active-dot"></span>
-                <span>Doimiy Faol Viloyatlar</span>
+                <span>{t('regions.legend1')}</span>
               </div>
               <div className="legend-item">
                 <span className="legend-dot live-dot"></span>
-                <span>24/7 Shaharlararo Qatnov</span>
+                <span>{t('regions.legend2')}</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Region Details Panel */}
+          {/* Region Details Panel (Honest Startup Network Hub Overview) */}
           <div className="region-details-panel">
             <AnimatePresence mode="wait">
               <motion.div
@@ -100,51 +100,44 @@ export const RegionsMap: React.FC = () => {
               >
                 <div className="region-info-header">
                   <div className="region-name-wrap">
-                    <span className="region-tag">{t('regions.active_tag')}</span>
+                    <div className="flex items-center gap-2 mb-1">
+                      <Globe2 size={16} className="text-gold" />
+                      <span className="region-tag">{t('regions.hub_title')}</span>
+                    </div>
                     <h3>{selectedRegion.name}</h3>
                   </div>
                   <div className="region-center-badge">
-                    <MapPin size={16} /> {t('regions.center')}: {selectedRegion.center}
+                    <MapPin size={15} /> {selectedRegion.center}
                   </div>
                 </div>
 
-                <div className="region-metrics-grid">
-                  <div className="metric-box">
-                    <Car size={20} className="metric-icon" />
-                    <div>
-                      <strong>{selectedRegion.activeCars.toLocaleString()} ta</strong>
-                      <p>{t('regions.cars_on_road')}</p>
-                    </div>
-                  </div>
+                <p className="region-hub-description">
+                  {t('regions.hub_desc')}
+                </p>
 
-                  <div className="metric-box">
-                    <Clock size={20} className="metric-icon" />
-                    <div>
-                      <strong>~{selectedRegion.avgArrival}</strong>
-                      <p>{t('regions.avg_arrival')}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="region-perks">
+                <div className="region-perks-list">
                   <div className="perk-row">
-                    <CheckCircle2 size={16} className="text-emerald" />
+                    <CheckCircle2 size={17} className="text-emerald shrink-0" />
                     <span>{t('regions.p1')}</span>
                   </div>
                   <div className="perk-row">
-                    <CheckCircle2 size={16} className="text-emerald" />
+                    <CheckCircle2 size={17} className="text-emerald shrink-0" />
                     <span>{t('regions.p2')}</span>
                   </div>
                   <div className="perk-row">
-                    <CheckCircle2 size={16} className="text-emerald" />
+                    <CheckCircle2 size={17} className="text-emerald shrink-0" />
                     <span>{t('regions.p3')}</span>
+                  </div>
+                  <div className="perk-row">
+                    <CheckCircle2 size={17} className="text-emerald shrink-0" />
+                    <span>{t('regions.p4')}</span>
                   </div>
                 </div>
 
-                <a href="#about" className="btn btn-primary btn-block">
-                  <span>{t('regions.btn')}</span>
-                  <ArrowRight size={16} />
-                </a>
+                <div className="region-status-card">
+                  <Compass size={18} className="text-gold" />
+                  <span>Yagona respublika transport integratsiyasi bosqichma-bosqich yo'lga qo'yiladi.</span>
+                </div>
               </motion.div>
             </AnimatePresence>
 

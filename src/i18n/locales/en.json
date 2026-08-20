@@ -99,18 +99,19 @@
     "desc": "Set your route in seconds and embark on a smooth journey in just 3 minutes"
   },
   "regions": {
-    "subtitle": "Nationwide Coverage",
-    "title": "Intercity and Regional Network",
-    "desc": "Across every province of Uzbekistan, the Urgimchak Taxi network is at your service 24/7",
-    "active_tag": "Active Region",
-    "center": "Hub",
-    "cars_on_road": "Active vehicles on road",
-    "avg_arrival": "Average arrival",
-    "p1": "Seamless intercity online booking",
-    "p2": "Regional parcel & cargo delivery",
-    "p3": "Modern vehicles with climate control",
-    "btn": "About Intercity Services",
-    "quick_select": "Quick region selector:"
+    "subtitle": "Regional Integration",
+    "title": "A Unified Transport Network Across Uzbekistan",
+    "desc": "Urgimchak Taxi is designed to connect all 12 regional hubs with safe, seamless, and affordable intercity mobility.",
+    "network_title": "Regional Coverage Map",
+    "legend1": "Planned Regional Transport Hubs",
+    "legend2": "Intercity Corridors",
+    "hub_title": "Regional Hub",
+    "hub_desc": "Integrating local driver partnerships, unified dispatch telemetry, and seamless intercity travel routes.",
+    "p1": "Direct intercity transit connecting Tashkent & provinces",
+    "p2": "Fast intercity parcel & cargo delivery network",
+    "p3": "Industry-low 5% commission for regional drivers",
+    "p4": "24/7 AI-monitored telemetry and ride security",
+    "quick_select": "Regional hubs:"
   },
   "safety": {
     "subtitle": "Safety Protocols",

@@ -1793,43 +1793,18 @@ html.light .shadcn-tariff-card {
   border-radius: var(--radius-full);
 }
 
-.region-metrics-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-bottom: 24px;
+.region-hub-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 22px;
 }
 
-.metric-box {
-  background: rgba(3, 7, 18, 0.7);
-  border: 1px solid var(--border-glass);
-  padding: 16px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.metric-icon {
-  color: var(--gold-400);
-}
-
-.metric-box strong {
-  display: block;
-  font-size: 1.1rem;
-  color: var(--text-white);
-}
-
-.metric-box p {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.region-perks {
+.region-perks-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 
 .perk-row {
@@ -1838,6 +1813,19 @@ html.light .shadcn-tariff-card {
   gap: 10px;
   font-size: 0.9rem;
   color: var(--text-secondary);
+}
+
+.region-status-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(234, 179, 8, 0.08);
+  border: 1px solid var(--border-gold-subtle);
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--gold-400);
+  line-height: 1.5;
 }
 
 .quick-region-pills {
