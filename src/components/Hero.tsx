@@ -79,16 +79,12 @@ export const Hero: React.FC = () => {
           >
             <div className="perk-inline-item">
               <ShieldCheck size={16} className="text-yellow-400" />
-              <span>100% Xavfsiz</span>
+              <span>100% Xavfsiz Safarlar</span>
             </div>
             <span className="perk-dot">•</span>
             <div className="perk-inline-item">
               <Zap size={16} className="text-yellow-400" />
-              <span>~3 Daqiqa yetib kelish</span>
-            </div>
-            <span className="perk-dot">•</span>
-            <div className="perk-inline-item">
-              <span>5% Past komissiya</span>
+              <span>Hamyonbop va Qulay Tariflar</span>
             </div>
           </motion.div>
         </div>
