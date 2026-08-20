@@ -49,7 +49,6 @@ export const TechArchitecture: React.FC = () => {
     <section className="tech-section section" id="tech">
       <div className="container">
         <div className="section-title">
-          <span className="sub-title">{t('tech.subtitle')}</span>
           <h2>{t('tech.title')}</h2>
           <p>{t('tech.desc')}</p>
         </div>

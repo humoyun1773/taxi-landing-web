@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Navigation, ShieldCheck, CreditCard, ChevronRight } from 'lucide-react';
+import { Navigation, ShieldCheck, CreditCard, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Badge } from './ui/badge';
 
 export const AppDownload: React.FC = () => {
   const { t } = useTranslation();
@@ -16,18 +15,6 @@ export const AppDownload: React.FC = () => {
           <div className="app-download-grid">
             {/* Left Content: Mobile Platform Overview */}
             <div className="app-content-col">
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="mb-4"
-              >
-                <Badge variant="gold" className="app-badge">
-                  <Sparkles size={13} className="text-yellow-400 mr-1.5" />
-                  <span>{t('app.subtitle')}</span>
-                </Badge>
-              </motion.div>
 
               <motion.h2
                 initial={{ opacity: 0, y: 25 }}

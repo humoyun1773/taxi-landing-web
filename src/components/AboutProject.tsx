@@ -18,7 +18,6 @@ export const AboutProject: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="about-info-col"
           >
-            <span className="sub-title">{t('about.subtitle')}</span>
             <h2>{t('about.title')}</h2>
             <p className="about-lead">
               {t('about.lead')}

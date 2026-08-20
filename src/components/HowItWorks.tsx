@@ -18,7 +18,6 @@ export const HowItWorks: React.FC = () => {
     <section className="how-it-works section" id="how-it-works">
       <div className="container">
         <div className="section-title">
-          <span className="sub-title">{t('howItWorks.subtitle')}</span>
           <h2>{t('howItWorks.title')}</h2>
           <p>{t('howItWorks.desc')}</p>
         </div>

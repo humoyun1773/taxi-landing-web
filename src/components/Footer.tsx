@@ -78,22 +78,11 @@ export const Footer: React.FC = () => {
             <li><a href="#about">{t('nav.about')}</a></li>
             <li><a href="#tech">{t('nav.tech')}</a></li>
             <li><a href="#tariffs">{t('nav.tariffs')}</a></li>
+            <li><a href="#app">{t('app.title')}</a></li>
           </ul>
         </div>
 
-        {/* 3. Company & Partners Column */}
-        <div className="footer-col">
-          <h4 className="footer-column-title">
-            <span>{t('footer.col2')}</span>
-          </h4>
-          <ul className="footer-nav-list">
-            <li><a href="#tariffs">{t('nav.tariffs')}</a></li>
-            <li><a href="#app">{t('app.subtitle')}</a></li>
-            <li><a href="#about">{t('about.subtitle')}</a></li>
-          </ul>
-        </div>
-
-        {/* 4. Direct Contacts Column */}
+        {/* 3. Direct Contacts Column */}
         <div className="footer-col contact-col">
           <h4 className="footer-column-title">
             <span>{t('footer.col3')}</span>
@@ -138,7 +127,7 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* 5. Copyright & Bottom Sub-Bar */}
+      {/* 4. Copyright & Bottom Sub-Bar */}
       <div className="footer-sub-bottom">
         <div className="container bottom-bar-flex">
           <p className="copyright-text">

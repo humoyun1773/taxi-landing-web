@@ -2806,8 +2806,8 @@ html.light .footer-master {
 
 .footer-main-container {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
-  gap: clamp(20px, 3vw, 40px);
+  grid-template-columns: 1.4fr 1fr 1.3fr;
+  gap: clamp(20px, 4vw, 50px);
   margin-bottom: 28px;
 }
 
