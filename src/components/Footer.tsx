@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ArrowUp, Send, Instagram, Globe, Sparkles, Layers, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp, Send, Instagram, Globe, Sparkles, ShieldCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { SpiderLogo } from './ui/SpiderLogo';
 
@@ -110,7 +110,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Side (Navigation + Services) */}
+        {/* Right Side (Navigation) */}
         <div className="footer-side-col footer-side-right">
           {/* 3. Navigation Column */}
           <div className="footer-col nav-col">
@@ -122,30 +122,14 @@ export const Footer: React.FC = () => {
               <li><a href="#about">{t('nav.about')}</a></li>
               <li><a href="#tech">{t('nav.tech')}</a></li>
               <li><a href="#tariffs">{t('nav.tariffs')}</a></li>
-              <li><a href="#regions">{t('nav.regions')}</a></li>
-              <li><a href="#driver">{t('driver.subtitle')}</a></li>
+              <li><a href="#how-it-works">Qanday ishlaydi</a></li>
               <li><a href="#app">Mobil ilova</a></li>
-            </ul>
-          </div>
-
-          {/* 4. Services Column */}
-          <div className="footer-col services-col">
-            <h4 className="footer-column-title">
-              <Layers size={14} className="title-icon text-yellow-400" />
-              <span>{t('footer.col2')}</span>
-            </h4>
-            <ul className="footer-links-list">
-              <li><a href="#services">Shahar ichida qatnov</a></li>
-              <li><a href="#regions">Shaharlararo taksi</a></li>
-              <li><a href="#services">Ekspress yetkazish</a></li>
-              <li><a href="#services">Aeroport transfer</a></li>
-              <li><a href="#tariffs">VIP & Biznes klass</a></li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* 5. Copyright & Bottom Sub-Bar */}
+      {/* 4. Copyright & Bottom Sub-Bar */}
       <div className="footer-sub-bottom">
         <div className="container bottom-bar-flex">
           <p className="copyright-text">
