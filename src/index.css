@@ -1579,7 +1579,7 @@ button, input, select {
 }
 
 /* ==========================================================================
-   7. TARIFFS (FLEET SHOWCASE - COMPACT & MODERN)
+   7. TARIFFS (SHADCN UI CARD DESIGN - COMPACT & MODERN)
    ========================================================================== */
 .tariffs-grid {
   display: grid;
@@ -1587,23 +1587,25 @@ button, input, select {
   gap: 20px;
 }
 
-.tariff-card {
+.shadcn-tariff-card {
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: var(--transition);
-  cursor: pointer;
   backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-glass);
+  transition: all 0.3s var(--ease-smooth);
 }
 
-.tariff-card:hover, .tariff-card.selected {
+.shadcn-tariff-card:hover {
   border-color: var(--gold-400);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), var(--shadow-gold);
+  background: var(--bg-card-hover);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 25px rgba(234, 179, 8, 0.2);
   transform: translateY(-5px);
+}
+
+.popular-card {
+  border-color: rgba(234, 179, 8, 0.5) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(234, 179, 8, 0.25) !important;
 }
 
 .popular-ribbon {
@@ -1620,6 +1622,13 @@ button, input, select {
   align-items: center;
   gap: 4px;
   box-shadow: 0 4px 12px rgba(234, 179, 8, 0.35);
+  z-index: 10;
+}
+
+.shadcn-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .tariff-header {
