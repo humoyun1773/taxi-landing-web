@@ -1,12 +1,15 @@
 import React from 'react';
-import { Building2, Navigation, Package, Plane } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Navigation, Route, PackageCheck, PlaneTakeoff, ShieldAlert, Sparkles, ArrowUpRight } from 'lucide-react';
 import { servicesData } from '../data/mockData';
 
-const iconMap = {
-  Building2: Building2,
+const serviceIcons = {
   Navigation: Navigation,
-  Package: Package,
-  Plane: Plane,
+  Route: Route,
+  PackageCheck: PackageCheck,
+  PlaneTakeoff: PlaneTakeoff,
+  ShieldAlert: ShieldAlert,
+  Sparkles: Sparkles,
 };
 
 export const Services: React.FC = () => {
@@ -15,21 +18,41 @@ export const Services: React.FC = () => {
       <div className="container">
         <div className="section-title">
           <span className="sub-title">Xizmatlarimiz</span>
-          <h2>Siz uchun keng qamrovli xizmatlar</h2>
-          <p>Har qanday ehtiyojingiz uchun mos transport va yetkazib berish xizmatlari</p>
+          <h2>Har Qanday Ehtiyoj Uchun Mukammal Transport</h2>
+          <p>Shaharda tezkor qatnovdan tortib, viloyatlararo qulay sayohat va ekspress yetkazib berishgacha</p>
         </div>
 
         <div className="services-grid">
-          {servicesData.map((service) => {
-            const IconComponent = iconMap[service.iconName];
+          {servicesData.map((service, idx) => {
+            const Icon = serviceIcons[service.iconName];
             return (
-              <div key={service.id} className="service-card">
-                <div className="service-icon">
-                  <IconComponent size={28} />
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -6 }}
+                className="service-card"
+              >
+                <div className="service-card-glow"></div>
+                <div className="service-header">
+                  <div className="service-icon-box">
+                    <Icon size={26} />
+                  </div>
+                  <span className="service-sub-label">{service.subtitle}</span>
                 </div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </div>
+
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-desc">{service.description}</p>
+
+                <div className="service-footer">
+                  <a href="#booking" className="service-link">
+                    <span>Buyurtma berish</span>
+                    <ArrowUpRight size={16} />
+                  </a>
+                </div>
+              </motion.div>
             );
           })}
         </div>
