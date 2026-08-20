@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Zap, ArrowRight, Play, Star, ShieldCheck, MapPin, Clock, Navigation, Award } from 'lucide-react';
+import { Zap, ArrowRight, Star, ShieldCheck, MapPin, Clock, Navigation, Award, Layers } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const mouseX = useMotionValue(0);
@@ -94,13 +94,13 @@ export const Hero: React.FC = () => {
             </motion.a>
 
             <motion.a
-              href="#app"
+              href="#tech"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="btn btn-glass"
             >
-              <Play size={16} />
-              <span>Ilovani Yuklab Olish</span>
+              <Layers size={16} />
+              <span>Texnologiyalar</span>
             </motion.a>
           </motion.div>
 

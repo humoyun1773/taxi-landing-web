@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,11 +69,13 @@ export const Navbar: React.FC = () => {
           </ul>
         </nav>
 
-        {/* Action Button: App Download */}
+        {/* Action: Phone / Support */}
         <div className="nav-actions">
-          <a href="#app" className="btn btn-primary nav-app-btn">
-            <Download size={15} />
-            <span>Ilovani Yuklab Olish</span>
+          <a href="tel:+998712000000" className="call-btn">
+            <div className="call-pulse">
+              <Phone size={14} />
+            </div>
+            <span>+998 (71) 200-00-00</span>
           </a>
 
           <button
@@ -111,8 +113,8 @@ export const Navbar: React.FC = () => {
                 ))}
               </ul>
               <div className="mobile-drawer-footer">
-                <a href="#app" onClick={() => setIsMenuOpen(false)} className="btn btn-primary btn-block">
-                  <Download size={16} /> Ilovani Yuklab Olish
+                <a href="tel:+998712000000" onClick={() => setIsMenuOpen(false)} className="btn btn-outline btn-block">
+                  <Phone size={16} /> +998 (71) 200-00-00
                 </a>
               </div>
             </div>

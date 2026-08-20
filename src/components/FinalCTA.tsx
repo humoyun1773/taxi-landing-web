@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Phone, ShieldCheck, Star, Download } from 'lucide-react';
+import { Zap, Phone, ShieldCheck, Star, ArrowRight } from 'lucide-react';
 
 export const FinalCTA: React.FC = () => {
   return (
@@ -38,7 +38,7 @@ export const FinalCTA: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="final-desc"
             >
-              Shahar ichida va viloyatlararo eng xavfsiz va qulay sayohatlar tajribasini his qiling. Ilovani hoziroq yuklab oling!
+              Shahar ichida va viloyatlararo eng xavfsiz va qulay sayohatlar tajribasini his qiling. Biz bilan hamkorlik qiling yoki savollaringiz bo'lsa bog'laning.
             </motion.p>
 
             <motion.div
@@ -49,13 +49,13 @@ export const FinalCTA: React.FC = () => {
               className="final-cta-buttons"
             >
               <motion.a
-                href="#app"
+                href="#about"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 className="btn btn-primary btn-large"
               >
-                <Download size={20} />
-                <span>Ilovani Yuklab Olish</span>
+                <span>Loyiha Bilan Tanishish</span>
+                <ArrowRight size={18} />
               </motion.a>
 
               <motion.a
