@@ -74,7 +74,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.48 }}
             className="hero-actions-row"
           >
-            <a href="#driver" className="hero-btn-primary">
+            <a href="#tariffs" className="hero-btn-primary">
               <span>{t('hero.cta_driver')}</span>
               <ArrowRight size={18} className="hero-btn-arrow" />
             </a>

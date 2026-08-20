@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
             <span>{t('footer.col2')}</span>
           </h4>
           <ul className="footer-nav-list">
-            <li><a href="#driver">{t('driver.subtitle')}</a></li>
+            <li><a href="#tariffs">{t('nav.tariffs')}</a></li>
             <li><a href="#app">{t('app.subtitle')}</a></li>
             <li><a href="#about">{t('about.subtitle')}</a></li>
           </ul>

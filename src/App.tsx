@@ -7,7 +7,6 @@ import { Services } from './components/Services';
 import { Tariffs } from './components/Tariffs';
 import { HowItWorks } from './components/HowItWorks';
 import { RegionsMap } from './components/RegionsMap';
-import { DriverSection } from './components/DriverSection';
 import { AppDownload } from './components/AppDownload';
 import { Footer } from './components/Footer';
 
@@ -23,7 +22,6 @@ export const App: React.FC = () => {
         <Tariffs />
         <HowItWorks />
         <RegionsMap />
-        <DriverSection />
         <AppDownload />
       </main>
       <Footer />
