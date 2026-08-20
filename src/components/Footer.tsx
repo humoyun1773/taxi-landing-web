@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
               aria-label="Telegram"
               className="social-btn"
             >
-              <Send size={15} />
+              <Send size={16} />
             </a>
             <a
               href="https://instagram.com"
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
               aria-label="Instagram"
               className="social-btn"
             >
-              <Instagram size={15} />
+              <Instagram size={16} />
             </a>
             <a
               href="https://urgimchaktaxi.uz"
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
               aria-label="Veb-sayt"
               className="social-btn"
             >
-              <Globe size={15} />
+              <Globe size={16} />
             </a>
           </div>
         </div>
