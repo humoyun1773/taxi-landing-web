@@ -11,15 +11,15 @@ export const Tariffs: React.FC = () => {
   const getTariffIcon = (id: string) => {
     switch (id) {
       case 'eco':
-        return <Zap size={20} className="text-yellow-400" />;
+        return <Zap size={18} className="text-yellow-400" />;
       case 'comfort':
-        return <Sparkles size={20} className="text-yellow-400" />;
+        return <Sparkles size={18} className="text-yellow-400" />;
       case 'business':
-        return <Crown size={20} className="text-yellow-400" />;
+        return <Crown size={18} className="text-yellow-400" />;
       case 'delivery':
-        return <PackageCheck size={20} className="text-yellow-400" />;
+        return <PackageCheck size={18} className="text-yellow-400" />;
       default:
-        return <Zap size={20} className="text-yellow-400" />;
+        return <Zap size={18} className="text-yellow-400" />;
     }
   };
 
@@ -32,75 +32,67 @@ export const Tariffs: React.FC = () => {
           <p>{t('tariffs.desc')}</p>
         </div>
 
-        <div className="tariffs-grid">
+        <div className="tariffs-grid-compact">
           {tariffsData.map((tariff, idx) => {
             const isSelected = selectedTariff === tariff.id;
             return (
               <motion.div
                 key={tariff.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
-                transition={{ duration: 0.45, delay: idx * 0.1 }}
-                whileHover={{ y: -6 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                whileHover={{ y: -5 }}
                 onClick={() => setSelectedTariff(tariff.id)}
-                className={`tariff-card-master ${tariff.isPopular ? 'popular' : ''} ${
+                className={`tariff-card-compact ${tariff.isPopular ? 'popular' : ''} ${
                   isSelected ? 'selected' : ''
                 }`}
               >
                 {tariff.isPopular && (
-                  <div className="popular-badge-pill">
-                    <Sparkles size={12} />
+                  <div className="compact-popular-badge">
+                    <Sparkles size={11} />
                     <span>{t('tariffs.popular')}</span>
                   </div>
                 )}
 
-                {/* Header */}
-                <div className="tariff-card-header">
-                  <div className="tariff-header-top">
-                    <div className="tariff-icon-wrap">
+                {/* Top Row: Icon + Title + Badge */}
+                <div className="compact-header-row">
+                  <div className="flex items-center gap-3">
+                    <div className="compact-icon-box">
                       {getTariffIcon(tariff.id)}
                     </div>
-                    <span className="tariff-badge-tag">{tariff.badge}</span>
-                  </div>
-
-                  <h3 className="tariff-title-name">{tariff.name}</h3>
-
-                  <div className="tariff-pricing-box">
-                    <div className="pricing-number-row">
-                      <span className="price-digits">{tariff.startPrice}</span>
-                      <span className="price-currency-unit">{t('tariffs.from')}</span>
+                    <div>
+                      <h3 className="compact-tariff-title">{tariff.name}</h3>
+                      <span className="compact-badge-text">{tariff.badge}</span>
                     </div>
-                    <span className="price-sub-note">{tariff.baseDistance}</span>
                   </div>
-
-                  <p className="tariff-description-text">{tariff.description}</p>
                 </div>
 
-                {/* Complete Features List (Toliq Shartlar) */}
-                <div className="tariff-specs-list">
-                  <div className="specs-section-heading">Tarif afzalliklari:</div>
-                  <ul>
-                    {tariff.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="spec-item-row">
-                        <div className="spec-check-icon">
-                          <Check size={13} />
-                        </div>
-                        <span className="spec-item-text">{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Price Display */}
+                <div className="compact-price-section">
+                  <div className="compact-price-row">
+                    <span className="compact-digits">{tariff.startPrice}</span>
+                    <span className="compact-unit">{t('tariffs.from')}</span>
+                  </div>
+                  <span className="compact-dist-note">• {tariff.baseDistance}</span>
                 </div>
 
-                {/* Fleet Models Footer Box */}
-                <div className="tariff-models-footer">
-                  <div className="models-icon-box">
-                    <CarFront size={16} />
-                  </div>
-                  <div className="models-info-wrap">
-                    <span className="models-label">Avtopark modellari:</span>
-                    <strong className="models-names">{tariff.cars}</strong>
-                  </div>
+                {/* Specs Bullets */}
+                <ul className="compact-specs-list">
+                  {tariff.features.map((feat, fIdx) => (
+                    <li key={fIdx} className="compact-spec-item">
+                      <div className="compact-check-circle">
+                        <Check size={11} />
+                      </div>
+                      <span className="compact-spec-text">{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Fleet Pill Footer */}
+                <div className="compact-models-pill">
+                  <CarFront size={14} className="text-yellow-400 shrink-0" />
+                  <span className="compact-models-names">{tariff.cars}</span>
                 </div>
               </motion.div>
             );
