@@ -331,7 +331,8 @@ button, input, select {
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  gap: 20px;
+  gap: clamp(16px, 2.5vw, 36px);
+  width: 100%;
 }
 
 .logo {
@@ -357,19 +358,6 @@ button, input, select {
   opacity: 0.5;
 }
 
-.logo-icon {
-  width: 42px;
-  height: 42px;
-  background: linear-gradient(135deg, #111827 0%, #030712 100%);
-  border: 1px solid var(--border-gold);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-
 .logo-title-group {
   display: flex;
   flex-direction: column;
@@ -388,59 +376,65 @@ button, input, select {
   margin-left: 2px;
 }
 
-.logo-sub {
-  font-size: 0.625rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: 1.5px;
-}
-
 .desktop-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 0 clamp(12px, 2vw, 32px);
 }
 
 .desktop-nav .nav-list {
   display: flex;
   align-items: center;
-  gap: 22px;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 32px);
 }
 
 .nav-link {
   position: relative;
-  font-size: 0.925rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--text-secondary);
-  padding: 8px 0;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
   white-space: nowrap;
-  transition: color 0.25s var(--ease-smooth);
+  transition: all 0.25s ease;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
   height: 2px;
   background: var(--gold-gradient);
   border-radius: 2px;
-  box-shadow: 0 0 10px rgba(234, 179, 8, 0.7);
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(255, 210, 31, 0.7);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-link:hover {
-  color: var(--text-white);
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+html.light .nav-link:hover {
+  color: #0F172A;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .nav-link:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: clamp(10px, 1.2vw, 16px);
   flex-shrink: 0;
 }
 
@@ -448,11 +442,11 @@ button, input, select {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-glass);
-  padding: 8px 16px;
+  padding: 9px 18px;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   font-weight: 700;
   color: var(--text-primary);
   white-space: nowrap;
