@@ -3183,66 +3183,112 @@ html.light .footer-sub-bottom {
     display: none;
   }
 
+  .navbar-container {
+    padding: 8px 16px !important;
+  }
+
+  .nav-logo-text {
+    font-size: 1.15rem !important;
+  }
+
+  .nav-actions {
+    gap: 8px !important;
+  }
+
+  .lang-pill-btn {
+    padding: 5px 9px !important;
+    font-size: 0.78rem !important;
+  }
+
+  .theme-toggle-btn {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .hero-fullbleed-bg-section {
+    min-height: auto !important;
+    padding-top: 85px !important;
+    padding-bottom: 28px !important;
+  }
+
   .section {
-    padding: 28px 0 !important;
+    padding: 24px 0 !important;
   }
 
   .section-title {
-    margin: 0 auto 18px !important;
+    margin: 0 auto 16px !important;
   }
 
   .section-title h2 {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
     line-height: 1.25;
     margin-bottom: 8px;
   }
 
   .section-title p {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     line-height: 1.6;
   }
 
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   .about-metrics-row {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .about-cta-group {
+    margin-top: 12px;
+    margin-bottom: 16px;
+  }
+
+  .about-card-showcase {
+    gap: 10px;
+  }
+
+  .about-feature-box {
+    padding: 16px 18px;
   }
 
   .tech-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .tech-pillar-card {
+    padding: 18px 16px;
   }
 
   .tariffs-grid-compact {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
 
   .steps-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
   }
 
   .app-download-section {
-    padding: 24px 0 !important;
+    padding: 20px 0 !important;
   }
 
   .app-download-wrapper {
-    padding: 24px 18px !important;
+    padding: 20px 16px !important;
     border-radius: 18px;
   }
 
   .app-download-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   .app-title {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
     line-height: 1.25;
     margin-bottom: 8px;
   }
@@ -3250,21 +3296,21 @@ html.light .footer-sub-bottom {
   .app-desc {
     font-size: 0.88rem;
     line-height: 1.6;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .real-phone-showcase-wrapper {
-    max-width: 280px;
+    max-width: 260px;
     margin: 0 auto;
   }
 
   .footer-master {
-    padding-top: 20px;
+    padding-top: 18px;
   }
 
   .footer-main-container {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 16px;
     margin-bottom: 12px;
   }
 
@@ -3277,23 +3323,23 @@ html.light .footer-sub-bottom {
 
 @media (max-width: 480px) {
   .section {
-    padding: 22px 0 !important;
+    padding: 20px 0 !important;
   }
 
   .container {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   .hero-main-title {
-    font-size: 1.6rem !important;
+    font-size: 1.55rem !important;
     letter-spacing: -0.5px;
   }
 
   .hero-subtext {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     line-height: 1.55;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .hero-actions-row {
@@ -3309,7 +3355,11 @@ html.light .footer-sub-bottom {
 
   .hero-perks-inline {
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
+  }
+
+  .about-metrics-row {
+    grid-template-columns: 1fr;
   }
 }
 
