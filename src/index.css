@@ -1339,7 +1339,7 @@ html.light .hero-gradient-mask {
   backdrop-filter: blur(14px);
 }
 
-.step-card:hover, .step-card.active {
+.step-card:hover {
   border-color: var(--gold-400);
   background: var(--bg-card-hover);
   box-shadow: var(--shadow-gold);
@@ -1372,7 +1372,7 @@ html.light .hero-gradient-mask {
   transition: var(--transition);
 }
 
-.step-card:hover .step-icon-circle, .step-card.active .step-icon-circle {
+.step-card:hover .step-icon-circle {
   border-color: var(--gold-400);
   box-shadow: 0 0 25px rgba(234, 179, 8, 0.35);
 }
@@ -1395,9 +1395,10 @@ html.light .hero-gradient-mask {
   height: 3px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-full);
+  transition: var(--transition);
 }
 
-.step-card.active .step-indicator-bar {
+.step-card:hover .step-indicator-bar {
   background: var(--gold-gradient);
   box-shadow: 0 0 10px var(--gold-500);
 }

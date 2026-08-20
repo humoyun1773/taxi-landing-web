@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, MapPin, Car, Smile } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,6 @@ const stepIcons = {
 
 export const HowItWorks: React.FC = () => {
   const { t } = useTranslation();
-  const [activeStep, setActiveStep] = useState<number>(0);
 
   return (
     <section className="how-it-works section" id="how-it-works">
@@ -39,7 +38,6 @@ export const HowItWorks: React.FC = () => {
           <div className="steps-grid">
             {stepsData.map((step, idx) => {
               const Icon = stepIcons[step.iconName];
-              const isActive = activeStep === idx;
 
               return (
                 <motion.div
@@ -47,9 +45,9 @@ export const HowItWorks: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.5, delay: idx * 0.15 }}
-                  onMouseEnter={() => setActiveStep(idx)}
-                  className={`step-card ${isActive ? 'active' : ''}`}
+                  transition={{ duration: 0.5, delay: idx * 0.12 }}
+                  whileHover={{ y: -6 }}
+                  className="step-card"
                 >
                   <div className="step-badge-number">{step.number}</div>
 
