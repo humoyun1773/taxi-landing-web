@@ -1,46 +1,70 @@
-# 🚕 TaxiGo - Zamonaviy Taxi Landing Page
+# 🚕 TaxiGo - React & TypeScript Taxi Landing Page
 
-Ushbu loyiha taksi xizmati, kuryerlik va yo'lovchi tashish biznesi uchun maxsus yaratilgan zamonaviy, to'liq moslashuvchan (responsive) va yuqori konversiyali landing sahifadir.
+Ushbu loyiha taksi va transport xizmatlari uchun **React 18 + TypeScript + Vite + Lucide Icons** texnologiyalari asosida yaratilgan zamonaviy, modulli va yuqori tezlikda ishlovchi Landing Page hisoblanadi.
 
 ---
 
-## 📁 Loyiha Arxitekturasi (Project Structure)
+## 📁 Loyiha Arxitekturasi (Project Architecture)
 
 ```text
 taxi-landing-page/
+├── 📂 public/                   # Statik ochiq fayllar
+├── 📂 src/
+│   ├── 📂 components/           # UI Komponentlar
+│   │   ├── 📄 Navbar.tsx        # Navigatsiya paneli va mobil menyu
+│   │   ├── 📄 Hero.tsx          # Asosiy banner va statistika
+│   │   ├── 📄 BookingForm.tsx   # Interaktiv tezkor taksi buyurtma formasi
+│   │   ├── 📄 Services.tsx      # Xizmat turlari (shahar, viloyat, aeroport, kuryer)
+│   │   ├── 📄 Tariffs.tsx       # Narx va tariflar kartalari (Standart, Komfort, Biznes)
+│   │   ├── 📄 Features.tsx      # Afzalliklarimiz (24/7, tajribali haydovchilar, to'lovlar)
+│   │   ├── 📄 DriverCTA.tsx     # Haydovchilarni ishga taklif qilish banneri
+│   │   ├── 📄 AppDownload.tsx   # Mobil ilova yuklab olish bo'limi
+│   │   ├── 📄 FAQ.tsx           # Savol-javoblar (Accordion)
+│   │   └── 📄 Footer.tsx        # Aloqa ma'lumotlari va tarmoq havolalari
+│   │
+│   ├── 📂 data/
+│   │   └── 📄 mockData.ts       # Dinamik ma'lumotlar (tariflar, xizmatlar, savollar)
+│   │
+│   ├── 📂 types/
+│   │   └── 📄 index.ts          # TypeScript interfeyslari va turlari
+│   │
+│   ├── 📄 App.tsx               # Asosiy sahifa konteyneri
+│   ├── 📄 main.tsx              # React DOM render qilish nuqtasi
+│   └── 📄 index.css             # Asosiy CSS stillar va responsive dizayn
 │
-├── 📄 index.html              # Asosiy HTML hujjati (Semantik va SEO optimallashtirilgan)
-├── 📄 README.md                # Loyiha haqida ma'lumot va qo'llanma
-├── 📄 .gitignore               # Keraksiz fayllarni git'dan chiqarib tashlash
-│
-└── 📂 assets/                  # Resurslar papkasi
-    ├── 📂 css/                 # Stillar papkasi
-    │   ├── 📄 style.css        # Asosiy dizayn tizimi, ranglar, komponentlar
-    │   └── 📄 responsive.css   # Mobil, planshet va katta ekranlar uchun moslashuv
-    │
-    ├── 📂 js/                  # Skriptlar papkasi
-    │   └── 📄 main.js          # Mobil menyu, narx hisoblagich, FAQ va buyurtma logikasi
-    │
-    └── 📂 images/              # Rasmlar, ikonlar va bannerlar (kerak bo'lganda)
+├── 📄 index.html                # HTML entry point
+├── 📄 package.json              # Loyiha kutubxonalari va scriptlar
+├── 📄 tsconfig.json             # TypeScript konfiguratsiyasi
+├── 📄 vite.config.ts            # Vite konfiguratsiyasi
+├── 📄 .gitignore                # Git e'tiborsiz qoldiradigan fayllar
+└── 📄 README.md                 # Loyiha qo'llanmasi
 ```
 
 ---
 
-## 🚀 Xususiyatlari & Imkoniyatlari
+## 🚀 Ishga Tushirish (Quick Start)
 
-- ⚡ **Tezkor Buyurtma Vidjeti**: Foydalanuvchilar qayerdan, qayerga va qaysi tarif kerakligini tanlab buyurtma qoldira oladi.
-- 📱 **100% Responsive Dizayn**: Mobil qurilmalar, planshetlar va noutbuklarda ideal ko'rinadi.
-- 🎨 **Zamonaviy UI/UX**: Sariq-qora taksi rang sxemasi, zamonaviy shriftlar, silliq animatsiyalar.
-- 📋 **Tariflar Jadvali**: Standart, Komfort, Biznes va Yetkazish xizmatlari uchun alohida kartalar.
-- ❓ **Interaktiv FAQ (Akkordeon)**: Mijozlar uchun ko'p so'raladigan savollar javoblari bilan.
-- 👨‍✈️ **Haydovchilarni Jalb Qilish Bloki**: Yangi haydovchilarni ishga taklif qiluvchi maxsus CTA banner.
-- 📲 **Ilova Yuklab Olish Bloki**: App Store va Google Play havolalari.
+### 1. Bog'liqliklarni o'rnatish:
+```bash
+npm install
+```
+
+### 2. Dasturni rivojlantirish (Development) rejimida ishga tushirish:
+```bash
+npm run dev
+```
+
+### 3. Production uchun build qilish:
+```bash
+npm run build
+```
 
 ---
 
-## 🛠 O'rnatish va Ishga Tushirish
+## ✨ Asosiy Xususiyatlar
 
-1. Ushbu loyihani brauzerda ochish uchun `index.html` faylini istalgan brauzerda (Chrome, Edge, Firefox) ochishingiz yoki VS Code orqali `Live Server` yordamida ishga tushirishingiz mumkin.
-2. O'zgartirishlar kiritish:
-   - Ranglar va o'lchamlarni `assets/css/style.css` dagi `:root` o'zgaruvchilaridan osongina o'zgartirishingiz mumkin.
-   - Aloqa ma'lumotlarini (telefon, email, manzillar) `index.html` dagi tegishli joylardan yangilashingiz mumkin.
+- ⚡ **Vite + React + TypeScript**: Maksimal tezlik, kod xavfsizligi va qulay arxitektura.
+- 🎯 **Tezkor Buyurtma (Booking Widget)**: Qayerdan / Qayerga borishni kiritish, tarif bo'yicha narxni hisoblash va buyurtma yuborish.
+- 🎨 **Zamonaviy UI & Ikonlar**: `lucide-react` zamonaviy SVG ikonlari va silliq animatsiyalar.
+- 📱 **To'liq Responsive**: Mobil smartfonlar, planshetlar va noutbuklar uchun to'liq moslashgan.
+- 🧩 **Modulli Komponentlar**: Har bir qism alohida TypeScript komponenti sifatida ajratilgan va osongina o'zgartirish mumkin.
