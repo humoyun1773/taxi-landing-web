@@ -1,0 +1,21 @@
+﻿{
+  "name": "O'rgimchak Taxi — Intellektual Taksi Xizmati",
+  "short_name": "UrgimchakTaxi",
+  "description": "O'zbekiston bo'ylab 24/7 tezkor, qulay va xavfsiz intellektual taksi xizmati",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080C14",
+  "theme_color": "#FFD21F",
+  "icons": [
+    {
+      "src": "/assets/spider-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/spider-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
