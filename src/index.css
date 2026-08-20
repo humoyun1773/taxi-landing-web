@@ -2361,85 +2361,83 @@ html.light .map-highlight-text strong {
 /* ==========================================================================
    11. APP DOWNLOAD & 3D REALISTIC SMARTPHONE SHOWCASE
    ========================================================================== */
+/* ==========================================================================
+   11. APP DOWNLOAD & 3D REALISTIC SMARTPHONE SHOWCASE
+   ========================================================================== */
 .app-download-section {
-  padding: 100px 0;
+  padding: clamp(36px, 4.5vw, 60px) 0;
   position: relative;
 }
 
 .app-download-wrapper {
   background: radial-gradient(circle at 70% 50%, #0F172A 0%, #080D1A 60%, #030712 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 28px;
-  padding: clamp(36px, 5vw, 70px);
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 44px);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 210, 31, 0.08);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 210, 31, 0.08);
 }
 
 html.light .app-download-wrapper {
   background: radial-gradient(circle at 70% 50%, #FFFFFF 0%, #F8FAFC 60%, #F1F5F9 100%);
   border: 1px solid #E2E8F0;
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.08);
 }
 
 .app-ambient-glow {
   position: absolute;
   top: 20%;
   right: 15%;
-  width: 450px;
-  height: 450px;
+  width: 400px;
+  height: 400px;
   background: radial-gradient(circle, rgba(255, 210, 31, 0.15) 0%, transparent 70%);
-  filter: blur(100px);
+  filter: blur(90px);
   pointer-events: none;
 }
 
 .app-download-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(30px, 5vw, 60px);
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(24px, 4vw, 48px);
   align-items: center;
   position: relative;
   z-index: 2;
 }
 
-.app-badge {
-  display: inline-flex;
-  margin-bottom: 18px;
-}
-
 .app-title {
-  font-size: clamp(2.3rem, 3.8vw, 3.2rem);
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
   font-weight: 900;
-  line-height: 1.16;
+  line-height: 1.2;
   color: var(--text-white);
-  margin-bottom: 18px;
-  letter-spacing: -0.8px;
+  margin-bottom: 12px;
+  letter-spacing: -0.6px;
 }
 
 .app-desc {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 30px;
-  max-width: 540px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 500px;
 }
 
 .app-feature-list-grid {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .app-feat-item {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 18px 22px;
-  border-radius: 18px;
+  padding: 12px 18px;
+  border-radius: 14px;
   backdrop-filter: blur(14px);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
@@ -2452,7 +2450,8 @@ html.light .app-feat-item {
 .app-feat-item:hover {
   border-color: rgba(255, 210, 31, 0.5);
   background: rgba(15, 23, 42, 0.9);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 210, 31, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 210, 31, 0.12);
+  transform: translateX(4px);
 }
 
 html.light .app-feat-item:hover {
@@ -2461,36 +2460,27 @@ html.light .app-feat-item:hover {
 }
 
 .app-feat-item:hover .feat-arrow {
-  transform: translateX(4px);
+  transform: translateX(3px);
   color: #FFD21F;
 }
 
 .app-feat-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-}
-
-.icon-gold {
-  background: rgba(255, 210, 31, 0.12);
+  background: rgba(255, 210, 31, 0.1);
   border: 1px solid rgba(255, 210, 31, 0.25);
   color: #FFD21F;
 }
 
-.icon-emerald {
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #10B981;
-}
-
-.icon-shield {
-  background: rgba(59, 130, 246, 0.12);
-  border: 1px solid rgba(59, 130, 246, 0.25);
-  color: #60A5FA;
+.icon-gold, .icon-emerald, .icon-shield {
+  background: rgba(255, 210, 31, 0.1);
+  border: 1px solid rgba(255, 210, 31, 0.25);
+  color: #FFD21F;
 }
 
 .app-feat-text {
@@ -2501,11 +2491,11 @@ html.light .app-feat-item:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .app-feat-header strong {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--text-white);
 }
@@ -2520,9 +2510,10 @@ html.light .app-feat-header strong {
 }
 
 .app-feat-text p {
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.4;
+  margin: 0;
 }
 
 /* Right Column: 3D Photorealistic Smartphone */
@@ -2535,14 +2526,14 @@ html.light .app-feat-header strong {
 .real-phone-showcase-wrapper {
   position: relative;
   width: 100%;
-  max-width: 420px;
+  max-width: 360px;
 }
 
 .real-phone-frame {
   position: relative;
-  border-radius: 28px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.95), 0 0 50px rgba(255, 210, 31, 0.22);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(255, 210, 31, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 

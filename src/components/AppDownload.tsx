@@ -15,9 +15,8 @@ export const AppDownload: React.FC = () => {
           <div className="app-download-grid">
             {/* Left Content: Mobile Platform Overview */}
             <div className="app-content-col">
-
               <motion.h2
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -27,7 +26,7 @@ export const AppDownload: React.FC = () => {
               </motion.h2>
 
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -36,23 +35,23 @@ export const AppDownload: React.FC = () => {
                 {t('app.desc')}
               </motion.p>
 
-              {/* Luxury Feature Cards Grid */}
+              {/* Compact Sleek Feature Cards */}
               <div className="app-feature-list-grid">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.25 }}
-                  whileHover={{ x: 6 }}
+                  transition={{ duration: 0.4, delay: 0.22 }}
+                  whileHover={{ x: 4 }}
                   className="app-feat-item"
                 >
                   <div className="app-feat-icon icon-gold">
-                    <Navigation size={22} />
+                    <Navigation size={18} />
                   </div>
                   <div className="app-feat-text">
                     <div className="app-feat-header">
                       <strong>{t('app.f1_title')}</strong>
-                      <ChevronRight size={16} className="feat-arrow" />
+                      <ChevronRight size={15} className="feat-arrow" />
                     </div>
                     <p>{t('app.f1_desc')}</p>
                   </div>
@@ -62,17 +61,17 @@ export const AppDownload: React.FC = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.35 }}
-                  whileHover={{ x: 6 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  whileHover={{ x: 4 }}
                   className="app-feat-item"
                 >
-                  <div className="app-feat-icon icon-emerald">
-                    <CreditCard size={22} />
+                  <div className="app-feat-icon icon-gold">
+                    <CreditCard size={18} />
                   </div>
                   <div className="app-feat-text">
                     <div className="app-feat-header">
                       <strong>{t('app.f2_title')}</strong>
-                      <ChevronRight size={16} className="feat-arrow" />
+                      <ChevronRight size={15} className="feat-arrow" />
                     </div>
                     <p>{t('app.f2_desc')}</p>
                   </div>
@@ -82,17 +81,17 @@ export const AppDownload: React.FC = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.45 }}
-                  whileHover={{ x: 6 }}
+                  transition={{ duration: 0.4, delay: 0.38 }}
+                  whileHover={{ x: 4 }}
                   className="app-feat-item"
                 >
-                  <div className="app-feat-icon icon-shield">
-                    <ShieldCheck size={22} />
+                  <div className="app-feat-icon icon-gold">
+                    <ShieldCheck size={18} />
                   </div>
                   <div className="app-feat-text">
                     <div className="app-feat-header">
                       <strong>{t('app.f3_title')}</strong>
-                      <ChevronRight size={16} className="feat-arrow" />
+                      <ChevronRight size={15} className="feat-arrow" />
                     </div>
                     <p>{t('app.f3_desc')}</p>
                   </div>
@@ -103,16 +102,16 @@ export const AppDownload: React.FC = () => {
             {/* Right: Ultra-Realistic 3D Smartphone Display */}
             <div className="app-phone-col">
               <motion.div
-                initial={{ opacity: 0, scale: 0.92, y: 30 }}
+                initial={{ opacity: 0, scale: 0.94, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="real-phone-showcase-wrapper"
               >
                 {/* Floating Animation Loop */}
                 <motion.div
                   animate={{
-                    y: [0, -8, 0],
+                    y: [0, -6, 0],
                   }}
                   transition={{
                     duration: 5,
