@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { tariffsData } from '../data/mockData';
-import { Check, Sparkles, CarFront, ArrowRight } from 'lucide-react';
+import { Check, Sparkles, CarFront } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export const Tariffs: React.FC = () => {
@@ -23,17 +23,17 @@ export const Tariffs: React.FC = () => {
             return (
               <motion.div
                 key={tariff.id}
-                initial={{ opacity: 0, y: 35 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: idx * 0.12 }}
-                whileHover={{ y: -8 }}
+                transition={{ duration: 0.45, delay: idx * 0.1 }}
+                whileHover={{ y: -6 }}
                 onClick={() => setSelectedTariff(tariff.id)}
                 className={`tariff-card ${tariff.isPopular ? 'popular' : ''} ${isSelected ? 'selected' : ''}`}
               >
                 {tariff.isPopular && (
                   <div className="popular-ribbon">
-                    <Sparkles size={13} /> {t('tariffs.popular')}
+                    <Sparkles size={12} /> {t('tariffs.popular')}
                   </div>
                 )}
 
@@ -50,33 +50,22 @@ export const Tariffs: React.FC = () => {
                 </div>
 
                 <div className="tariff-features-list">
-                  <div className="feature-group-title">{t('tariffs.terms')}</div>
                   <ul>
                     {tariff.features.map((feat, fIdx) => (
                       <li key={fIdx}>
                         <div className="check-bullet">
-                          <Check size={14} />
+                          <Check size={13} />
                         </div>
                         <span>{feat}</span>
                       </li>
                     ))}
                     <li className="cars-info-item">
                       <div className="check-bullet car-bullet">
-                        <CarFront size={14} />
+                        <CarFront size={13} />
                       </div>
-                      <span><strong>{t('tariffs.models')}</strong> {tariff.cars}</span>
+                      <span><strong>{tariff.cars}</strong></span>
                     </li>
                   </ul>
-                </div>
-
-                <div className="tariff-action">
-                  <a
-                    href="#about"
-                    className={`btn btn-block ${tariff.isPopular ? 'btn-primary' : 'btn-outline'}`}
-                  >
-                    <span>{t('tariffs.btn')}</span>
-                    <ArrowRight size={16} />
-                  </a>
                 </div>
               </motion.div>
             );

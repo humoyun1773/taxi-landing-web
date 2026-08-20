@@ -1579,19 +1579,19 @@ button, input, select {
 }
 
 /* ==========================================================================
-   7. TARIFFS (FLEET SHOWCASE)
+   7. TARIFFS (FLEET SHOWCASE - COMPACT & MODERN)
    ========================================================================== */
 .tariffs-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .tariff-card {
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
-  border-radius: var(--radius-xl);
-  padding: 34px 26px;
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1602,51 +1602,52 @@ button, input, select {
 
 .tariff-card:hover, .tariff-card.selected {
   border-color: var(--gold-400);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), var(--shadow-gold);
-  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), var(--shadow-gold);
+  transform: translateY(-5px);
 }
 
 .popular-ribbon {
   position: absolute;
-  top: -12px;
-  right: 22px;
+  top: -10px;
+  right: 18px;
   background: var(--gold-gradient);
   color: #030712;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 900;
-  padding: 5px 16px;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
-  gap: 5px;
-  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);
+  gap: 4px;
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.35);
 }
 
 .tariff-header {
   border-bottom: 1px solid var(--border-glass);
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
 }
 
 .tariff-name-group {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .tariff-name {
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--text-white);
 }
 
 .tariff-car-pill {
-  font-size: 0.7rem;
+  font-size: 0.675rem;
   font-weight: 700;
-  color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.04);
-  padding: 3px 10px;
+  color: var(--gold-400);
+  background: rgba(234, 179, 8, 0.08);
+  border: 1px solid var(--border-gold-subtle);
+  padding: 2px 8px;
   border-radius: var(--radius-full);
 }
 
@@ -1654,52 +1655,47 @@ button, input, select {
   display: flex;
   align-items: baseline;
   gap: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .price-val {
-  font-size: 2.2rem;
+  font-size: 1.85rem;
   font-weight: 900;
   color: var(--gold-400);
+  letter-spacing: -0.5px;
 }
 
 .price-cur {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
 .tariff-desc {
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .tariff-features-list {
   flex: 1;
-  margin-bottom: 26px;
-}
-
-.feature-group-title {
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 14px;
 }
 
 .tariff-features-list ul li {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 12px;
-  font-size: 0.9rem;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
   color: var(--text-secondary);
 }
 
+.tariff-features-list ul li:last-child {
+  margin-bottom: 0;
+}
+
 .check-bullet {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: rgba(16, 185, 129, 0.15);
   color: var(--emerald);
@@ -1707,7 +1703,6 @@ button, input, select {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .car-bullet {
