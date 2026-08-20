@@ -89,8 +89,8 @@ export const Footer: React.FC = () => {
                 <Phone size={14} />
               </div>
               <div className="contact-details">
-                <a href="tel:+998712000000" className="contact-main-text">
-                  +998 (71) 200-00-00
+                <a href="tel:+998919517335" className="contact-main-text">
+                  +998 (91) 951-73-35
                 </a>
                 <span className="contact-sub-text">24/7 Qo'llab-quvvatlash</span>
               </div>
