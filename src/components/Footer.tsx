@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ArrowUp, Send, Instagram, Globe, Sparkles } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp, Send, Instagram, Globe, Sparkles, Layers, ShieldCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { SpiderLogo } from './ui/SpiderLogo';
 
@@ -65,20 +65,38 @@ export const Footer: React.FC = () => {
         {/* 2. Navigation Column */}
         <div className="footer-col nav-col">
           <h4 className="footer-column-title">
-            <Sparkles size={13} className="text-yellow-400" />
+            <Sparkles size={14} className="title-icon text-yellow-400" />
             <span>{t('footer.col1')}</span>
           </h4>
-          <ul className="footer-nav-list">
+          <ul className="footer-links-list">
             <li><a href="#about">{t('nav.about')}</a></li>
             <li><a href="#tech">{t('nav.tech')}</a></li>
             <li><a href="#tariffs">{t('nav.tariffs')}</a></li>
+            <li><a href="#regions">{t('nav.regions')}</a></li>
+            <li><a href="#driver">{t('driver.subtitle')}</a></li>
             <li><a href="#app">Mobil ilova</a></li>
           </ul>
         </div>
 
-        {/* 3. Direct Contacts Column */}
+        {/* 3. Services Column */}
+        <div className="footer-col services-col">
+          <h4 className="footer-column-title">
+            <Layers size={14} className="title-icon text-yellow-400" />
+            <span>{t('footer.col2')}</span>
+          </h4>
+          <ul className="footer-links-list">
+            <li><a href="#services">Shahar ichida qatnov</a></li>
+            <li><a href="#regions">Shaharlararo taksi</a></li>
+            <li><a href="#services">Ekspress yetkazish</a></li>
+            <li><a href="#services">Aeroport transfer</a></li>
+            <li><a href="#tariffs">VIP & Biznes klass</a></li>
+          </ul>
+        </div>
+
+        {/* 4. Direct Contacts Column */}
         <div className="footer-col contact-col">
           <h4 className="footer-column-title">
+            <ShieldCheck size={14} className="title-icon text-yellow-400" />
             <span>{t('footer.col3')}</span>
           </h4>
           <ul className="footer-contact-list">
@@ -121,7 +139,7 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* 4. Copyright & Bottom Sub-Bar */}
+      {/* 5. Copyright & Bottom Sub-Bar */}
       <div className="footer-sub-bottom">
         <div className="container bottom-bar-flex">
           <p className="copyright-text">
