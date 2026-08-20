@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* 2. Navigation Column */}
-        <div className="footer-col">
+        <div className="footer-col nav-col">
           <h4 className="footer-column-title">
             <Sparkles size={13} className="text-yellow-400" />
             <span>{t('footer.col1')}</span>

@@ -61,8 +61,10 @@ export const Navbar: React.FC = () => {
 
         {/* Right Side: Language Selector, Theme Toggle, Phone */}
         <div className="nav-actions">
-          <LanguageSelector />
-          <ThemeToggle />
+          <div className="desktop-controls">
+            <LanguageSelector />
+            <ThemeToggle />
+          </div>
 
           <a href="tel:+998712000000" className="call-btn">
             <div className="call-pulse">
