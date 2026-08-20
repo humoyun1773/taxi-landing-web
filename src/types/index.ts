@@ -9,7 +9,6 @@ export interface Tariff {
   cars: string;
   features: string[];
   isPopular?: boolean;
-  accentColor?: string;
 }
 
 export interface ServiceItem {
