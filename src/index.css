@@ -418,37 +418,22 @@ button, input, select {
   font-size: 0.94rem;
   font-weight: 600;
   color: var(--text-secondary);
-  padding: 8px 0;
+  padding: 6px 2px;
   white-space: nowrap;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
   text-decoration: none;
   display: inline-block;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #FFD21F;
-  border-radius: 2px;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border-bottom: 2px solid transparent;
 }
 
 .nav-link:hover {
-  color: #FFFFFF;
+  color: #FFD21F;
+  border-bottom-color: #FFD21F;
 }
 
 html.light .nav-link:hover {
-  color: #0F172A;
-}
-
-.nav-link:hover::after {
-  transform: scaleX(1);
+  color: #D97706;
+  border-bottom-color: #D97706;
 }
 
 .nav-actions {
