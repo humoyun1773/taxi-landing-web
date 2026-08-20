@@ -1,52 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight, ShieldCheck, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Badge } from './ui/badge';
 
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
-  const shouldReduceMotion = useReducedMotion();
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springConfig = { damping: 25, stiffness: 120 };
-  const smoothMouseX = useSpring(mouseX, springConfig);
-  const smoothMouseY = useSpring(mouseY, springConfig);
-
-  const bgParallaxX = useTransform(smoothMouseX, [-500, 500], [-8, 8]);
-  const bgParallaxY = useTransform(smoothMouseY, [-500, 500], [-5, 5]);
-
-  const [isDesktop, setIsDesktop] = useState(true);
-
-  useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDesktop || shouldReduceMotion) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    mouseX.set(x);
-    mouseY.set(y);
-  };
 
   return (
-    <section
-      className="hero hero-fullbleed-bg-section"
-      id="home"
-      onMouseMove={handleMouseMove}
-    >
-      {/* 1. Full-Bleed Background Taxi Photography */}
-      <motion.div
-        style={isDesktop && !shouldReduceMotion ? { x: bgParallaxX, y: bgParallaxY } : {}}
-        className="hero-bg-photo-layer"
-      >
+    <section className="hero hero-fullbleed-bg-section" id="home">
+      {/* 1. Full-Bleed Background Taxi Photography (100% Original, Static, No Flip/Mirror) */}
+      <div className="hero-bg-photo-layer">
         <img
           src="/assets/urgimchak_yellow_taxi.jpg"
           alt="Urgimchak Taxi — Bright Yellow Modern Sedan"
@@ -54,7 +18,7 @@ export const Hero: React.FC = () => {
           loading="eager"
           decoding="async"
         />
-      </motion.div>
+      </div>
 
       {/* 2. Directional Cinematic Gradient Mask (Dark Left for Text, Clear Right for Taxi) */}
       <div className="hero-full-directional-overlay"></div>
