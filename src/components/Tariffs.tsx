@@ -67,10 +67,10 @@ export const Tariffs: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Price Display */}
+                {/* Price Display — Single Horizontal Line */}
                 <div className="compact-price-section">
                   <div className="compact-price-row">
-                    <span className="compact-digits">{tariff.startPrice}</span>
+                    <span className="compact-digits">{tariff.startPrice}&nbsp;so'm</span>
                     <span className="compact-unit">{t('tariffs.from')}</span>
                   </div>
                   <span className="compact-dist-note">• {tariff.baseDistance}</span>

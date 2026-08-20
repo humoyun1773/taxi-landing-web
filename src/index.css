@@ -1774,8 +1774,8 @@ html.light .compact-tariff-title {
 
 .compact-price-section {
   display: flex;
-  align-items: baseline;
-  gap: 6px;
+  flex-direction: column;
+  gap: 3px;
   margin-bottom: 14px;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -1788,27 +1788,31 @@ html.light .compact-price-section {
 .compact-price-row {
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 .compact-digits {
-  font-size: 1.85rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: #FFD21F;
   letter-spacing: -0.5px;
-  line-height: 1;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .compact-unit {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .compact-dist-note {
-  font-size: 0.76rem;
-  font-weight: 700;
+  font-size: 0.74rem;
+  font-weight: 600;
   color: #FFD21F;
+  white-space: nowrap;
 }
 
 .compact-specs-list {
