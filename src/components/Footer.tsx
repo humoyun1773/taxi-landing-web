@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ArrowUp, Send, ShieldCheck, Heart } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp, Send, Instagram, Globe, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { SpiderLogo } from './ui/SpiderLogo';
 
@@ -11,41 +11,74 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="footer">
-      <div className="container footer-container">
-        {/* Brand Column */}
+    <footer className="footer-master" id="contact">
+      {/* Subtle Top Glow Divider */}
+      <div className="footer-top-divider"></div>
+
+      <div className="container footer-main-container">
+        {/* 1. Brand Column */}
         <div className="footer-col brand-col">
           <a href="#home" className="logo footer-logo">
             <div className="logo-icon-wrapper">
               <SpiderLogo size={32} />
             </div>
             <div className="logo-title-group">
-              <span className="logo-brand">URGIMCHAK<span className="brand-accent">TAXI</span></span>
+              <span className="logo-brand">
+                URGIMCHAK<span className="brand-accent">TAXI</span>
+              </span>
               <span className="logo-sub">PREMIUM MOBILITY</span>
             </div>
           </a>
 
-          <p className="footer-desc">
+          <p className="footer-brand-desc">
             {t('footer.desc')}
           </p>
 
-          <div className="social-links">
-            <a href="https://t.me" target="_blank" rel="noreferrer" aria-label="Telegram">
-              <Send size={18} />
+          {/* Social Links */}
+          <div className="footer-social-row">
+            <a
+              href="https://t.me"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Telegram"
+              className="social-btn"
+            >
+              <Send size={16} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
-              <Heart size={18} />
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="social-btn"
+            >
+              <Instagram size={16} />
             </a>
-            <a href="#" aria-label="Xavfsizlik sertifikati">
-              <ShieldCheck size={18} />
+            <a
+              href="https://urgimchaktaxi.uz"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Veb-sayt"
+              className="social-btn"
+            >
+              <Globe size={16} />
             </a>
+          </div>
+
+          {/* Live System Status Pill */}
+          <div className="footer-system-status">
+            <span className="status-indicator-dot"></span>
+            <span>Tizim & Dispetcherlik 24/7 Faol</span>
           </div>
         </div>
 
-        {/* Navigation Column */}
+        {/* 2. Navigation Column */}
         <div className="footer-col">
-          <h4 className="footer-heading">{t('footer.col1')}</h4>
-          <ul className="footer-links">
+          <h4 className="footer-column-title">
+            <Sparkles size={14} className="text-yellow-400" />
+            <span>{t('footer.col1')}</span>
+          </h4>
+          <ul className="footer-nav-list">
             <li><a href="#about">{t('nav.about')}</a></li>
             <li><a href="#tech">{t('nav.tech')}</a></li>
             <li><a href="#tariffs">{t('nav.tariffs')}</a></li>
@@ -54,56 +87,78 @@ export const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Company Column */}
+        {/* 3. Company & Partners Column */}
         <div className="footer-col">
-          <h4 className="footer-heading">{t('footer.col2')}</h4>
-          <ul className="footer-links">
+          <h4 className="footer-column-title">
+            <span>{t('footer.col2')}</span>
+          </h4>
+          <ul className="footer-nav-list">
             <li><a href="#driver">{t('driver.subtitle')}</a></li>
             <li><a href="#app">{t('app.subtitle')}</a></li>
             <li><a href="#about">{t('about.subtitle')}</a></li>
           </ul>
         </div>
 
-        {/* Contact Column */}
-        <div className="footer-col">
-          <h4 className="footer-heading">{t('footer.col3')}</h4>
-          <ul className="contact-list">
-            <li>
-              <Phone size={18} className="contact-icon" />
-              <div>
-                <strong>+998 (71) 200-00-00</strong>
-                <span>24/7 Call Center</span>
+        {/* 4. Direct Contacts Column */}
+        <div className="footer-col contact-col">
+          <h4 className="footer-column-title">
+            <span>{t('footer.col3')}</span>
+          </h4>
+          <ul className="footer-contact-list">
+            <li className="contact-item">
+              <div className="contact-icon-bubble">
+                <Phone size={16} />
+              </div>
+              <div className="contact-details">
+                <a href="tel:+998712000000" className="contact-main-text">
+                  +998 (71) 200-00-00
+                </a>
+                <span className="contact-sub-text">24/7 Qo'llab-quvvatlash</span>
               </div>
             </li>
-            <li>
-              <Mail size={18} className="contact-icon" />
-              <div>
-                <strong>info@orgimchaktaxi.uz</strong>
-                <span>Texnik yordam</span>
+
+            <li className="contact-item">
+              <div className="contact-icon-bubble">
+                <Mail size={16} />
+              </div>
+              <div className="contact-details">
+                <a href="mailto:info@urgimchaktaxi.uz" className="contact-main-text">
+                  info@urgimchaktaxi.uz
+                </a>
+                <span className="contact-sub-text">Hamkorlik & Aloqa</span>
               </div>
             </li>
-            <li>
-              <MapPin size={18} className="contact-icon" />
-              <div>
-                <strong>Toshkent shahri, Amir Temur ko'chasi, 107-B</strong>
-                <span>Bosh ofis</span>
+
+            <li className="contact-item">
+              <div className="contact-icon-bubble">
+                <MapPin size={16} />
+              </div>
+              <div className="contact-details">
+                <span className="contact-main-text">
+                  Toshkent sh., Amir Temur shox ko'chasi, 107-B
+                </span>
+                <span className="contact-sub-text">Bosh ofis</span>
               </div>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Copyright Bottom Bar */}
-      <div className="footer-bottom">
-        <div className="container bottom-content">
-          <p>© {new Date().getFullYear()} Urgimchak Taxi Technologies Inc. {t('footer.rights')}</p>
-          <div className="bottom-links">
+      {/* 5. Copyright & Bottom Sub-Bar */}
+      <div className="footer-sub-bottom">
+        <div className="container bottom-bar-flex">
+          <p className="copyright-text">
+            © {new Date().getFullYear()} Urgimchak Taxi Technologies Inc. {t('footer.rights')}
+          </p>
+
+          <div className="legal-links-row">
             <a href="#">{t('footer.privacy')}</a>
-            <span className="divider">•</span>
+            <span className="legal-dot">•</span>
             <a href="#">{t('footer.terms')}</a>
           </div>
-          <button onClick={scrollToTop} className="scroll-top-btn" aria-label="Yuqoriga qaytish">
-            <ArrowUp size={18} />
+
+          <button onClick={scrollToTop} className="footer-scroll-top-btn" title="Yuqoriga qaytish">
+            <ArrowUp size={16} />
           </button>
         </div>
       </div>
