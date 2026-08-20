@@ -3122,6 +3122,54 @@ html.light .footer-sub-bottom {
   }
 }
 
+/* ==========================================================================
+   MOBILE & TABLET ADAPTIVE OPTIMIZATIONS (ZERO DEAD SPACE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .tariffs-grid-compact {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .timeline-track {
+    display: none;
+  }
+
+  .app-download-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .app-phone-col {
+    order: -1;
+  }
+
+  .real-phone-showcase-wrapper {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .footer-main-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -3136,63 +3184,132 @@ html.light .footer-sub-bottom {
   }
 
   .section {
-    padding: 80px 0;
+    padding: 28px 0 !important;
+  }
+
+  .section-title {
+    margin: 0 auto 18px !important;
   }
 
   .section-title h2 {
-    font-size: 2.2rem;
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin-bottom: 8px;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .section-title p {
+    font-size: 0.92rem;
+    line-height: 1.6;
   }
 
-  .tariffs-grid {
+  .about-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .tariffs-grid-compact {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .steps-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
-  .driver-banner-wrapper {
-    padding: 40px 24px;
+  .app-download-section {
+    padding: 24px 0 !important;
   }
 
   .app-download-wrapper {
-    padding: 40px 24px;
+    padding: 24px 18px !important;
+    border-radius: 18px;
   }
 
-  .final-title {
-    font-size: 2.4rem;
+  .app-download-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-  .bottom-content {
+  .app-title {
+    font-size: 1.65rem;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  .app-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .real-phone-showcase-wrapper {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .footer-master {
+    padding-top: 20px;
+  }
+
+  .footer-main-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 12px;
+  }
+
+  .bottom-bar-flex {
     flex-direction: column;
-    gap: 16px;
     text-align: center;
+    gap: 8px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.3rem;
+  .section {
+    padding: 22px 0 !important;
   }
 
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  .form-row-dual {
-    grid-template-columns: 1fr;
+  .hero-main-title {
+    font-size: 1.6rem !important;
+    letter-spacing: -0.5px;
   }
 
-  .hero-buttons .btn {
+  .hero-subtext {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions-row {
+    flex-direction: column;
     width: 100%;
+    gap: 10px;
   }
 
-  .footer-container {
-    grid-template-columns: 1fr;
+  .hero-btn-primary, .hero-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-perks-inline {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 }
 
