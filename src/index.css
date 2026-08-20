@@ -3398,9 +3398,14 @@ html.light .footer-scroll-top-btn {
     width: 100%;
   }
 
-  .footer-col.contact-col {
+  .footer-col.nav-col {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+  }
+
+  .footer-col.contact-col {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
     width: 100%;
     margin-top: 0;
     padding-top: 0;
@@ -3409,11 +3414,6 @@ html.light .footer-scroll-top-btn {
 
   html.light .footer-col.contact-col {
     border-top: none;
-  }
-
-  .footer-col.nav-col {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
   }
 
   .footer-col.services-col {
