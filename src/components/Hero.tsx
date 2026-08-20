@@ -41,8 +41,8 @@ export const Hero: React.FC = () => {
         className="hero-car-bg-backdrop"
       >
         <img
-          src="https://images.unsplash.com/photo-1556122071-e404eaedb77f?auto=format&fit=crop&w=1920&q=85"
-          alt="Urgimchak Taxi Fleet Background"
+          src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1920&q=85"
+          alt="Urgimchak Taxi Ambient Background"
           className="hero-bg-img"
         />
       </motion.div>
