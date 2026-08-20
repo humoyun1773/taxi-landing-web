@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import confetti from 'canvas-confetti';
 import { MapPin, Flag, Layers, Phone, Send, CheckCircle2, Sparkles, Clock } from 'lucide-react';
 import { BookingFormData } from '../types';
 
@@ -40,13 +39,7 @@ export const BookingForm: React.FC = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-      confetti({
-        particleCount: 60,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#F59E0B', '#FBBF24', '#10B981', '#FFFFFF'],
-      });
-    }, 700);
+    }, 600);
   };
 
   const handleReset = () => {

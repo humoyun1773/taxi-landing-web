@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ShieldCheck, Zap, ArrowRight, Play, Star, MapPin } from 'lucide-react';
 import { BookingForm } from './BookingForm';
 
 export const Hero: React.FC = () => {
-  // Desktop Mouse Parallax Values
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -13,16 +12,16 @@ export const Hero: React.FC = () => {
   const smoothMouseX = useSpring(mouseX, springConfig);
   const smoothMouseY = useSpring(mouseY, springConfig);
 
-  // Parallax transforms
-  const taxiX = useTransform(smoothMouseX, [-500, 500], [-10, 10]);
-  const taxiY = useTransform(smoothMouseY, [-500, 500], [-6, 6]);
-  const card1X = useTransform(smoothMouseX, [-500, 500], [-14, 14]);
-  const card1Y = useTransform(smoothMouseY, [-500, 500], [10, -10]);
-  const card2X = useTransform(smoothMouseX, [-500, 500], [12, -12]);
-  const card2Y = useTransform(smoothMouseY, [-500, 500], [-8, 8]);
-  const bgGlowX = useTransform(smoothMouseX, [-500, 500], [-25, 25]);
+  // Parallax transforms - strictly stable MotionValues
+  const taxiX = useTransform(smoothMouseX, [-500, 500], [-8, 8]);
+  const taxiY = useTransform(smoothMouseY, [-500, 500], [-5, 5]);
+  const card1X = useTransform(smoothMouseX, [-500, 500], [-12, 12]);
+  const card1Y = useTransform(smoothMouseY, [-500, 500], [8, -8]);
+  const card2X = useTransform(smoothMouseX, [-500, 500], [10, -10]);
+  const card2Y = useTransform(smoothMouseY, [-500, 500], [-6, 6]);
+  const bgGlowX = useTransform(smoothMouseX, [-500, 500], [-20, 20]);
 
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth > 992);
@@ -45,7 +44,7 @@ export const Hero: React.FC = () => {
       {/* Dynamic Background Motion Elements */}
       <div className="hero-bg-network">
         <div className="spider-grid-overlay"></div>
-        {/* Animated Yellow Light Trail (Looping speed effect) */}
+        {/* Animated Yellow Light Trail */}
         <div className="light-trail-container">
           <div className="light-trail trail-1"></div>
           <div className="light-trail trail-2"></div>
@@ -54,7 +53,7 @@ export const Hero: React.FC = () => {
 
         {/* Ambient Radial Glows */}
         <motion.div
-          style={{ x: isDesktop ? bgGlowX : 0 }}
+          style={{ x: bgGlowX }}
           className="hero-radial-glow primary-glow"
         ></motion.div>
         <div className="hero-radial-glow secondary-glow"></div>
@@ -159,8 +158,8 @@ export const Hero: React.FC = () => {
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             style={{
-              x: isDesktop ? taxiX : 0,
-              y: isDesktop ? taxiY : 0,
+              x: taxiX,
+              y: taxiY,
             }}
             className="hero-taxi-presentation"
           >
@@ -170,8 +169,8 @@ export const Hero: React.FC = () => {
             {/* Step 6: Floating UI Cards */}
             <motion.div
               style={{
-                x: isDesktop ? card1X : 0,
-                y: isDesktop ? card1Y : 0,
+                x: card1X,
+                y: card1Y,
               }}
               className="floating-badge-card float-top-left"
             >
@@ -186,8 +185,8 @@ export const Hero: React.FC = () => {
 
             <motion.div
               style={{
-                x: isDesktop ? card2X : 0,
-                y: isDesktop ? card2Y : 0,
+                x: card2X,
+                y: card2Y,
               }}
               className="floating-badge-card float-bottom-right"
             >
