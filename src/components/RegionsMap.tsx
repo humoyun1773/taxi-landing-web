@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { regionsData } from '../data/mockData';
 import { MapPin, Car, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { RegionData } from '../types';
 
 export const RegionsMap: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedRegion, setSelectedRegion] = useState<RegionData>(regionsData[0]);
 
   return (
     <section className="regions-section section" id="regions">
       <div className="container">
         <div className="section-title">
-          <span className="sub-title">Butun O'zbekiston Bo'ylab</span>
-          <h2>Shaharlararo va Viloyatlararo Qamrov</h2>
-          <p>Qaysi viloyatda bo'lishingizdan qat'i nazar, Urgimchak Taxi tarmog'i butun respublika bo'ylab faoliyat yuritadi</p>
+          <span className="sub-title">{t('regions.subtitle')}</span>
+          <h2>{t('regions.title')}</h2>
+          <p>{t('regions.desc')}</p>
         </div>
 
         <div className="regions-layout">
@@ -26,7 +28,6 @@ export const RegionsMap: React.FC = () => {
             className="map-card"
           >
             <div className="map-network-bg">
-              {/* Stylized SVG Map of Uzbekistan with Interactive Points */}
               <svg className="uzbekistan-svg" viewBox="0 0 1000 550" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -99,11 +100,11 @@ export const RegionsMap: React.FC = () => {
               >
                 <div className="region-info-header">
                   <div className="region-name-wrap">
-                    <span className="region-tag">Faol Hudud</span>
+                    <span className="region-tag">{t('regions.active_tag')}</span>
                     <h3>{selectedRegion.name}</h3>
                   </div>
                   <div className="region-center-badge">
-                    <MapPin size={16} /> Markaz: {selectedRegion.center}
+                    <MapPin size={16} /> {t('regions.center')}: {selectedRegion.center}
                   </div>
                 </div>
 
@@ -112,7 +113,7 @@ export const RegionsMap: React.FC = () => {
                     <Car size={20} className="metric-icon" />
                     <div>
                       <strong>{selectedRegion.activeCars.toLocaleString()} ta</strong>
-                      <p>Hozir yo'lda mashinalar</p>
+                      <p>{t('regions.cars_on_road')}</p>
                     </div>
                   </div>
 
@@ -120,7 +121,7 @@ export const RegionsMap: React.FC = () => {
                     <Clock size={20} className="metric-icon" />
                     <div>
                       <strong>~{selectedRegion.avgArrival}</strong>
-                      <p>O'rtacha yetib kelish</p>
+                      <p>{t('regions.avg_arrival')}</p>
                     </div>
                   </div>
                 </div>
@@ -128,20 +129,20 @@ export const RegionsMap: React.FC = () => {
                 <div className="region-perks">
                   <div className="perk-row">
                     <CheckCircle2 size={16} className="text-emerald" />
-                    <span>Shaharlararo qulay va arzon bron qilish</span>
+                    <span>{t('regions.p1')}</span>
                   </div>
                   <div className="perk-row">
                     <CheckCircle2 size={16} className="text-emerald" />
-                    <span>Yuk va posilkalarni viloyatga yetkazish</span>
+                    <span>{t('regions.p2')}</span>
                   </div>
                   <div className="perk-row">
                     <CheckCircle2 size={16} className="text-emerald" />
-                    <span>Doimiy konditsionerli yangi avtomobillar</span>
+                    <span>{t('regions.p3')}</span>
                   </div>
                 </div>
 
-                <a href="#app" className="btn btn-primary btn-block">
-                  <span>Ilova Orqali Safar Qilish</span>
+                <a href="#about" className="btn btn-primary btn-block">
+                  <span>{t('regions.btn')}</span>
                   <ArrowRight size={16} />
                 </a>
               </motion.div>
@@ -149,7 +150,7 @@ export const RegionsMap: React.FC = () => {
 
             {/* Quick Region Selector Pills */}
             <div className="quick-region-pills">
-              <span className="pills-title">Tezkor viloyat tanlash:</span>
+              <span className="pills-title">{t('regions.quick_select')}</span>
               <div className="pills-scroll">
                 {regionsData.map((reg) => (
                   <button

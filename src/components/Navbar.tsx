@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { LanguageSelector } from './ui/LanguageSelector';
+import { ThemeToggle } from './ui/ThemeToggle';
 
 export const Navbar: React.FC = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -14,15 +18,14 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Minimal, clean informational navigation links
   const navLinks = [
-    { label: 'Loyiha haqida', href: '#about' },
-    { label: 'Texnologiya', href: '#tech' },
-    { label: 'Avtopark', href: '#tariffs' },
-    { label: 'Xizmatlar', href: '#services' },
-    { label: 'Xavfsizlik', href: '#safety' },
-    { label: 'Qamrov', href: '#regions' },
-    { label: 'FAQ', href: '#faq' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.tech'), href: '#tech' },
+    { label: t('nav.tariffs'), href: '#tariffs' },
+    { label: t('nav.services'), href: '#services' },
+    { label: t('nav.safety'), href: '#safety' },
+    { label: t('nav.regions'), href: '#regions' },
+    { label: t('nav.faq'), href: '#faq' },
   ];
 
   return (
@@ -69,13 +72,16 @@ export const Navbar: React.FC = () => {
           </ul>
         </nav>
 
-        {/* Action: Phone / Support */}
+        {/* Controls: Language Selector, Theme Toggle, Phone */}
         <div className="nav-actions">
+          <LanguageSelector />
+          <ThemeToggle />
+
           <a href="tel:+998712000000" className="call-btn">
             <div className="call-pulse">
               <Phone size={14} />
             </div>
-            <span>+998 (71) 200-00-00</span>
+            <span>{t('nav.call')}</span>
           </a>
 
           <button
@@ -99,6 +105,10 @@ export const Navbar: React.FC = () => {
             className="mobile-drawer"
           >
             <div className="container mobile-drawer-content">
+              <div className="mobile-controls-row">
+                <LanguageSelector />
+                <ThemeToggle />
+              </div>
               <ul className="mobile-nav-list">
                 {navLinks.map((link) => (
                   <li key={link.href}>
@@ -114,7 +124,7 @@ export const Navbar: React.FC = () => {
               </ul>
               <div className="mobile-drawer-footer">
                 <a href="tel:+998712000000" onClick={() => setIsMenuOpen(false)} className="btn btn-outline btn-block">
-                  <Phone size={16} /> +998 (71) 200-00-00
+                  <Phone size={16} /> {t('nav.call')}
                 </a>
               </div>
             </div>

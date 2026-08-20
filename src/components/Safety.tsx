@@ -1,56 +1,48 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Shield, ShieldAlert, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { safetyData } from '../data/mockData';
-import { ShieldCheck, Lock, Radio, PhoneCall, Check } from 'lucide-react';
 
 export const Safety: React.FC = () => {
-  return (
-    <section className="safety-section section" id="safety">
-      <div className="container">
-        <div className="safety-layout">
-          {/* Left Text & Safety Features List */}
-          <div className="safety-content">
-            <div className="section-title text-left">
-              <span className="sub-title">100% Xavfsizlik Kafolati</span>
-              <h2>Sizning Xavfsizligingiz — Bizning Oliy Maqsadimiz</h2>
-              <p>
-                Urgimchak Taxi tizimi har bir safarni boshidan oxirigacha intellektual telemetriya va xavfsizlik protokollari bilan nazorat qiladi.
-              </p>
-            </div>
+  const { t } = useTranslation();
 
-            <div className="safety-cards-grid">
-              {safetyData.map((item, idx) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-30px' }}
-                  transition={{ duration: 0.45, delay: idx * 0.1 }}
-                  className="safety-feature-item"
-                >
-                  <div className="safety-check-icon">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.2 + idx * 0.1, type: 'spring' }}
-                    >
-                      <Check size={18} />
-                    </motion.div>
+  return (
+    <section className="safety-section section light-dark-bg" id="safety">
+      <div className="container">
+        <div className="section-title">
+          <span className="sub-title">{t('safety.subtitle')}</span>
+          <h2>{t('safety.title')}</h2>
+          <p>{t('safety.desc')}</p>
+        </div>
+
+        <div className="safety-layout">
+          {/* Left: Safety checklist items */}
+          <div className="safety-cards-grid">
+            {safetyData.map((item, idx) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="safety-feature-item"
+              >
+                <div className="safety-check-icon">
+                  <CheckCircle2 size={24} />
+                </div>
+                <div className="safety-text-group">
+                  <div className="safety-tag-row">
+                    <h4>{item.title}</h4>
+                    <span className="safety-badge">{item.tag}</span>
                   </div>
-                  <div>
-                    <div className="safety-tag-row">
-                      <h4>{item.title}</h4>
-                      <span className="safety-badge">{item.tag}</span>
-                    </div>
-                    <p>{item.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  <p>{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Right Visual: Animated Security Shield & Live SOS Demo */}
+          {/* Right: 3D Shield Interactive Graphic */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -58,36 +50,37 @@ export const Safety: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="safety-visual-card"
           >
-            <div className="safety-glow-bg"></div>
+            <div className="shield-icon-wrapper">
+              <div className="shield-ring-pulse"></div>
+              <div className="shield-ring-pulse outer"></div>
+              <Shield size={72} className="shield-main-icon" />
+            </div>
 
             <div className="shield-interactive-box">
-              <div className="shield-icon-wrapper">
-                <div className="shield-ring-pulse"></div>
-                <div className="shield-ring-pulse outer"></div>
-                <ShieldCheck size={56} className="shield-main-icon" />
-              </div>
-
-              <h3>24/7 Intellektual Himoya</h3>
-              <p>Har bir soniyada sun'iy intellekt nazorati ostidasiz</p>
+              <h3>{t('safety.shield_title')}</h3>
+              <p>{t('safety.shield_desc')}</p>
 
               <div className="safety-status-indicators">
                 <div className="status-item">
-                  <Radio size={18} className="text-emerald" />
-                  <span>Jonli GPS Kuzatuv Faol</span>
+                  <span className="pulse-dot"></span>
+                  <span>{t('safety.st1')}</span>
                 </div>
                 <div className="status-item">
-                  <Lock size={18} className="text-amber" />
-                  <span>Shaxsiy Ma'lumotlar Shifrlangan</span>
+                  <span className="pulse-dot"></span>
+                  <span>{t('safety.st2')}</span>
                 </div>
                 <div className="status-item">
-                  <PhoneCall size={18} className="text-rose" />
-                  <span>Tezkor SOS Dispetcher Tarmog'i</span>
+                  <span className="pulse-dot"></span>
+                  <span>{t('safety.st3')}</span>
                 </div>
               </div>
 
               <div className="emergency-sos-bar">
-                <span className="sos-label">SOS Favqulodda Tugma</span>
-                <span className="sos-status">Tayyor holatda</span>
+                <div className="sos-alert-label">
+                  <ShieldAlert size={18} className="text-rose" />
+                  <span className="sos-label">{t('safety.sos_title')}</span>
+                </div>
+                <span className="sos-status">{t('safety.sos_status')}</span>
               </div>
             </div>
           </motion.div>

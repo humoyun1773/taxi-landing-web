@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Phone, ShieldCheck, Star, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const FinalCTA: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="final-cta-section">
       <div className="container">
@@ -17,7 +20,7 @@ export const FinalCTA: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="badge final-badge"
             >
-              <Zap size={14} /> Kelajak Mobilligi
+              <Zap size={14} /> {t('final.badge')}
             </motion.div>
 
             <motion.h2
@@ -27,8 +30,7 @@ export const FinalCTA: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="final-title"
             >
-              Yangi Avlod Taksi Ekotizimi — <br />
-              <span className="gradient-text-gold">Urgimchak Taxi</span> Bilan Birga!
+              {t('final.title')}
             </motion.h2>
 
             <motion.p
@@ -38,7 +40,7 @@ export const FinalCTA: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="final-desc"
             >
-              Shahar ichida va viloyatlararo eng xavfsiz va qulay sayohatlar tajribasini his qiling. Biz bilan hamkorlik qiling yoki savollaringiz bo'lsa bog'laning.
+              {t('final.desc')}
             </motion.p>
 
             <motion.div
@@ -54,7 +56,7 @@ export const FinalCTA: React.FC = () => {
                 whileTap={{ scale: 0.96 }}
                 className="btn btn-primary btn-large"
               >
-                <span>Loyiha Bilan Tanishish</span>
+                <span>{t('final.cta')}</span>
                 <ArrowRight size={18} />
               </motion.a>
 
@@ -72,15 +74,15 @@ export const FinalCTA: React.FC = () => {
             <div className="final-trust-footer">
               <div className="trust-item">
                 <ShieldCheck size={16} className="text-gold" />
-                <span>100% Xavfsizlik nazorati</span>
+                <span>{t('final.t1')}</span>
               </div>
               <div className="trust-item">
                 <Star size={16} className="text-gold" />
-                <span>4.9 Ilova reytingi</span>
+                <span>{t('final.t2')}</span>
               </div>
               <div className="trust-item">
                 <Zap size={16} className="text-gold" />
-                <span>3 daqiqada yetib kelish</span>
+                <span>{t('final.t3')}</span>
               </div>
             </div>
           </div>

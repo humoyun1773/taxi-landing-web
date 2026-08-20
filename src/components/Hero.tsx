@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Zap, ArrowRight, Star, ShieldCheck, MapPin, Clock, Navigation, Award, Layers, Sparkles } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const Hero: React.FC = () => {
+  const { t } = useTranslation();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -37,7 +39,6 @@ export const Hero: React.FC = () => {
       <div className="hero-bg-network">
         <div className="hero-radial-glow primary-glow"></div>
         <div className="hero-radial-glow secondary-glow"></div>
-        <div className="hero-car-bg-ambient"></div>
         <div className="light-trail-container">
           <div className="light-trail trail-1"></div>
           <div className="light-trail trail-2"></div>
@@ -55,7 +56,7 @@ export const Hero: React.FC = () => {
             className="hero-badge"
           >
             <Zap size={14} />
-            <span>O'zbekiston Bo'ylab №1 Intellektual Taksi Ekotizimi</span>
+            <span>{t('hero.badge')}</span>
           </motion.div>
 
           <motion.h1
@@ -64,9 +65,9 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="hero-title"
           >
-            Yangi Avlod <br />
-            Taksi Platformasi — <br />
-            <span className="gradient-text-gold">Urgimchak Taxi</span>
+            {t('hero.title_prefix')} <br />
+            {t('hero.title_mid')} <br />
+            <span className="gradient-text-gold">{t('hero.title_accent')}</span>
           </motion.h1>
 
           <motion.p
@@ -75,7 +76,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="hero-desc"
           >
-            Sun'iy intellekt asosida ishlovchi aqlli marshrutlash, 100% xavfsiz safarlar va butun O'zbekistonni birlashtiruvchi yagona zamonaviy transport ekotizimi.
+            {t('hero.desc')}
           </motion.p>
 
           <motion.div
@@ -90,7 +91,7 @@ export const Hero: React.FC = () => {
               whileTap={{ scale: 0.98 }}
               className="btn btn-primary"
             >
-              <span>Loyiha Bilan Tanishish</span>
+              <span>{t('hero.cta_about')}</span>
               <ArrowRight size={18} />
             </motion.a>
 
@@ -101,7 +102,7 @@ export const Hero: React.FC = () => {
               className="btn btn-glass"
             >
               <Layers size={16} />
-              <span>Texnologiyalar</span>
+              <span>{t('hero.cta_tech')}</span>
             </motion.a>
           </motion.div>
 
@@ -116,7 +117,7 @@ export const Hero: React.FC = () => {
               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Mijoz fikri" />
               <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Mijoz fikri" />
               <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Mijoz fikri" />
-              <div className="avatar-count">+500K</div>
+              <div className="avatar-count">{t('hero.trust_count')}</div>
             </div>
             <div className="trust-info">
               <div className="stars">
@@ -125,7 +126,7 @@ export const Hero: React.FC = () => {
                 ))}
                 <span className="rating-num">4.9 / 5.0</span>
               </div>
-              <p>500 000 dan ortiq mamnun yo'lovchilar va haydovchilar</p>
+              <p>{t('hero.trust_desc')}</p>
             </div>
           </motion.div>
         </div>
@@ -152,12 +153,12 @@ export const Hero: React.FC = () => {
               
               <div className="car-overlay-badge">
                 <Sparkles size={14} style={{ display: 'inline', marginRight: 4 }} />
-                Premium VIP Ekotizim
+                {t('hero.card_badge')}
               </div>
 
               <div className="car-overlay-arrival">
                 <Clock size={14} />
-                ~3 daqiqada yetib kelish
+                {t('hero.card_eta')}
               </div>
 
               <div className="car-bottom-glow-strip"></div>
@@ -170,8 +171,8 @@ export const Hero: React.FC = () => {
                   <Navigation size={18} />
                 </div>
                 <div>
-                  <strong>Intellektual Marshrut</strong>
-                  <span>Tirbandlikni chetlab o'tish</span>
+                  <strong>{t('hero.pill_route')}</strong>
+                  <span>{t('hero.pill_route_sub')}</span>
                 </div>
               </div>
 
@@ -180,8 +181,8 @@ export const Hero: React.FC = () => {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <strong>12 Viloyat Qamrovi</strong>
-                  <span>Shaharlararo qulay safarlar</span>
+                  <strong>{t('hero.pill_region')}</strong>
+                  <span>{t('hero.pill_region_sub')}</span>
                 </div>
               </div>
 
@@ -190,8 +191,8 @@ export const Hero: React.FC = () => {
                   <Award size={18} />
                 </div>
                 <div>
-                  <strong>5% Eng Past Komissiya</strong>
-                  <span>Haydovchilar uchun qulay shart</span>
+                  <strong>{t('hero.pill_comm')}</strong>
+                  <span>{t('hero.pill_comm_sub')}</span>
                 </div>
               </div>
 
@@ -200,8 +201,8 @@ export const Hero: React.FC = () => {
                   <ShieldCheck size={18} />
                 </div>
                 <div>
-                  <strong>100% Xavfsizlik & SOS</strong>
-                  <span>24/7 jonli telemetriya</span>
+                  <strong>{t('hero.pill_safety')}</strong>
+                  <span>{t('hero.pill_safety_sub')}</span>
                 </div>
               </div>
             </div>

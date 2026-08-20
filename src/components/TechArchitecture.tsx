@@ -1,32 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { techPillarsData } from '../data/mockData';
 import { Cpu, Zap, Shield, Globe, Compass, Layers } from 'lucide-react';
-
-const iconMap = {
-  Cpu: Cpu,
-  Zap: Zap,
-  Shield: Shield,
-  Globe: Globe,
-  Compass: Compass,
-  Layers: Layers,
-};
+import { useTranslation } from 'react-i18next';
 
 export const TechArchitecture: React.FC = () => {
+  const { t } = useTranslation();
+
+  const techPillars = [
+    {
+      id: 'tp1',
+      icon: Cpu,
+      title: t('tech.tp1_title'),
+      description: t('tech.tp1_desc'),
+    },
+    {
+      id: 'tp2',
+      icon: Zap,
+      title: t('tech.tp2_title'),
+      description: t('tech.tp2_desc'),
+    },
+    {
+      id: 'tp3',
+      icon: Shield,
+      title: t('tech.tp3_title'),
+      description: t('tech.tp3_desc'),
+    },
+    {
+      id: 'tp4',
+      icon: Globe,
+      title: t('tech.tp4_title'),
+      description: t('tech.tp4_desc'),
+    },
+    {
+      id: 'tp5',
+      icon: Compass,
+      title: t('tech.tp5_title'),
+      description: t('tech.tp5_desc'),
+    },
+    {
+      id: 'tp6',
+      icon: Layers,
+      title: t('tech.tp6_title'),
+      description: t('tech.tp6_desc'),
+    },
+  ];
+
   return (
     <section className="tech-section section" id="tech">
       <div className="container">
         <div className="section-title">
-          <span className="sub-title">Texnologik Arxitektura</span>
-          <h2>Platforma Qanday Texnologiyalar Asosida Ishlaydi?</h2>
-          <p>
-            Urgimchak Taxi — ilg'or neyrotarmoqlar, geografik axborot tizimlari (GIS) va real vaqtli telemetriya bilan qurollangan zamonaviy texnologik platformadir
-          </p>
+          <span className="sub-title">{t('tech.subtitle')}</span>
+          <h2>{t('tech.title')}</h2>
+          <p>{t('tech.desc')}</p>
         </div>
 
         <div className="tech-grid">
-          {techPillarsData.map((pillar, idx) => {
-            const Icon = iconMap[pillar.iconName];
+          {techPillars.map((pillar, idx) => {
+            const Icon = pillar.icon;
             return (
               <motion.div
                 key={pillar.id}

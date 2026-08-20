@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Navigation, ShieldCheck, CreditCard } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const AppDownload: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="app-download-section section" id="app">
       <div className="container">
@@ -19,7 +22,7 @@ export const AppDownload: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="sub-title app-badge"
               >
-                <Sparkles size={14} /> Raqamli Ekotizim
+                <Sparkles size={14} /> {t('app.subtitle')}
               </motion.div>
 
               <motion.h2
@@ -29,8 +32,7 @@ export const AppDownload: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="app-title"
               >
-                Intellektual Mobil <br />
-                <span className="gradient-text-gold">Foydalanuvchi Tajribasi</span>
+                {t('app.title')}
               </motion.h2>
 
               <motion.p
@@ -40,7 +42,7 @@ export const AppDownload: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="app-desc"
               >
-                Urgimchak Taxi ilovasi zamonaviy dizayn, intuitiv interfeys va neyrotarmoqli marshrutlash bilan qurollangan. Barcha jarayonlar maksimal sodda va qulay tarzda avtomatlashtirilgan.
+                {t('app.desc')}
               </motion.p>
 
               {/* App Capabilities Grid */}
@@ -50,8 +52,8 @@ export const AppDownload: React.FC = () => {
                     <Navigation size={20} className="text-gold" />
                   </div>
                   <div>
-                    <strong>Jonli GPS Telemetriya</strong>
-                    <p>Avtomobil harakatini sekundma-sekund real vaqtda kuzatish</p>
+                    <strong>{t('app.f1_title')}</strong>
+                    <p>{t('app.f1_desc')}</p>
                   </div>
                 </div>
 
@@ -60,8 +62,8 @@ export const AppDownload: React.FC = () => {
                     <CreditCard size={20} className="text-emerald" />
                   </div>
                   <div>
-                    <strong>Qulay To'lov Tizimlari</strong>
-                    <p>Payme, Click, Uzcard, Humo va naqd to'lovlarni to'liq qo'llab-quvvatlash</p>
+                    <strong>{t('app.f2_title')}</strong>
+                    <p>{t('app.f2_desc')}</p>
                   </div>
                 </div>
 
@@ -70,8 +72,8 @@ export const AppDownload: React.FC = () => {
                     <ShieldCheck size={20} className="text-gold" />
                   </div>
                   <div>
-                    <strong>O'rnatilgan SOS Himoya</strong>
-                    <p>Safar davomida 24/7 tezkor xavfsizlik va dispetcher monitoringi</p>
+                    <strong>{t('app.f3_title')}</strong>
+                    <p>{t('app.f3_desc')}</p>
                   </div>
                 </div>
               </div>
@@ -104,7 +106,7 @@ export const AppDownload: React.FC = () => {
                       <div className="screen-logo">
                         <span className="dot"></span> Urgimchak Taxi
                       </div>
-                      <div className="screen-badge">AI Faol</div>
+                      <div className="screen-badge">AI Active</div>
                     </div>
 
                     <div className="screen-map-preview">
@@ -113,15 +115,15 @@ export const AppDownload: React.FC = () => {
                         <span className="pulse-radar"></span>
                         <div className="car-symbol">🚕</div>
                       </div>
-                      <div className="user-dest-marker">📍 Siz shu yerdasiz</div>
+                      <div className="user-dest-marker">📍 Live GPS</div>
                     </div>
 
                     <div className="screen-bottom-card">
                       <div className="car-type-info">
                         <strong>Komfort Klass</strong>
-                        <span>Tracker 2 (Oq)</span>
+                        <span>Tracker 2 (White)</span>
                       </div>
-                      <div className="eta-badge">2 daqiqa qoldi</div>
+                      <div className="eta-badge">2 min ETA</div>
                     </div>
                   </div>
                 </motion.div>

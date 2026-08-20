@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { tariffsData } from '../data/mockData';
 import { Check, Sparkles, CarFront, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const Tariffs: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedTariff, setSelectedTariff] = useState('comfort');
 
   return (
     <section className="tariffs section light-dark-bg" id="tariffs">
       <div className="container">
         <div className="section-title">
-          <span className="sub-title">Avtopark & Tariflar</span>
-          <h2>Har Qanday Talab Uchun Mos Avtomobillar</h2>
-          <p>Yashirin to'lovlarsiz, aniq belgilangan hamyonbop va qulay tariflar rejasi</p>
+          <span className="sub-title">{t('tariffs.subtitle')}</span>
+          <h2>{t('tariffs.title')}</h2>
+          <p>{t('tariffs.desc')}</p>
         </div>
 
         <div className="tariffs-grid">
@@ -31,7 +33,7 @@ export const Tariffs: React.FC = () => {
               >
                 {tariff.isPopular && (
                   <div className="popular-ribbon">
-                    <Sparkles size={13} /> {tariff.badge || 'Eng Ommabop'}
+                    <Sparkles size={13} /> {t('tariffs.popular')}
                   </div>
                 )}
 
@@ -42,13 +44,13 @@ export const Tariffs: React.FC = () => {
                   </div>
                   <div className="tariff-price-wrap">
                     <span className="price-val">{tariff.startPrice}</span>
-                    <span className="price-cur">so'mdan</span>
+                    <span className="price-cur">{t('tariffs.from')}</span>
                   </div>
                   <p className="tariff-desc">{tariff.description}</p>
                 </div>
 
                 <div className="tariff-features-list">
-                  <div className="feature-group-title">Tarif shartlari:</div>
+                  <div className="feature-group-title">{t('tariffs.terms')}</div>
                   <ul>
                     {tariff.features.map((feat, fIdx) => (
                       <li key={fIdx}>
@@ -62,17 +64,17 @@ export const Tariffs: React.FC = () => {
                       <div className="check-bullet car-bullet">
                         <CarFront size={14} />
                       </div>
-                      <span><strong>Modellar:</strong> {tariff.cars}</span>
+                      <span><strong>{t('tariffs.models')}</strong> {tariff.cars}</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="tariff-action">
                   <a
-                    href="#app"
+                    href="#about"
                     className={`btn btn-block ${tariff.isPopular ? 'btn-primary' : 'btn-outline'}`}
                   >
-                    <span>Ilovada Tanlash</span>
+                    <span>{t('tariffs.btn')}</span>
                     <ArrowRight size={16} />
                   </a>
                 </div>

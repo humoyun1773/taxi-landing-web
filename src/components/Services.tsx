@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Navigation, Route, PackageCheck, PlaneTakeoff, ShieldAlert, Sparkles, ArrowUpRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { servicesData } from '../data/mockData';
 
 const serviceIcons = {
@@ -13,13 +14,15 @@ const serviceIcons = {
 };
 
 export const Services: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="services section" id="services">
       <div className="container">
         <div className="section-title">
-          <span className="sub-title">Ekotizim Xizmatlari</span>
-          <h2>Har Qanday Ehtiyoj Uchun Mukammal Transport</h2>
-          <p>Shaharda tezkor qatnovdan tortib, viloyatlararo qulay sayohat va ekspress yetkazib berishgacha</p>
+          <span className="sub-title">{t('services.subtitle')}</span>
+          <h2>{t('services.title')}</h2>
+          <p>{t('services.desc')}</p>
         </div>
 
         <div className="services-grid">
@@ -47,8 +50,8 @@ export const Services: React.FC = () => {
                 <p className="service-desc">{service.description}</p>
 
                 <div className="service-footer">
-                  <a href="#app" className="service-link">
-                    <span>Xizmat haqida batafsil</span>
+                  <a href="#about" className="service-link">
+                    <span>{t('services.more')}</span>
                     <ArrowUpRight size={16} />
                   </a>
                 </div>

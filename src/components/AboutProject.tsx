@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Cpu, Zap, ArrowRight, TrendingUp, Users } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const AboutProject: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="about-project section light-dark-bg" id="about">
       <div className="container">
@@ -15,13 +18,13 @@ export const AboutProject: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="about-info-col"
           >
-            <span className="sub-title">Loyiha Haqida & Missiyamiz</span>
-            <h2>O'zbekiston Shaharlarida Qulay Va Xavfsiz Harakatlanishning Yangi Standarti</h2>
+            <span className="sub-title">{t('about.subtitle')}</span>
+            <h2>{t('about.title')}</h2>
             <p className="about-lead">
-              <strong>Urgimchak Taxi</strong> — bu an'anaviy taksi xizmatlarini tubdan o'zgartiruvchi, sun'iy intellekt va zamonaviy transport telemetriyasiga asoslangan yagona raqamli mobillik ekotizimidir.
+              {t('about.lead')}
             </p>
             <p className="about-text">
-              Bizning maqsadimiz — yo'lovchilarga bir necha daqiqada arzon va xavfsiz avtomobil topib berish, haydovchilarga esa eng past komissiya (5%) bilan erkin va yuqori daromad yaratishdir.
+              {t('about.text')}
             </p>
 
             <div className="about-metrics-row">
@@ -30,8 +33,8 @@ export const AboutProject: React.FC = () => {
                   <TrendingUp size={22} className="text-gold" />
                 </div>
                 <div>
-                  <strong>30% Tezroq</strong>
-                  <span>Tirbandliklarsiz aqlli marshrut</span>
+                  <strong>{t('about.m1_title')}</strong>
+                  <span>{t('about.m1_sub')}</span>
                 </div>
               </div>
 
@@ -40,15 +43,15 @@ export const AboutProject: React.FC = () => {
                   <Users size={22} className="text-emerald" />
                 </div>
                 <div>
-                  <strong>5% Komissiya</strong>
-                  <span>Haydovchilar uchun eng qulay shart</span>
+                  <strong>{t('about.m2_title')}</strong>
+                  <span>{t('about.m2_sub')}</span>
                 </div>
               </div>
             </div>
 
             <div className="about-cta-group">
               <a href="#tariffs" className="btn btn-primary">
-                <span>Avtopark va Tariflar bilan tanishish</span>
+                <span>{t('about.cta')}</span>
                 <ArrowRight size={16} />
               </a>
             </div>
@@ -63,16 +66,14 @@ export const AboutProject: React.FC = () => {
             className="about-visual-col"
           >
             <div className="about-card-showcase">
-              <div className="showcase-glow"></div>
-              
               <div className="about-feature-box">
                 <div className="feat-header">
                   <div className="feat-icon">
                     <Cpu size={24} />
                   </div>
-                  <h4>Sun'iy Intellektli Algoritm</h4>
+                  <h4>{t('about.f1_title')}</h4>
                 </div>
-                <p>Buyurtma tushgan zahoti eng yaqin bo'sh haydovchi sekundning ulushlarida aniqlanadi va yetib kelish vaqti 3 daqiqagacha qisqaradi.</p>
+                <p>{t('about.f1_desc')}</p>
               </div>
 
               <div className="about-feature-box">
@@ -80,9 +81,9 @@ export const AboutProject: React.FC = () => {
                   <div className="feat-icon gold">
                     <Zap size={24} />
                   </div>
-                  <h4>Shaffof va Ochiq Ekotizim</h4>
+                  <h4>{t('about.f2_title')}</h4>
                 </div>
-                <p>Yo'lovchi uchun adolatli narx, haydovchi uchun eng past komissiya va 24/7 tezkor to'lovlar tizimi integratsiya qilingan.</p>
+                <p>{t('about.f2_desc')}</p>
               </div>
 
               <div className="about-feature-box">
@@ -90,9 +91,9 @@ export const AboutProject: React.FC = () => {
                   <div className="feat-icon green">
                     <ShieldCheck size={24} />
                   </div>
-                  <h4>100% Xavfsizlik Kafolati</h4>
+                  <h4>{t('about.f3_title')}</h4>
                 </div>
-                <p>Barcha haydovchilar shaxsi tekshirilgan, har bir safar real vaqtli GPS orqali kuzatiladi va doimiy SOS yordam xizmati mavjud.</p>
+                <p>{t('about.f3_desc')}</p>
               </div>
             </div>
           </motion.div>
