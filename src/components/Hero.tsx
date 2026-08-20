@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight, ShieldCheck, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Badge } from './ui/badge';
+
 
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -28,19 +28,6 @@ export const Hero: React.FC = () => {
       {/* 3. Hero Foreground Content */}
       <div className="container hero-fullbleed-container">
         <div className="hero-text-column">
-          {/* Eyebrow Brand Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="hero-eyebrow-wrapper"
-          >
-            <Badge variant="gold" className="hero-brand-badge">
-              <Zap size={13} className="text-yellow-400 mr-1.5" />
-              <span>{t('hero.badge')}</span>
-            </Badge>
-          </motion.div>
-
           {/* Monumental Hero Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
