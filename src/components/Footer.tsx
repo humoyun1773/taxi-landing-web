@@ -12,15 +12,12 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="footer-master" id="contact">
-      {/* Subtle Top Glow Divider */}
-      <div className="footer-top-divider"></div>
-
       <div className="container footer-main-container">
         {/* 1. Brand Column */}
         <div className="footer-col brand-col">
           <a href="#home" className="logo footer-logo">
             <div className="logo-icon-wrapper">
-              <SpiderLogo size={32} />
+              <SpiderLogo size={28} />
             </div>
             <div className="logo-title-group">
               <span className="logo-brand">
@@ -42,7 +39,7 @@ export const Footer: React.FC = () => {
               aria-label="Telegram"
               className="social-btn"
             >
-              <Send size={16} />
+              <Send size={15} />
             </a>
             <a
               href="https://instagram.com"
@@ -51,7 +48,7 @@ export const Footer: React.FC = () => {
               aria-label="Instagram"
               className="social-btn"
             >
-              <Instagram size={16} />
+              <Instagram size={15} />
             </a>
             <a
               href="https://urgimchaktaxi.uz"
@@ -60,7 +57,7 @@ export const Footer: React.FC = () => {
               aria-label="Veb-sayt"
               className="social-btn"
             >
-              <Globe size={16} />
+              <Globe size={15} />
             </a>
           </div>
 
@@ -74,7 +71,7 @@ export const Footer: React.FC = () => {
         {/* 2. Navigation Column */}
         <div className="footer-col">
           <h4 className="footer-column-title">
-            <Sparkles size={14} className="text-yellow-400" />
+            <Sparkles size={13} className="text-yellow-400" />
             <span>{t('footer.col1')}</span>
           </h4>
           <ul className="footer-nav-list">
@@ -104,7 +101,7 @@ export const Footer: React.FC = () => {
           <ul className="footer-contact-list">
             <li className="contact-item">
               <div className="contact-icon-bubble">
-                <Phone size={16} />
+                <Phone size={14} />
               </div>
               <div className="contact-details">
                 <a href="tel:+998712000000" className="contact-main-text">
@@ -116,7 +113,7 @@ export const Footer: React.FC = () => {
 
             <li className="contact-item">
               <div className="contact-icon-bubble">
-                <Mail size={16} />
+                <Mail size={14} />
               </div>
               <div className="contact-details">
                 <a href="mailto:info@urgimchaktaxi.uz" className="contact-main-text">
@@ -128,7 +125,7 @@ export const Footer: React.FC = () => {
 
             <li className="contact-item">
               <div className="contact-icon-bubble">
-                <MapPin size={16} />
+                <MapPin size={14} />
               </div>
               <div className="contact-details">
                 <span className="contact-main-text">
@@ -155,7 +152,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <button onClick={scrollToTop} className="footer-scroll-top-btn" title="Yuqoriga qaytish">
-            <ArrowUp size={16} />
+            <ArrowUp size={15} />
           </button>
         </div>
       </div>
