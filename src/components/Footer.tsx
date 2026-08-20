@@ -60,12 +60,6 @@ export const Footer: React.FC = () => {
               <Globe size={15} />
             </a>
           </div>
-
-          {/* Live System Status Pill */}
-          <div className="footer-system-status">
-            <span className="status-indicator-dot"></span>
-            <span>Tizim & Dispetcherlik 24/7 Faol</span>
-          </div>
         </div>
 
         {/* 2. Navigation Column */}
