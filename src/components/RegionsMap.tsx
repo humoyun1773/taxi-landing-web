@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { regionsData } from '../data/mockData';
-import { MapPin, CheckCircle2, Globe2, Compass } from 'lucide-react';
+import { MapPin, CheckCircle2, Globe2, Compass, Radio } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { RegionData } from '../types';
 
@@ -19,39 +19,65 @@ export const RegionsMap: React.FC = () => {
         </div>
 
         <div className="regions-layout">
-          {/* Interactive Map Visual */}
+          {/* Interactive Glowing Map Visual */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="map-card"
           >
+            <div className="map-card-top-bar">
+              <div className="flex items-center gap-2">
+                <Radio size={14} className="text-yellow-400 animate-pulse" />
+                <span className="text-xs font-bold uppercase tracking-wider text-yellow-400">
+                  Respublika 12 Viloyat Tarmog'i
+                </span>
+              </div>
+              <span className="text-xs text-slate-400 font-semibold">
+                Faol Hub: <strong className="text-white">{selectedRegion.center}</strong>
+              </span>
+            </div>
+
             <div className="map-network-bg">
-              <svg className="uzbekistan-svg" viewBox="0 0 1000 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="uzbekistan-svg" viewBox="0 0 1000 560" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#1E293B" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#0F172A" stopOpacity="0.9" />
+                  <linearGradient id="mapGlowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1E293B" stopOpacity="0.85" />
+                    <stop offset="50%" stopColor="#0F172A" stopOpacity="0.9" />
+                    <stop offset="100%" stopColor="#030712" stopOpacity="0.95" />
                   </linearGradient>
+                  <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="6" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
                 </defs>
 
-                {/* Country Outline Representation */}
+                {/* Country Outline Representation (Stylized Geometric Uzbekistan Silhouette) */}
                 <path
-                  d="M120,240 C150,180 230,120 380,110 C500,100 620,130 730,170 C840,200 950,210 930,280 C900,340 850,370 780,390 C720,410 650,470 580,480 C500,490 470,400 390,370 C300,340 180,350 120,280 Z"
-                  fill="url(#mapGradient)"
-                  stroke="#EAB308"
-                  strokeWidth="1.8"
-                  strokeOpacity="0.4"
+                  d="M 140 210 Q 220 130 360 130 T 520 110 Q 640 120 730 160 Q 860 190 940 230 Q 960 280 910 330 Q 860 370 780 390 Q 710 420 630 470 Q 540 480 480 410 Q 400 370 300 340 Q 180 350 140 280 Z"
+                  fill="url(#mapGlowGrad)"
+                  stroke="#FFD21F"
+                  strokeWidth="2.5"
+                  strokeOpacity="0.5"
+                  filter="url(#goldGlow)"
+                />
+
+                <path
+                  d="M 140 210 Q 220 130 360 130 T 520 110 Q 640 120 730 160 Q 860 190 940 230 Q 960 280 910 330 Q 860 370 780 390 Q 710 420 630 470 Q 540 480 480 410 Q 400 370 300 340 Q 180 350 140 280 Z"
+                  fill="none"
+                  stroke="#FFD21F"
+                  strokeWidth="1.2"
+                  strokeOpacity="0.8"
                   strokeDasharray="6 6"
                 />
 
-                {/* Network connecting lines */}
+                {/* Inter-region network connecting lines */}
                 <path
-                  d="M 740 176 L 550 302 L 420 286 L 880 242 L 930 209 L 860 181 L 260 198 L 540 385 L 620 462"
-                  stroke="#EAB308"
+                  d="M 740 176 L 550 302 L 420 286 L 880 242 L 930 209 L 860 181 L 260 198 L 540 385 L 620 462 L 740 176 L 860 181"
+                  stroke="#FFD21F"
                   strokeWidth="1.2"
-                  strokeOpacity="0.25"
+                  strokeOpacity="0.35"
                   strokeDasharray="4 4"
                 />
               </svg>
@@ -78,36 +104,37 @@ export const RegionsMap: React.FC = () => {
             <div className="map-legend">
               <div className="legend-item">
                 <span className="legend-dot active-dot"></span>
-                <span>{t('regions.legend1')}</span>
+                <span>Tanlangan viloyat markazi</span>
               </div>
               <div className="legend-item">
                 <span className="legend-dot live-dot"></span>
-                <span>{t('regions.legend2')}</span>
+                <span>Tarmoq integratsiyasi bosqichi</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Region Details Panel (Honest Startup Network Hub Overview) */}
+          {/* Region Details Panel */}
           <div className="region-details-panel">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedRegion.id}
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: 18 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.35 }}
+                exit={{ opacity: 0, x: -18 }}
+                transition={{ duration: 0.3 }}
                 className="region-info-box"
               >
                 <div className="region-info-header">
                   <div className="region-name-wrap">
                     <div className="flex items-center gap-2 mb-1">
-                      <Globe2 size={16} className="text-gold" />
+                      <Globe2 size={16} className="text-yellow-400" />
                       <span className="region-tag">{t('regions.hub_title')}</span>
                     </div>
                     <h3>{selectedRegion.name}</h3>
                   </div>
                   <div className="region-center-badge">
-                    <MapPin size={15} /> {selectedRegion.center}
+                    <MapPin size={15} className="text-yellow-400" />
+                    <span>{selectedRegion.center}</span>
                   </div>
                 </div>
 
@@ -117,25 +144,25 @@ export const RegionsMap: React.FC = () => {
 
                 <div className="region-perks-list">
                   <div className="perk-row">
-                    <CheckCircle2 size={17} className="text-emerald shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald shrink-0" />
                     <span>{t('regions.p1')}</span>
                   </div>
                   <div className="perk-row">
-                    <CheckCircle2 size={17} className="text-emerald shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald shrink-0" />
                     <span>{t('regions.p2')}</span>
                   </div>
                   <div className="perk-row">
-                    <CheckCircle2 size={17} className="text-emerald shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald shrink-0" />
                     <span>{t('regions.p3')}</span>
                   </div>
                   <div className="perk-row">
-                    <CheckCircle2 size={17} className="text-emerald shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald shrink-0" />
                     <span>{t('regions.p4')}</span>
                   </div>
                 </div>
 
                 <div className="region-status-card">
-                  <Compass size={18} className="text-gold" />
+                  <Compass size={18} className="text-yellow-400 shrink-0" />
                   <span>Yagona respublika transport integratsiyasi bosqichma-bosqich yo'lga qo'yiladi.</span>
                 </div>
               </motion.div>
