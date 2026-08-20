@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Zap, ArrowRight, Star, ShieldCheck, MapPin, Clock, Navigation, Award, Layers, Sparkles } from 'lucide-react';
+import { Zap, ArrowRight, ShieldCheck, MapPin, Clock, Navigation, Award, Layers, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export const Hero: React.FC = () => {
@@ -104,30 +104,6 @@ export const Hero: React.FC = () => {
               <Layers size={16} />
               <span>{t('hero.cta_tech')}</span>
             </motion.a>
-          </motion.div>
-
-          {/* Social Proof */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.75 }}
-            className="hero-trust-bar"
-          >
-            <div className="avatar-group">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Mijoz fikri" />
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Mijoz fikri" />
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Mijoz fikri" />
-              <div className="avatar-count">{t('hero.trust_count')}</div>
-            </div>
-            <div className="trust-info">
-              <div className="stars">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} fill="#FACC15" color="#FACC15" />
-                ))}
-                <span className="rating-num">4.9 / 5.0</span>
-              </div>
-              <p>{t('hero.trust_desc')}</p>
-            </div>
           </motion.div>
         </div>
 
