@@ -351,11 +351,18 @@ button, input, select {
   width: 100%;
 }
 
+.nav-left-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 3.5vw, 44px);
+}
+
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .logo-icon-wrapper {
@@ -380,7 +387,7 @@ button, input, select {
 }
 
 .logo-brand {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 900;
   letter-spacing: 0.5px;
   color: var(--text-white);
@@ -400,45 +407,54 @@ button, input, select {
 .desktop-nav .nav-list {
   display: flex;
   align-items: center;
-  gap: 4px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-glass);
-  padding: 4px 6px;
-  border-radius: var(--radius-full);
-  backdrop-filter: blur(12px);
-}
-
-html.light .desktop-nav .nav-list {
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  gap: clamp(16px, 2vw, 28px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
   position: relative;
-  font-size: 0.88rem;
+  font-size: 0.94rem;
   font-weight: 600;
   color: var(--text-secondary);
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
+  padding: 8px 0;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease;
+  text-decoration: none;
   display: inline-block;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #FFD21F;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-link:hover {
   color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.08);
 }
 
 html.light .nav-link:hover {
   color: #0F172A;
-  background: rgba(0, 0, 0, 0.06);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-shrink: 0;
 }
 
