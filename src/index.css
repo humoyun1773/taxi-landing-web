@@ -2541,42 +2541,69 @@ html.light .models-names {
 }
 
 /* ==========================================================================
-   11. APP DOWNLOAD & SMARTPHONE UI
+   11. APP DOWNLOAD & 3D REALISTIC SMARTPHONE SHOWCASE
    ========================================================================== */
+.app-download-section {
+  padding: 100px 0;
+  position: relative;
+}
+
 .app-download-wrapper {
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-xl);
-  padding: 65px;
+  background: radial-gradient(circle at 70% 50%, #0F172A 0%, #080D1A 60%, #030712 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: clamp(36px, 5vw, 70px);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 210, 31, 0.08);
+}
+
+html.light .app-download-wrapper {
+  background: radial-gradient(circle at 70% 50%, #FFFFFF 0%, #F8FAFC 60%, #F1F5F9 100%);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.08);
+}
+
+.app-ambient-glow {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(255, 210, 31, 0.15) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
 }
 
 .app-download-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 50px;
+  gap: clamp(30px, 5vw, 60px);
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .app-badge {
-  margin-bottom: 20px;
-}
-
-.app-title {
-  font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1.18;
-  color: var(--text-white);
+  display: inline-flex;
   margin-bottom: 18px;
 }
 
+.app-title {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.12;
+  color: var(--text-white);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
 .app-desc {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   color: var(--text-secondary);
-  line-height: 1.85;
+  line-height: 1.8;
   margin-bottom: 34px;
+  max-width: 540px;
 }
 
 .app-feature-list-grid {
@@ -2587,205 +2614,173 @@ html.light .models-names {
 
 .app-feat-item {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  background: rgba(3, 7, 18, 0.6);
-  border: 1px solid var(--border-glass);
-  padding: 16px 20px;
-  border-radius: var(--radius-lg);
-  transition: var(--transition);
+  align-items: center;
+  gap: 18px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px 22px;
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+html.light .app-feat-item {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .app-feat-item:hover {
-  border-color: var(--border-gold);
-  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(255, 210, 31, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 210, 31, 0.12);
+}
+
+html.light .app-feat-item:hover {
+  background: #FFFFFF;
+  border-color: #FFD21F;
+}
+
+.app-feat-item:hover .feat-arrow {
   transform: translateX(4px);
+  color: #FFD21F;
 }
 
 .app-feat-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.04);
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.app-feat-item strong {
-  display: block;
-  font-size: 1.05rem;
-  color: var(--text-white);
+.icon-gold {
+  background: rgba(255, 210, 31, 0.12);
+  border: 1px solid rgba(255, 210, 31, 0.25);
+  color: #FFD21F;
+}
+
+.icon-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #10B981;
+}
+
+.icon-shield {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  color: #60A5FA;
+}
+
+.app-feat-text {
+  flex: 1;
+}
+
+.app-feat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 4px;
 }
 
-.app-feat-item p {
-  font-size: 0.875rem;
+.app-feat-header strong {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-white);
+}
+
+html.light .app-feat-header strong {
+  color: #0F172A;
+}
+
+.feat-arrow {
+  color: var(--text-muted);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.app-feat-text p {
+  font-size: 0.86rem;
   color: var(--text-muted);
   line-height: 1.5;
 }
 
-.qr-scan-box {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  background: rgba(3, 7, 18, 0.6);
-  padding: 18px 24px;
-  border-radius: var(--radius-md);
-  border: 1px dashed var(--border-gold);
-}
-
-.qr-info strong {
-  display: block;
-  font-size: 1rem;
-  color: var(--text-white);
-}
-
-.qr-info p {
-  font-size: 0.825rem;
-  color: var(--text-muted);
-}
-
-.phone-mockup-wrapper {
+/* Right Column: 3D Photorealistic Smartphone */
+.app-phone-col {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.phone-device {
-  width: 290px;
-  height: 540px;
-  background: #030712;
-  border: 10px solid #1E293B;
-  border-radius: 46px;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(234, 179, 8, 0.2);
-  padding: 14px;
+.real-phone-showcase-wrapper {
   position: relative;
-  overflow: hidden;
-}
-
-.phone-screen {
   width: 100%;
-  height: 100%;
-  background: #080D1A;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 18px;
+  max-width: 420px;
+}
+
+.real-phone-frame {
   position: relative;
-}
-
-.phone-notch {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 18px;
-  background: #1E293B;
-  border-radius: var(--radius-full);
-}
-
-.screen-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 14px;
-}
-
-.screen-logo {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--text-white);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.screen-logo .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold-400);
-}
-
-.screen-badge {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: var(--emerald);
-  background: rgba(16, 185, 129, 0.15);
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-
-.screen-map-preview {
-  flex: 1;
-  background: #0F172A;
-  border-radius: var(--radius-md);
-  margin: 14px 0;
-  position: relative;
+  border-radius: 28px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.95), 0 0 50px rgba(255, 210, 31, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.driver-car-marker {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pulse-radar {
+.phone-ambient-underglow {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  bottom: -20px;
+  left: 10%;
+  right: 10%;
+  height: 50px;
+  background: rgba(255, 210, 31, 0.35);
+  filter: blur(40px);
   border-radius: 50%;
-  border: 1px solid var(--gold-400);
-  animation: radarPulse 2s infinite;
+  pointer-events: none;
 }
 
-.car-symbol {
-  font-size: 1.8rem;
-}
-
-.user-dest-marker {
-  position: absolute;
-  bottom: 12px;
-  font-size: 0.7rem;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 3px 10px;
-  border-radius: 4px;
-  color: #FFF;
-}
-
-.screen-bottom-card {
-  background: #141E33;
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.car-type-info strong {
+.real-phone-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
   display: block;
-  font-size: 0.85rem;
-  color: var(--text-white);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.car-type-info span {
-  font-size: 0.7rem;
-  color: var(--text-muted);
+.real-phone-frame:hover .real-phone-img {
+  transform: scale(1.03);
 }
 
-.eta-badge {
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--gold-400);
+.phone-glass-reflection-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .app-download-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .app-content-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app-feat-item {
+    text-align: left;
+  }
+
+  .real-phone-showcase-wrapper {
+    max-width: 360px;
+    margin: 0 auto;
+  }
 }
 
 /* ==========================================================================

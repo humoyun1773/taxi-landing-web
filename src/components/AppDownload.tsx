@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Navigation, ShieldCheck, CreditCard } from 'lucide-react';
+import { Sparkles, Navigation, ShieldCheck, CreditCard, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Badge } from './ui/badge';
 
 export const AppDownload: React.FC = () => {
   const { t } = useTranslation();
@@ -16,13 +17,16 @@ export const AppDownload: React.FC = () => {
             {/* Left Content: Mobile Platform Overview */}
             <div className="app-content-col">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="sub-title app-badge"
+                className="mb-4"
               >
-                <Sparkles size={14} /> {t('app.subtitle')}
+                <Badge variant="gold" className="app-badge">
+                  <Sparkles size={13} className="text-yellow-400 mr-1.5" />
+                  <span>{t('app.subtitle')}</span>
+                </Badge>
               </motion.div>
 
               <motion.h2
@@ -45,87 +49,99 @@ export const AppDownload: React.FC = () => {
                 {t('app.desc')}
               </motion.p>
 
-              {/* App Capabilities Grid */}
+              {/* Luxury Feature Cards Grid */}
               <div className="app-feature-list-grid">
-                <div className="app-feat-item">
-                  <div className="app-feat-icon">
-                    <Navigation size={20} className="text-gold" />
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.25 }}
+                  whileHover={{ x: 6 }}
+                  className="app-feat-item"
+                >
+                  <div className="app-feat-icon icon-gold">
+                    <Navigation size={22} />
                   </div>
-                  <div>
-                    <strong>{t('app.f1_title')}</strong>
+                  <div className="app-feat-text">
+                    <div className="app-feat-header">
+                      <strong>{t('app.f1_title')}</strong>
+                      <ChevronRight size={16} className="feat-arrow" />
+                    </div>
                     <p>{t('app.f1_desc')}</p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="app-feat-item">
-                  <div className="app-feat-icon">
-                    <CreditCard size={20} className="text-emerald" />
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.35 }}
+                  whileHover={{ x: 6 }}
+                  className="app-feat-item"
+                >
+                  <div className="app-feat-icon icon-emerald">
+                    <CreditCard size={22} />
                   </div>
-                  <div>
-                    <strong>{t('app.f2_title')}</strong>
+                  <div className="app-feat-text">
+                    <div className="app-feat-header">
+                      <strong>{t('app.f2_title')}</strong>
+                      <ChevronRight size={16} className="feat-arrow" />
+                    </div>
                     <p>{t('app.f2_desc')}</p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="app-feat-item">
-                  <div className="app-feat-icon">
-                    <ShieldCheck size={20} className="text-gold" />
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.45 }}
+                  whileHover={{ x: 6 }}
+                  className="app-feat-item"
+                >
+                  <div className="app-feat-icon icon-shield">
+                    <ShieldCheck size={22} />
                   </div>
-                  <div>
-                    <strong>{t('app.f3_title')}</strong>
+                  <div className="app-feat-text">
+                    <div className="app-feat-header">
+                      <strong>{t('app.f3_title')}</strong>
+                      <ChevronRight size={16} className="feat-arrow" />
+                    </div>
                     <p>{t('app.f3_desc')}</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
 
-            {/* Right: 3D Floating Mockup Phone */}
+            {/* Right: Ultra-Realistic 3D Smartphone Display */}
             <div className="app-phone-col">
               <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 40 }}
+                initial={{ opacity: 0, scale: 0.92, y: 30 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="phone-mockup-wrapper"
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="real-phone-showcase-wrapper"
               >
                 {/* Floating Animation Loop */}
                 <motion.div
                   animate={{
-                    y: [0, -10, 0],
+                    y: [0, -8, 0],
                   }}
                   transition={{
                     duration: 5,
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }}
-                  className="phone-device"
+                  className="real-phone-frame"
                 >
-                  <div className="phone-screen">
-                    <div className="phone-notch"></div>
-                    <div className="screen-header">
-                      <div className="screen-logo">
-                        <span className="dot"></span> Urgimchak Taxi
-                      </div>
-                      <div className="screen-badge">AI Active</div>
-                    </div>
-
-                    <div className="screen-map-preview">
-                      <div className="map-grid-lines"></div>
-                      <div className="driver-car-marker">
-                        <span className="pulse-radar"></span>
-                        <div className="car-symbol">🚕</div>
-                      </div>
-                      <div className="user-dest-marker">📍 Live GPS</div>
-                    </div>
-
-                    <div className="screen-bottom-card">
-                      <div className="car-type-info">
-                        <strong>Komfort Klass</strong>
-                        <span>Tracker 2 (White)</span>
-                      </div>
-                      <div className="eta-badge">2 min ETA</div>
-                    </div>
-                  </div>
+                  <div className="phone-ambient-underglow"></div>
+                  <img
+                    src="/assets/urgimchak_app_mockup.jpg"
+                    alt="Urgimchak Taxi 3D Smartphone App Interface"
+                    className="real-phone-img"
+                    loading="lazy"
+                  />
+                  <div className="phone-glass-reflection-overlay"></div>
                 </motion.div>
               </motion.div>
             </div>
