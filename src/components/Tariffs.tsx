@@ -25,7 +25,7 @@ export const Tariffs: React.FC = () => {
 
   return (
     <section className="tariffs section light-dark-bg" id="tariffs">
-      <div className="container">
+      <div className="container tariffs-wide-container">
         <div className="section-title">
           <h2>{t('tariffs.title')}</h2>
           <p>{t('tariffs.desc')}</p>

@@ -1676,20 +1676,25 @@ html.light .hero-bottom-vignette {
 }
 
 /* ==========================================================================
-   7. TARIFFS (COMPACT HEIGHT & WIDE 4-CARD GRID)
+   7. TARIFFS (EXPANDED WIDE 4-CARD GRID)
    ========================================================================== */
+.tariffs-wide-container {
+  max-width: 1420px !important;
+  width: 100%;
+}
+
 .tariffs-grid-compact {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
   align-items: stretch;
 }
 
 .tariff-card-compact {
   background: #0D1424;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  padding: 22px 20px;
+  border-radius: 20px;
+  padding: 26px 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1801,9 +1806,9 @@ html.light .compact-price-section {
 }
 
 .compact-dist-note {
-  font-size: 0.74rem;
-  font-weight: 600;
-  color: #10B981;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #FFD21F;
 }
 
 .compact-specs-list {
@@ -1822,11 +1827,11 @@ html.light .compact-price-section {
 }
 
 .compact-check-circle {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
-  background: rgba(16, 185, 129, 0.15);
-  color: #10B981;
+  background: rgba(255, 210, 31, 0.12);
+  color: #FFD21F;
   display: flex;
   align-items: center;
   justify-content: center;
