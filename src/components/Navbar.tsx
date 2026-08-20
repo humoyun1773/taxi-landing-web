@@ -23,7 +23,6 @@ export const Navbar: React.FC = () => {
     { label: t('nav.about'), href: '#about' },
     { label: t('nav.tech'), href: '#tech' },
     { label: t('nav.tariffs'), href: '#tariffs' },
-    { label: t('nav.regions'), href: '#regions' },
   ];
 
   return (
