@@ -24,7 +24,6 @@ export const Navbar: React.FC = () => {
     { label: t('nav.tech'), href: '#tech' },
     { label: t('nav.tariffs'), href: '#tariffs' },
     { label: t('nav.services'), href: '#services' },
-    { label: t('nav.safety'), href: '#safety' },
     { label: t('nav.regions'), href: '#regions' },
   ];
 

@@ -9,7 +9,6 @@ import { Services } from './components/Services';
 import { Tariffs } from './components/Tariffs';
 import { HowItWorks } from './components/HowItWorks';
 import { RegionsMap } from './components/RegionsMap';
-import { Safety } from './components/Safety';
 import { DriverSection } from './components/DriverSection';
 import { AppDownload } from './components/AppDownload';
 import { FinalCTA } from './components/FinalCTA';
@@ -29,7 +28,6 @@ export const App: React.FC = () => {
         <Tariffs />
         <HowItWorks />
         <RegionsMap />
-        <Safety />
         <DriverSection />
         <AppDownload />
         <FinalCTA />
