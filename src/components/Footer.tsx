@@ -26,7 +26,6 @@ export const Footer: React.FC = () => {
               <span className="logo-brand">
                 URGIMCHAK<span className="brand-accent">TAXI</span>
               </span>
-              <span className="logo-sub">PREMIUM MOBILITY</span>
             </div>
           </a>
 
