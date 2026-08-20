@@ -660,13 +660,13 @@ button, input, select {
 }
 
 .hero-showcase-card {
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(15, 23, 42, 0.7);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-xl);
-  padding: 32px;
+  padding: 30px;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  box-shadow: var(--shadow-glass);
+  box-shadow: var(--shadow-glass), 0 0 45px rgba(234, 179, 8, 0.12);
   position: relative;
 }
 
@@ -674,20 +674,41 @@ button, input, select {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   border: 1px solid var(--border-glass);
+  height: 280px;
+  background: #030712;
 }
 
 .hero-car-img {
   width: 100%;
-  height: 230px;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  transition: transform 0.6s var(--ease-smooth);
+  transition: transform 0.8s var(--ease-smooth);
 }
 
 .hero-showcase-card:hover .hero-car-img {
-  transform: scale(1.03);
+  transform: scale(1.05);
+}
+
+.car-image-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.2) 0%, transparent 40%, rgba(3, 7, 18, 0.85) 100%);
+  z-index: 1;
+}
+
+.car-bottom-glow-strip {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: var(--gold-gradient);
+  box-shadow: 0 0 16px var(--gold-400);
+  z-index: 2;
 }
 
 .car-overlay-badge {
@@ -699,9 +720,10 @@ button, input, select {
   color: var(--gold-400);
   font-size: 0.75rem;
   font-weight: 800;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   backdrop-filter: blur(10px);
+  z-index: 2;
 }
 
 .car-overlay-arrival {
@@ -709,26 +731,27 @@ button, input, select {
   bottom: 14px;
   right: 14px;
   background: rgba(3, 7, 18, 0.85);
-  border: 1px solid rgba(16, 185, 129, 0.4);
+  border: 1px solid rgba(16, 185, 129, 0.5);
   color: #10B981;
   font-size: 0.75rem;
   font-weight: 800;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   gap: 6px;
   backdrop-filter: blur(10px);
+  z-index: 2;
 }
 
 .hero-tech-pills-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 12px;
 }
 
 .hero-pill-item {
-  background: rgba(3, 7, 18, 0.6);
+  background: rgba(3, 7, 18, 0.75);
   border: 1px solid var(--border-glass);
   padding: 14px 16px;
   border-radius: var(--radius-md);
@@ -736,6 +759,32 @@ button, input, select {
   align-items: center;
   gap: 12px;
   transition: var(--transition);
+}
+
+.hero-pill-item:hover {
+  border-color: var(--border-gold);
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-2px);
+}
+
+.hero-pill-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-pill-icon-wrap.gold {
+  background: rgba(234, 179, 8, 0.12);
+  color: var(--gold-400);
+}
+
+.hero-pill-icon-wrap.green {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--emerald);
 }
 
 .hero-pill-item:hover {

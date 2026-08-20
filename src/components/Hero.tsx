@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Zap, ArrowRight, Star, ShieldCheck, MapPin, Clock, Navigation, Award, Layers } from 'lucide-react';
+import { Zap, ArrowRight, Star, ShieldCheck, MapPin, Clock, Navigation, Award, Layers, Sparkles } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const mouseX = useMotionValue(0);
@@ -10,8 +10,8 @@ export const Hero: React.FC = () => {
   const smoothMouseX = useSpring(mouseX, springConfig);
   const smoothMouseY = useSpring(mouseY, springConfig);
 
-  const carParallaxX = useTransform(smoothMouseX, [-500, 500], [-10, 10]);
-  const carParallaxY = useTransform(smoothMouseY, [-500, 500], [-6, 6]);
+  const carParallaxX = useTransform(smoothMouseX, [-500, 500], [-12, 12]);
+  const carParallaxY = useTransform(smoothMouseY, [-500, 500], [-8, 8]);
 
   const [isDesktop, setIsDesktop] = useState(true);
 
@@ -33,10 +33,11 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="hero" id="home" onMouseMove={handleMouseMove}>
-      {/* Ambient Lighting & Trail Network */}
+      {/* Ambient Lighting, Road Trails & Cinematic Background Car Glow */}
       <div className="hero-bg-network">
         <div className="hero-radial-glow primary-glow"></div>
         <div className="hero-radial-glow secondary-glow"></div>
+        <div className="hero-car-bg-ambient"></div>
         <div className="light-trail-container">
           <div className="light-trail trail-1"></div>
           <div className="light-trail trail-2"></div>
@@ -74,7 +75,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="hero-desc"
           >
-            Sun'iy intellekt asosida ishlovchi aqlli marshrutlash, 100% xavfsiz safarlar va butun O'zbekistonni birlashtiruvchi yagona zamonaviy transport platformasi.
+            Sun'iy intellekt asosida ishlovchi aqlli marshrutlash, 100% xavfsiz safarlar va butun O'zbekistonni birlashtiruvchi yagona zamonaviy transport ekotizimi.
           </motion.p>
 
           <motion.div
@@ -129,7 +130,7 @@ export const Hero: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Right Column: Premium Fleet & Platform Visual Showcase */}
+        {/* Right Column: Premium Fleet & Cinematic Car Showcase */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -137,30 +138,37 @@ export const Hero: React.FC = () => {
           className="hero-visual-column"
         >
           <div className="hero-showcase-card">
-            {/* Real Premium Luxury Taxi Car Showcase */}
+            {/* Cinematic Luxury Taxi Car Frame with Glowing Aura */}
             <motion.div
               style={{ x: carParallaxX, y: carParallaxY }}
               className="hero-car-image-box"
             >
+              <div className="car-image-overlay-gradient"></div>
               <img
-                src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80"
+                src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=85"
                 alt="Urgimchak Taxi Luxury Fleet"
                 className="hero-car-img"
               />
+              
               <div className="car-overlay-badge">
-                <ShieldCheck size={14} style={{ display: 'inline', marginRight: 4 }} />
-                AI Smart Mobility
+                <Sparkles size={14} style={{ display: 'inline', marginRight: 4 }} />
+                Premium VIP Ekotizim
               </div>
+
               <div className="car-overlay-arrival">
                 <Clock size={14} />
                 ~3 daqiqada yetib kelish
               </div>
+
+              <div className="car-bottom-glow-strip"></div>
             </motion.div>
 
-            {/* Tech Feature Highlights */}
+            {/* Tech Feature Highlights Bento Grid */}
             <div className="hero-tech-pills-grid">
               <div className="hero-pill-item">
-                <Navigation size={18} className="text-gold" />
+                <div className="hero-pill-icon-wrap gold">
+                  <Navigation size={18} />
+                </div>
                 <div>
                   <strong>Intellektual Marshrut</strong>
                   <span>Tirbandlikni chetlab o'tish</span>
@@ -168,7 +176,9 @@ export const Hero: React.FC = () => {
               </div>
 
               <div className="hero-pill-item">
-                <MapPin size={18} className="text-emerald" />
+                <div className="hero-pill-icon-wrap green">
+                  <MapPin size={18} />
+                </div>
                 <div>
                   <strong>12 Viloyat Qamrovi</strong>
                   <span>Shaharlararo qulay safarlar</span>
@@ -176,7 +186,9 @@ export const Hero: React.FC = () => {
               </div>
 
               <div className="hero-pill-item">
-                <Award size={18} className="text-gold" />
+                <div className="hero-pill-icon-wrap gold">
+                  <Award size={18} />
+                </div>
                 <div>
                   <strong>5% Eng Past Komissiya</strong>
                   <span>Haydovchilar uchun qulay shart</span>
@@ -184,7 +196,9 @@ export const Hero: React.FC = () => {
               </div>
 
               <div className="hero-pill-item">
-                <ShieldCheck size={18} className="text-emerald" />
+                <div className="hero-pill-icon-wrap green">
+                  <ShieldCheck size={18} />
+                </div>
                 <div>
                   <strong>100% Xavfsizlik & SOS</strong>
                   <span>24/7 jonli telemetriya</span>
