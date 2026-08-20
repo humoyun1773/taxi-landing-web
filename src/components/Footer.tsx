@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
             <li><a href="#about">{t('nav.about')}</a></li>
             <li><a href="#tech">{t('nav.tech')}</a></li>
             <li><a href="#tariffs">{t('nav.tariffs')}</a></li>
-            <li><a href="#app">{t('app.title')}</a></li>
+            <li><a href="#app">Mobil ilova</a></li>
           </ul>
         </div>
 
