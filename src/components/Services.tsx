@@ -17,7 +17,7 @@ export const Services: React.FC = () => {
     <section className="services section" id="services">
       <div className="container">
         <div className="section-title">
-          <span className="sub-title">Xizmatlarimiz</span>
+          <span className="sub-title">Ekotizim Xizmatlari</span>
           <h2>Har Qanday Ehtiyoj Uchun Mukammal Transport</h2>
           <p>Shaharda tezkor qatnovdan tortib, viloyatlararo qulay sayohat va ekspress yetkazib berishgacha</p>
         </div>
@@ -47,8 +47,8 @@ export const Services: React.FC = () => {
                 <p className="service-desc">{service.description}</p>
 
                 <div className="service-footer">
-                  <a href="#booking" className="service-link">
-                    <span>Buyurtma berish</span>
+                  <a href="#app" className="service-link">
+                    <span>Xizmat haqida batafsil</span>
                     <ArrowUpRight size={16} />
                   </a>
                 </div>

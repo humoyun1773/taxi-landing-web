@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Menu, X, ArrowRight, Zap } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,14 +14,14 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Minimal, clean informational navigation links
   const navLinks = [
-    { label: 'Bosh sahifa', href: '#home' },
+    { label: 'Loyiha haqida', href: '#about' },
+    { label: 'Texnologiya', href: '#tech' },
+    { label: 'Avtopark', href: '#tariffs' },
     { label: 'Xizmatlar', href: '#services' },
-    { label: 'Tariflar', href: '#tariffs' },
-    { label: 'Qanday Ishlaydi?', href: '#how-it-works' },
-    { label: 'Hududlar', href: '#regions' },
     { label: 'Xavfsizlik', href: '#safety' },
-    { label: 'Haydovchilarga', href: '#driver' },
+    { label: 'Qamrov', href: '#regions' },
     { label: 'FAQ', href: '#faq' },
   ];
 
@@ -29,38 +29,37 @@ export const Navbar: React.FC = () => {
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`header ${isScrolled ? 'scrolled' : ''}`}
     >
       <div className="container nav-container">
-        {/* Brand Logo */}
-        <a href="#" className="logo">
+        {/* Luxury Brand Logo */}
+        <a href="#home" className="logo">
           <div className="logo-icon-wrapper">
             <div className="logo-glow"></div>
             <div className="logo-icon">
-              {/* Custom SVG Spider-Taxi Symbol */}
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="#F59E0B" strokeWidth="2" strokeDasharray="3 3"/>
-                <path d="M5 10L19 14M5 14L19 10M12 4V20" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round"/>
-                <circle cx="12" cy="12" r="4" fill="#F59E0B"/>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="#FACC15" strokeWidth="1.8" strokeDasharray="3 3"/>
+                <path d="M5 10L19 14M5 14L19 10M12 4V20" stroke="#FACC15" strokeWidth="1.5" strokeLinecap="round"/>
+                <circle cx="12" cy="12" r="4" fill="#FACC15"/>
               </svg>
             </div>
           </div>
           <div className="logo-title-group">
             <span className="logo-brand">URGIMCHAK<span className="brand-accent">TAXI</span></span>
-            <span className="logo-sub">PREMIUM MOTION MOBILITY</span>
+            <span className="logo-sub">PREMIUM MOBILITY</span>
           </div>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="navbar desktop-nav">
+        {/* Minimal Desktop Navigation */}
+        <nav className="desktop-nav">
           <ul className="nav-list">
             {navLinks.map((link, idx) => (
               <motion.li
                 key={link.href}
-                initial={{ opacity: 0, y: -10 }}
+                initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + idx * 0.05, duration: 0.4 }}
+                transition={{ delay: 0.1 + idx * 0.04, duration: 0.35 }}
               >
                 <a href={link.href} className="nav-link">
                   {link.label}
@@ -70,18 +69,11 @@ export const Navbar: React.FC = () => {
           </ul>
         </nav>
 
-        {/* CTA & Actions */}
+        {/* Action Button: App Download */}
         <div className="nav-actions">
-          <a href="tel:+998712000000" className="call-btn">
-            <div className="call-pulse">
-              <Phone size={16} />
-            </div>
-            <span className="phone-num">+998 (71) 200-00-00</span>
-          </a>
-
-          <a href="#booking" className="btn btn-primary nav-order-btn">
-            <span>Buyurtma</span>
-            <ArrowRight size={16} className="btn-arrow" />
+          <a href="#app" className="btn btn-primary nav-app-btn">
+            <Download size={15} />
+            <span>Ilovani Yuklab Olish</span>
           </a>
 
           <button
@@ -119,8 +111,8 @@ export const Navbar: React.FC = () => {
                 ))}
               </ul>
               <div className="mobile-drawer-footer">
-                <a href="#booking" onClick={() => setIsMenuOpen(false)} className="btn btn-primary btn-block">
-                  <Zap size={18} /> Taksi Chaqirish
+                <a href="#app" onClick={() => setIsMenuOpen(false)} className="btn btn-primary btn-block">
+                  <Download size={16} /> Ilovani Yuklab Olish
                 </a>
               </div>
             </div>

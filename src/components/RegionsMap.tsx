@@ -13,7 +13,7 @@ export const RegionsMap: React.FC = () => {
         <div className="section-title">
           <span className="sub-title">Butun O'zbekiston Bo'ylab</span>
           <h2>Shaharlararo va Viloyatlararo Qamrov</h2>
-          <p>Qaysi viloyatda bo'lishingizdan qat'i nazar, Urgimchak Taxi tarmog'i sizga xizmat ko'rsatishga tayyor</p>
+          <p>Qaysi viloyatda bo'lishingizdan qat'i nazar, Urgimchak Taxi tarmog'i butun respublika bo'ylab faoliyat yuritadi</p>
         </div>
 
         <div className="regions-layout">
@@ -33,18 +33,14 @@ export const RegionsMap: React.FC = () => {
                     <stop offset="0%" stopColor="#1E293B" stopOpacity="0.8" />
                     <stop offset="100%" stopColor="#0F172A" stopOpacity="0.9" />
                   </linearGradient>
-                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="6" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                  </filter>
                 </defs>
 
                 {/* Country Outline Representation */}
                 <path
                   d="M120,240 C150,180 230,120 380,110 C500,100 620,130 730,170 C840,200 950,210 930,280 C900,340 850,370 780,390 C720,410 650,470 580,480 C500,490 470,400 390,370 C300,340 180,350 120,280 Z"
                   fill="url(#mapGradient)"
-                  stroke="#F59E0B"
-                  strokeWidth="2"
+                  stroke="#EAB308"
+                  strokeWidth="1.8"
                   strokeOpacity="0.4"
                   strokeDasharray="6 6"
                 />
@@ -52,7 +48,7 @@ export const RegionsMap: React.FC = () => {
                 {/* Network connecting lines */}
                 <path
                   d="M 740 176 L 550 302 L 420 286 L 880 242 L 930 209 L 860 181 L 260 198 L 540 385 L 620 462"
-                  stroke="#F59E0B"
+                  stroke="#EAB308"
                   strokeWidth="1.2"
                   strokeOpacity="0.25"
                   strokeDasharray="4 4"
@@ -144,8 +140,8 @@ export const RegionsMap: React.FC = () => {
                   </div>
                 </div>
 
-                <a href="#booking" className="btn btn-primary btn-block">
-                  <span>Ushbu Viloyatdan Taksi Chaqirish</span>
+                <a href="#app" className="btn btn-primary btn-block">
+                  <span>Ilova Orqali Safar Qilish</span>
                   <ArrowRight size={16} />
                 </a>
               </motion.div>

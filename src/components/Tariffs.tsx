@@ -10,8 +10,8 @@ export const Tariffs: React.FC = () => {
     <section className="tariffs section light-dark-bg" id="tariffs">
       <div className="container">
         <div className="section-title">
-          <span className="sub-title">Shaffof Tariflar</span>
-          <h2>Har Qanday Talab Uchun Mos Tariflar</h2>
+          <span className="sub-title">Avtopark & Tariflar</span>
+          <h2>Har Qanday Talab Uchun Mos Avtomobillar</h2>
           <p>Yashirin to'lovlarsiz, aniq belgilangan hamyonbop va qulay tariflar rejasi</p>
         </div>
 
@@ -31,7 +31,7 @@ export const Tariffs: React.FC = () => {
               >
                 {tariff.isPopular && (
                   <div className="popular-ribbon">
-                    <Sparkles size={13} /> {tariff.badge || 'Eng Mashhur'}
+                    <Sparkles size={13} /> {tariff.badge || 'Eng Ommabop'}
                   </div>
                 )}
 
@@ -69,10 +69,10 @@ export const Tariffs: React.FC = () => {
 
                 <div className="tariff-action">
                   <a
-                    href="#booking"
+                    href="#app"
                     className={`btn btn-block ${tariff.isPopular ? 'btn-primary' : 'btn-outline'}`}
                   >
-                    <span>{tariff.name} bilan ketish</span>
+                    <span>Ilovada Tanlash</span>
                     <ArrowRight size={16} />
                   </a>
                 </div>

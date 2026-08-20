@@ -1,15 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, ArrowRight, Phone, ShieldCheck, Star } from 'lucide-react';
+import { Zap, Phone, ShieldCheck, Star, Download } from 'lucide-react';
 
 export const FinalCTA: React.FC = () => {
   return (
     <section className="final-cta-section">
       <div className="container">
         <div className="final-cta-wrapper">
-          {/* Animated Background Glow */}
           <div className="final-cta-glow"></div>
-          <div className="final-spider-pattern"></div>
 
           <div className="final-cta-content">
             <motion.div
@@ -19,7 +17,7 @@ export const FinalCTA: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="badge final-badge"
             >
-              <Zap size={14} /> Sayohatni Bugun Boshlang
+              <Zap size={14} /> Kelajak Mobilligi
             </motion.div>
 
             <motion.h2
@@ -29,8 +27,8 @@ export const FinalCTA: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="final-title"
             >
-              Qulay, Tez va Xavfsiz Harakatlanish — <br />
-              <span className="gradient-text-yellow">Urgimchak Taxi</span> Bilan Birga!
+              Yangi Avlod Taksi Ekotizimi — <br />
+              <span className="gradient-text-gold">Urgimchak Taxi</span> Bilan Birga!
             </motion.h2>
 
             <motion.p
@@ -40,7 +38,7 @@ export const FinalCTA: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="final-desc"
             >
-              Shahar ichida va viloyatlararo eng yaxshi narxlarda sayohat qiling. Avtomobil bir necha daqiqada sizni kutadi!
+              Shahar ichida va viloyatlararo eng xavfsiz va qulay sayohatlar tajribasini his qiling. Ilovani hoziroq yuklab oling!
             </motion.p>
 
             <motion.div
@@ -51,18 +49,18 @@ export const FinalCTA: React.FC = () => {
               className="final-cta-buttons"
             >
               <motion.a
-                href="#booking"
-                whileHover={{ scale: 1.05 }}
+                href="#app"
+                whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 className="btn btn-primary btn-large"
               >
-                <span>Hozir Taksi Chaqirish</span>
-                <ArrowRight size={20} />
+                <Download size={20} />
+                <span>Ilovani Yuklab Olish</span>
               </motion.a>
 
               <motion.a
                 href="tel:+998712000000"
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.96 }}
                 className="btn btn-outline-white btn-large"
               >
@@ -73,15 +71,15 @@ export const FinalCTA: React.FC = () => {
 
             <div className="final-trust-footer">
               <div className="trust-item">
-                <ShieldCheck size={16} className="text-amber" />
+                <ShieldCheck size={16} className="text-gold" />
                 <span>100% Xavfsizlik nazorati</span>
               </div>
               <div className="trust-item">
-                <Star size={16} className="text-amber" />
+                <Star size={16} className="text-gold" />
                 <span>4.9 Ilova reytingi</span>
               </div>
               <div className="trust-item">
-                <Zap size={16} className="text-amber" />
+                <Zap size={16} className="text-gold" />
                 <span>3 daqiqada yetib kelish</span>
               </div>
             </div>

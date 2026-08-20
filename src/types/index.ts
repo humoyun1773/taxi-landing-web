@@ -32,7 +32,7 @@ export interface RegionData {
   center: string;
   activeCars: number;
   avgArrival: string;
-  coords: { x: number; y: number }; // percentage position on map
+  coords: { x: number; y: number };
 }
 
 export interface SafetyItem {
@@ -58,10 +58,9 @@ export interface FAQItem {
   category: string;
 }
 
-export interface BookingFormData {
-  pickup: string;
-  dropoff: string;
-  tariff: string;
-  phone: string;
-  passengerCount: number;
+export interface TechPillar {
+  id: string;
+  iconName: 'Cpu' | 'Zap' | 'Shield' | 'Globe' | 'Compass' | 'Layers';
+  title: string;
+  description: string;
 }
