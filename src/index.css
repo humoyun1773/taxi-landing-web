@@ -1687,6 +1687,21 @@ html.light .hero-bottom-vignette {
 /* ==========================================================================
    7. TARIFFS (EXPANDED WIDE 4-CARD GRID)
    ========================================================================== */
+.tariffs.section {
+  padding-top: clamp(16px, 2.5vw, 32px);
+}
+
+.tariffs .section-title {
+  margin-top: 0;
+  margin-bottom: clamp(24px, 3.5vw, 36px);
+}
+
+.tariffs .section-title h2 {
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+  margin-bottom: 12px;
+}
+
 .tariffs-wide-container {
   max-width: 1420px !important;
   width: 100%;
