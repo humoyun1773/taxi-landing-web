@@ -347,8 +347,7 @@ button, input, select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
-  gap: clamp(16px, 2.5vw, 36px);
+  height: 76px;
   width: 100%;
 }
 
@@ -381,7 +380,7 @@ button, input, select {
 }
 
 .logo-brand {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: 0.5px;
   color: var(--text-white);
@@ -396,62 +395,50 @@ button, input, select {
 .desktop-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex: 1;
-  margin: 0 clamp(12px, 2vw, 32px);
 }
 
 .desktop-nav .nav-list {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: clamp(16px, 2vw, 32px);
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  padding: 4px 6px;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(12px);
+}
+
+html.light .desktop-nav .nav-list {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .nav-link {
   position: relative;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-secondary);
-  padding: 8px 14px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   white-space: nowrap;
-  transition: all 0.25s ease;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 14px;
-  right: 14px;
-  height: 2px;
-  background: var(--gold-gradient);
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(255, 210, 31, 0.7);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
+  display: inline-block;
 }
 
 .nav-link:hover {
   color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 html.light .nav-link:hover {
   color: #0F172A;
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.nav-link:hover::after {
-  transform: scaleX(1);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: clamp(10px, 1.2vw, 16px);
+  gap: 10px;
   flex-shrink: 0;
 }
 
