@@ -673,71 +673,103 @@ button, input, select {
    2. HERO SECTION — CINEMATIC BACKGROUND TAXI & CLEAN TYPOGRAPHY
    ========================================================================== */
 /* ==========================================================================
-   2. HERO SECTION — PREMIUM AUTOMOTIVE ADVERTISING + STARTUP STYLE
+   2. HERO SECTION — FULL-BLEED CINEMATIC BACKGROUND TAXI & GRADIENT OVERLAY
    ========================================================================== */
-.hero-automotive-section {
+.hero-fullbleed-bg-section {
   min-height: 100vh;
   min-height: 100svh;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding-top: 130px;
-  padding-bottom: 70px;
+  padding-top: 140px;
+  padding-bottom: 90px;
   background-color: #080808;
 }
 
-html.light .hero-automotive-section {
+html.light .hero-fullbleed-bg-section {
   background-color: #F8FAFC;
 }
 
-.hero-city-ambient-backdrop {
+.hero-bg-photo-layer {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
+  inset: -3%;
+  width: 106%;
+  height: 106%;
   z-index: 0;
-}
-
-.city-radial-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(140px);
   pointer-events: none;
 }
 
-.primary-glow {
-  top: 15%;
-  right: 15%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255, 210, 31, 0.16) 0%, transparent 70%);
+.hero-full-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right 25% center;
+  filter: brightness(0.88) contrast(1.12);
+  display: block;
 }
 
-.secondary-glow {
-  bottom: 10%;
-  left: 5%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(30, 58, 138, 0.12) 0%, transparent 70%);
+html.light .hero-full-bg-image {
+  filter: brightness(0.92) contrast(1.05) opacity(0.75);
 }
 
-.hero-directional-overlay {
+.hero-full-directional-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(8, 8, 8, 0.95) 0%, rgba(8, 8, 8, 0.75) 45%, rgba(8, 8, 8, 0.25) 80%, rgba(8, 8, 8, 0.85) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(8, 8, 8, 0.96) 0%,
+    rgba(8, 8, 8, 0.88) 36%,
+    rgba(8, 8, 8, 0.5) 62%,
+    rgba(8, 8, 8, 0.15) 82%,
+    rgba(8, 8, 8, 0.65) 100%
+  );
   pointer-events: none;
   z-index: 1;
 }
 
-html.light .hero-directional-overlay {
-  background: linear-gradient(90deg, rgba(248, 250, 252, 0.96) 0%, rgba(248, 250, 252, 0.8) 45%, rgba(248, 250, 252, 0.3) 80%, rgba(248, 250, 252, 0.9) 100%);
+html.light .hero-full-directional-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(248, 250, 252, 0.97) 0%,
+    rgba(248, 250, 252, 0.9) 36%,
+    rgba(248, 250, 252, 0.55) 62%,
+    rgba(248, 250, 252, 0.25) 82%,
+    rgba(248, 250, 252, 0.85) 100%
+  );
 }
 
-.hero-master-grid {
-  display: grid;
-  grid-template-columns: 1.12fr 0.88fr;
-  gap: clamp(32px, 5vw, 64px);
-  align-items: center;
+.hero-top-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.85) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+html.light .hero-top-vignette {
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.85) 0%, transparent 100%);
+}
+
+.hero-bottom-vignette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(0deg, rgba(8, 8, 8, 0.95) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+html.light .hero-bottom-vignette {
+  background: linear-gradient(0deg, rgba(248, 250, 252, 0.95) 0%, transparent 100%);
+}
+
+.hero-fullbleed-container {
   position: relative;
   z-index: 2;
   width: 100%;
@@ -747,7 +779,7 @@ html.light .hero-directional-overlay {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 640px;
+  max-width: 660px;
 }
 
 .hero-eyebrow-wrapper {
@@ -755,8 +787,8 @@ html.light .hero-directional-overlay {
 }
 
 .hero-brand-badge {
-  background: rgba(255, 210, 31, 0.1) !important;
-  border: 1px solid rgba(255, 210, 31, 0.35) !important;
+  background: rgba(255, 210, 31, 0.12) !important;
+  border: 1px solid rgba(255, 210, 31, 0.4) !important;
   color: #FFD21F !important;
   font-size: 0.825rem !important;
   font-weight: 800 !important;
@@ -764,13 +796,13 @@ html.light .hero-directional-overlay {
   padding: 6px 16px !important;
   border-radius: var(--radius-full) !important;
   text-transform: uppercase !important;
-  backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(14px) !important;
 }
 
 .hero-main-title {
-  font-size: clamp(3rem, 5.2vw, 4.8rem);
+  font-size: clamp(3.2rem, 5.5vw, 5rem);
   font-weight: 900;
-  line-height: 1.06;
+  line-height: 1.05;
   letter-spacing: -1.8px;
   text-transform: uppercase;
   margin-bottom: 22px;
@@ -782,22 +814,22 @@ html.light .hero-directional-overlay {
 
 .hero-title-yellow {
   color: #FFD21F;
-  text-shadow: 0 0 35px rgba(255, 210, 31, 0.35);
+  text-shadow: 0 0 35px rgba(255, 210, 31, 0.4);
 }
 
 .hero-subtext {
-  font-size: 1.15rem;
-  line-height: 1.75;
+  font-size: 1.16rem;
+  line-height: 1.8;
   color: var(--text-secondary);
-  margin-bottom: 34px;
-  max-width: 520px;
+  margin-bottom: 36px;
+  max-width: 560px;
 }
 
 .hero-actions-row {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 36px;
+  margin-bottom: 38px;
   flex-wrap: wrap;
 }
 
@@ -810,9 +842,9 @@ html.light .hero-directional-overlay {
   color: #080808;
   font-size: 1.02rem;
   font-weight: 800;
-  padding: 16px 34px;
+  padding: 16px 36px;
   border-radius: var(--radius-full);
-  box-shadow: 0 8px 28px rgba(255, 210, 31, 0.35);
+  box-shadow: 0 8px 30px rgba(255, 210, 31, 0.35);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
@@ -820,7 +852,7 @@ html.light .hero-directional-overlay {
 .hero-btn-primary:hover {
   transform: translateY(-3px) scale(1.02);
   background: #FFE052;
-  box-shadow: 0 14px 38px rgba(255, 210, 31, 0.45);
+  box-shadow: 0 14px 40px rgba(255, 210, 31, 0.48);
 }
 
 .hero-btn-primary:hover .hero-btn-arrow {
@@ -836,21 +868,21 @@ html.light .hero-directional-overlay {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--text-primary);
   font-size: 1.02rem;
   font-weight: 700;
-  padding: 15px 28px;
+  padding: 15px 30px;
   border-radius: var(--radius-full);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 
 .hero-btn-secondary:hover {
-  border-color: rgba(255, 210, 31, 0.5);
-  background: rgba(255, 210, 31, 0.08);
+  border-color: rgba(255, 210, 31, 0.55);
+  background: rgba(255, 210, 31, 0.1);
   color: var(--text-white);
   transform: translateY(-2px);
 }
@@ -859,7 +891,7 @@ html.light .hero-directional-overlay {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   font-weight: 600;
 }
@@ -874,108 +906,29 @@ html.light .hero-directional-overlay {
   color: var(--border-glass-hover);
 }
 
-/* Right Column: High-End Yellow Taxi Car Visual */
-.hero-visual-column {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-taxi-frame-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 580px;
-}
-
-.taxi-golden-underglow {
-  position: absolute;
-  bottom: -20px;
-  left: 10%;
-  right: 10%;
-  height: 60px;
-  background: rgba(255, 210, 31, 0.28);
-  filter: blur(45px);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero-taxi-image-container {
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.85), 0 0 45px rgba(255, 210, 31, 0.18);
-  z-index: 1;
-  background: #080808;
-}
-
-.hero-taxi-photograph {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-taxi-frame-wrapper:hover .hero-taxi-photograph {
-  transform: scale(1.03);
-}
-
-.hero-taxi-vignette-blend {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(8, 8, 8, 0.15) 0%, transparent 50%, rgba(8, 8, 8, 0.75) 100%);
-  pointer-events: none;
-}
-
 /* Mobile & Tablet Responsiveness */
 @media (max-width: 1024px) {
-  .hero-automotive-section {
-    padding-top: 110px;
-    padding-bottom: 60px;
+  .hero-fullbleed-bg-section {
+    padding-top: 120px;
+    padding-bottom: 70px;
   }
 
-  .hero-master-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
+  .hero-full-bg-image {
+    object-position: right 15% center;
   }
 
   .hero-text-column {
-    align-items: center;
     max-width: 100%;
   }
 
   .hero-main-title {
-    font-size: clamp(2.5rem, 7vw, 3.6rem);
-  }
-
-  .hero-subtext {
-    max-width: 100%;
-  }
-
-  .hero-actions-row {
-    justify-content: center;
-  }
-
-  .hero-perks-inline {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-taxi-frame-wrapper {
-    max-width: 440px;
-    margin: 0 auto;
+    font-size: clamp(2.6rem, 7vw, 3.8rem);
   }
 }
 
 @media (max-width: 640px) {
   .hero-main-title {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
     letter-spacing: -1px;
   }
 
@@ -988,8 +941,8 @@ html.light .hero-directional-overlay {
     width: 100%;
   }
 
-  .hero-taxi-frame-wrapper {
-    max-width: 100%;
+  .hero-perks-inline {
+    flex-wrap: wrap;
   }
 }
 

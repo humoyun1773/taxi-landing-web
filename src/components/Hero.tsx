@@ -15,14 +15,8 @@ export const Hero: React.FC = () => {
   const smoothMouseX = useSpring(mouseX, springConfig);
   const smoothMouseY = useSpring(mouseY, springConfig);
 
-  const taxiParallaxX = useTransform(smoothMouseX, [-500, 500], [-10, 10]);
-  const taxiParallaxY = useTransform(smoothMouseY, [-500, 500], [-6, 6]);
-
-  const bgParallaxX = useTransform(smoothMouseX, [-500, 500], [-4, 4]);
-  const bgParallaxY = useTransform(smoothMouseY, [-500, 500], [-3, 3]);
-
-  const glowParallaxX = useTransform(smoothMouseX, [-500, 500], [-6, 6]);
-  const glowParallaxY = useTransform(smoothMouseY, [-500, 500], [-4, 4]);
+  const bgParallaxX = useTransform(smoothMouseX, [-500, 500], [-8, 8]);
+  const bgParallaxY = useTransform(smoothMouseY, [-500, 500], [-5, 5]);
 
   const [isDesktop, setIsDesktop] = useState(true);
 
@@ -44,29 +38,31 @@ export const Hero: React.FC = () => {
 
   return (
     <section
-      className="hero hero-automotive-section"
+      className="hero hero-fullbleed-bg-section"
       id="home"
       onMouseMove={handleMouseMove}
     >
-      {/* 1. Dark Cinematic Ambient City Backdrop */}
+      {/* 1. Full-Bleed Background Taxi Photography */}
       <motion.div
         style={isDesktop && !shouldReduceMotion ? { x: bgParallaxX, y: bgParallaxY } : {}}
-        className="hero-city-ambient-backdrop"
+        className="hero-bg-photo-layer"
       >
-        <div className="city-radial-glow primary-glow"></div>
-        <div className="city-radial-glow secondary-glow"></div>
-        <div className="light-trail-container">
-          <div className="light-trail trail-1"></div>
-          <div className="light-trail trail-2"></div>
-          <div className="light-trail trail-3"></div>
-        </div>
+        <img
+          src="/assets/urgimchak_yellow_taxi.jpg"
+          alt="Urgimchak Taxi — Bright Yellow Modern Sedan"
+          className="hero-full-bg-image"
+          loading="eager"
+          decoding="async"
+        />
       </motion.div>
 
-      {/* 2. Directional Gradient Mask for 100% Text Legibility */}
-      <div className="hero-directional-overlay"></div>
+      {/* 2. Directional Cinematic Gradient Mask (Dark Left for Text, Clear Right for Taxi) */}
+      <div className="hero-full-directional-overlay"></div>
+      <div className="hero-top-vignette"></div>
+      <div className="hero-bottom-vignette"></div>
 
-      <div className="container hero-master-grid">
-        {/* Left Column: Brand, Headline, Subtitle, CTAs */}
+      {/* 3. Hero Foreground Content */}
+      <div className="container hero-fullbleed-container">
         <div className="hero-text-column">
           {/* Eyebrow Brand Badge */}
           <motion.div
@@ -147,49 +143,6 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Right Column: Bright Yellow Automotive Taxi Photography */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94, x: 40 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.85, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-          className="hero-visual-column"
-        >
-          <motion.div
-            style={isDesktop && !shouldReduceMotion ? { x: taxiParallaxX, y: taxiParallaxY } : {}}
-            animate={
-              !shouldReduceMotion
-                ? {
-                    y: [0, -6, 0],
-                  }
-                : {}
-            }
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="hero-taxi-frame-wrapper"
-          >
-            {/* Ambient Yellow Ground Underglow */}
-            <motion.div
-              style={isDesktop && !shouldReduceMotion ? { x: glowParallaxX, y: glowParallaxY } : {}}
-              className="taxi-golden-underglow"
-            ></motion.div>
-
-            {/* High-Resolution Yellow Sedan Taxi Photo (No Plate Visible) */}
-            <div className="hero-taxi-image-container">
-              <img
-                src="/assets/urgimchak_yellow_taxi.jpg"
-                alt="Urgimchak Taxi — Bright Yellow Modern Sedan"
-                className="hero-taxi-photograph"
-                loading="eager"
-                decoding="async"
-              />
-              <div className="hero-taxi-vignette-blend"></div>
-            </div>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
