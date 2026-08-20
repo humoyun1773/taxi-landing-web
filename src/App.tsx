@@ -3,7 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutProject } from './components/AboutProject';
 import { TechArchitecture } from './components/TechArchitecture';
-import { Services } from './components/Services';
 import { Tariffs } from './components/Tariffs';
 import { HowItWorks } from './components/HowItWorks';
 import { RegionsMap } from './components/RegionsMap';
@@ -18,7 +17,6 @@ export const App: React.FC = () => {
         <Hero />
         <AboutProject />
         <TechArchitecture />
-        <Services />
         <Tariffs />
         <HowItWorks />
         <RegionsMap />
