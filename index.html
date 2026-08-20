@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxiGo - Qulay, Tez va Xavfsiz Taxi Xizmati</title>
+    <meta name="description" content="TaxiGo - Shahar bo'ylab va shaharlararo qulay, tez va ishonchli taksi xizmati. Hozir buyurtma bering!">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚕</text></svg>">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-taxi"></i></span>
+                <span class="logo-text">Taxi<span>Go</span></span>
+            </a>
+
+            <nav class="navbar" id="navbar">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Bosh sahifa</a></li>
+                    <li><a href="#services" class="nav-link">Xizmatlar</a></li>
+                    <li><a href="#tariffs" class="nav-link">Tariflar</a></li>
+                    <li><a href="#about" class="nav-link">Afzalliklar</a></li>
+                    <li><a href="#app" class="nav-link">Ilova</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link">Aloqa</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="tel:+998712000000" class="call-btn">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+998 (71) 200-00-00</span>
+                </a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Menyu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fa-solid fa-shield-halved"></i> 100% Xavfsiz & Ishonchli Sayohat
+                </div>
+                <h1 class="hero-title">
+                    Istalgan manzilga <span class="highlight">tez va qulay</span> yetib oling!
+                </h1>
+                <p class="hero-desc">
+                    TaxiGo bilan shahar bo'ylab va viloyatlararo xavfsiz safar qiling. Eng yaxshi haydovchilar, arzon narxlar va 24/7 xizmat.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>500K+</h3>
+                        <p>Mamnun mijozlar</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3 Min</h3>
+                        <p>O'rtacha yetib kelish</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9 ★</h3>
+                        <p>Ilova reytingi</p>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#booking" class="btn btn-primary">
+                        <i class="fa-solid fa-car"></i> Taksi chaqirish
+                    </a>
+                    <a href="#app" class="btn btn-outline">
+                        <i class="fa-brands fa-google-play"></i> Ilovani yuklab olish
+                    </a>
+                </div>
+            </div>
+
+            <!-- Booking Quick Card -->
+            <div class="hero-card" id="booking">
+                <div class="booking-box">
+                    <div class="box-header">
+                        <h3>Tezkor Buyurtma</h3>
+                        <span class="pulse-dot"></span>
+                    </div>
+                    <form id="quickBookingForm" class="booking-form">
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-location-dot"></i> Qayerdan</label>
+                            <input type="text" id="pickupLocation" placeholder="Masalan: Chorsu bozori" required>
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-flag-checkered"></i> Qayerga</label>
+                            <input type="text" id="dropLocation" placeholder="Masalan: Toshkent City" required>
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-layer-group"></i> Tarif turi</label>
+                            <select id="tariffSelect">
+                                <option value="standard">Standart (12 000 so'mdan)</option>
+                                <option value="comfort">Komfort (18 000 so'mdan)</option>
+                                <option value="business">Biznes (30 000 so'mdan)</option>
+                                <option value="delivery">Yetkazib berish (10 000 so'mdan)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fa-solid fa-phone"></i> Telefon raqamingiz</label>
+                            <input type="tel" id="phoneNumber" placeholder="+998 (__) ___-__-__" required>
+                        </div>
+                        <div class="fare-estimate" id="fareEstimate">
+                            <span>Taxminiy narx:</span>
+                            <strong id="priceText">15 000 so'm</strong>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fa-solid fa-paper-plane"></i> Buyurtma berish
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">Xizmatlarimiz</span>
+                <h2>Siz uchun keng qamrovli xizmatlar</h2>
+                <p>Har qanday ehtiyojingiz uchun mos transport va yetkazib berish xizmatlari</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-city"></i></div>
+                    <h3>Shahar ichida qatnov</h3>
+                    <p>Tirbandlikda vaqt yo'qotmang. Tezkor marshrutlar orqali manzilingizga o'z vaqtida yetib boring.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-road"></i></div>
+                    <h3>Shaharlararo qatnov</h3>
+                    <p>Viloyatlar va shaharlar o'rtasida qulay, xavfsiz va arzon narxlarda sayohat qiling.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <h3>Kuryerlik va Yetkazish</h3>
+                    <p>Hujjatlar, posilkalar va sovg'alarni bir manzildan ikkinchisiga eshikkacha yetkazib beramiz.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                    <h3>Aeroport transfer</h3>
+                    <p>Aeroport yoki vokzaldan kutib olish va kuzatib qo'yish uchun oldindan buyurtma xizmati.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tariffs Section -->
+    <section class="tariffs section light-bg" id="tariffs">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">Tariflar</span>
+                <h2>Har kim uchun mos tariflar</h2>
+                <p>Hamyonbop narxlar va yuqori darajadagi servis</p>
+            </div>
+
+            <div class="tariffs-grid">
+                <!-- Tariff 1 -->
+                <div class="tariff-card">
+                    <div class="tariff-header">
+                        <span class="tariff-name">Standart</span>
+                        <div class="tariff-price">12 000 <span>so'm / min.</span></div>
+                        <p>Kundalik qisqa sayohatlar uchun tejamkor tanlov</p>
+                    </div>
+                    <div class="tariff-body">
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Boshlang'ich: 12 000 so'm (2 km ichida)</li>
+                            <li><i class="fa-solid fa-check"></i> Har 1 km: 2 000 so'm</li>
+                            <li><i class="fa-solid fa-check"></i> Kutish vaqti: 3 daqiqa bepul</li>
+                            <li><i class="fa-solid fa-check"></i> Avtomobillar: Cobalt, Nexia 3, Gentra</li>
+                        </ul>
+                    </div>
+                    <div class="tariff-footer">
+                        <a href="#booking" class="btn btn-outline btn-block">Tanlash</a>
+                    </div>
+                </div>
+
+                <!-- Tariff 2 (Popular) -->
+                <div class="tariff-card popular">
+                    <div class="popular-badge">Eng mashhur</div>
+                    <div class="tariff-header">
+                        <span class="tariff-name">Komfort</span>
+                        <div class="tariff-price">18 000 <span>so'm / min.</span></div>
+                        <p>Qulay va konditsionerli yangi avtomobillar</p>
+                    </div>
+                    <div class="tariff-body">
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Boshlang'ich: 18 000 so'm (2 km ichida)</li>
+                            <li><i class="fa-solid fa-check"></i> Har 1 km: 2 800 so'm</li>
+                            <li><i class="fa-solid fa-check"></i> Kutish vaqti: 5 daqiqa bepul</li>
+                            <li><i class="fa-solid fa-check"></i> Avtomobillar: Tracker 2, Onix, Kia K5</li>
+                        </ul>
+                    </div>
+                    <div class="tariff-footer">
+                        <a href="#booking" class="btn btn-primary btn-block">Tanlash</a>
+                    </div>
+                </div>
+
+                <!-- Tariff 3 -->
+                <div class="tariff-card">
+                    <div class="tariff-header">
+                        <span class="tariff-name">Biznes</span>
+                        <div class="tariff-price">30 000 <span>so'm / min.</span></div>
+                        <p>Biznes uchrashuvlar va maxsus mehmonlar uchun</p>
+                    </div>
+                    <div class="tariff-body">
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Boshlang'ich: 30 000 so'm (3 km ichida)</li>
+                            <li><i class="fa-solid fa-check"></i> Har 1 km: 4 500 so'm</li>
+                            <li><i class="fa-solid fa-check"></i> Kutish vaqti: 10 daqiqa bepul</li>
+                            <li><i class="fa-solid fa-check"></i> Avtomobillar: Malibu 2, BYD Han, Mercedes-Benz</li>
+                        </ul>
+                    </div>
+                    <div class="tariff-footer">
+                        <a href="#booking" class="btn btn-outline btn-block">Tanlash</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="about section" id="about">
+        <div class="container about-container">
+            <div class="about-image">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="TaxiGo avtomobili" class="main-img">
+                    <div class="experience-card">
+                        <h4>7+ Yil</h4>
+                        <p>Ishonchli xizmat tajribasi</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="section-title text-left">
+                    <span class="sub-title">Nega aynan biz?</span>
+                    <h2>Sizning qulayligingiz va xavfsizligingiz bizning ustuvor maqsadimiz</h2>
+                </div>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <h4>24/7 Uzluksiz xizmat</h4>
+                            <p>Kunning istalgan vaqtida tezkor buyurtma bering, avtomobil bir necha daqiqada yetib boradi.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-id-card"></i></div>
+                        <div>
+                            <h4>Tajribali haydovchilar</h4>
+                            <p>Barcha haydovchilarimiz qat'iy tekshiruvdan va maxsus tayyorgarlikdan o'tgan.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-credit-card"></i></div>
+                        <div>
+                            <h4>Oson to'lov usullari</h4>
+                            <p>Naqd pul, Uzcard, Humo, Visa va ilova orqali bir bosishda to'lov qiling.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Driver CTA Section -->
+    <section class="driver-cta">
+        <div class="container">
+            <div class="driver-banner">
+                <div class="driver-info">
+                    <h2>Haydovchi bo'lib ishlamoqchimisiz?</h2>
+                    <p>O'z avtomobilingiz bilan erkin grafik asosida kunlik yuqori daromad toping!</p>
+                    <ul class="driver-perks">
+                        <li><i class="fa-solid fa-circle-check"></i> Kam komissiya (faqat 5%)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Darhol to'lovlarni yechib olish</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Bonuslar va mukofotlar</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-dark">Haydovchi sifatida ulanish</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section class="app-section section" id="app">
+        <div class="container app-container">
+            <div class="app-content">
+                <span class="sub-title">Mobil Ilova</span>
+                <h2>TaxiGo ilovasini yuklab oling</h2>
+                <p>Ilova orqali buyurtma berish yanada oson va qulayroq. Birinchi sayohatingiz uchun 15% chegirma promokodini qo'lga kiriting!</p>
+                <div class="app-buttons">
+                    <a href="#" class="store-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        <div>
+                            <span>Yuklab oling</span>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="store-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div>
+                            <span>Yuklab oling</span>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="app-preview">
+                <div class="phone-mockup">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="Taxi ilovasi ko'rinishi">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section light-bg" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">Ko'p so'raladigan savollar</span>
+                <h2>Savollaringiz bormi?</h2>
+                <p>Eng ko'p beriladigan savollarga javoblar bilan tanishing</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Taksi necha daqiqada yetib keladi?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Odatda shahar markazida avtomobil 2-5 daqiqa ichida yetib keladi. Qatnov tig'iz vaqtlarda ham yaqin atrofdagi haydovchi darhol yo'naltiriladi.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>To'lovni qanday usullarda amalga oshirish mumkin?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Siz to'lovni naqd pulda, Uzcard, Humo, Visa kartalari hamda Payme, Click yoki to'g'ridan-to'g'ri mobil ilovamiz balansi orqali amalga oshirishingiz mumkin.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Shaharlararo taksi buyurtma qilsa bo'ladimi?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ha, albatta! Siz Samarqand, Buxoro, Andijon, Farg'ona va O'zbekistonning boshqa viloyatlariga oldindan yoki hoziroq taksi chaqirishingiz mumkin.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Haydovchi sifatida qanday ro'yxatdan o'tish mumkin?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Bizning saytimiz orqali yoki operatorimizga telefon qilib (yoki ilovani yuklab olib "Haydovchi bo'lish" bo'limi orqali) 10 daqiqa ichida ro'yxatdan o'tishingiz mumkin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo">
+                    <span class="logo-icon"><i class="fa-solid fa-taxi"></i></span>
+                    <span class="logo-text">Taxi<span>Go</span></span>
+                </a>
+                <p class="footer-desc">
+                    TaxiGo — sizning har kungi ishonchli va xavfsiz transport hamkoringiz. Shahar va viloyatlararo eng yaxshi xizmat.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Tezkor havolalar</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Bosh sahifa</a></li>
+                    <li><a href="#services">Xizmatlar</a></li>
+                    <li><a href="#tariffs">Tariflar</a></li>
+                    <li><a href="#about">Biz haqimizda</a></li>
+                    <li><a href="#app">Mobil Ilova</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Xizmatlar</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Standart Taxi</a></li>
+                    <li><a href="#">Komfort Taxi</a></li>
+                    <li><a href="#">Biznes Taxi</a></li>
+                    <li><a href="#">Shaharlararo qatnov</a></li>
+                    <li><a href="#">Kuryerlik xizmati</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Aloqa</h4>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-phone"></i> +998 (71) 200-00-00</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@taxigo.uz</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Toshkent shahri, Amir Temur ko'chasi, 15-uy</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-content">
+                <p>&copy; 2026 TaxiGo. Barcha huquqlar himoyalangan.</p>
+                <div class="legal-links">
+                    <a href="#">Foydalanish shartlari</a>
+                    <a href="#">Maxfiylik siyosati</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
