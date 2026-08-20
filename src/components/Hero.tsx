@@ -8,12 +8,12 @@ export const Hero: React.FC = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 30, stiffness: 140 };
+  const springConfig = { damping: 30, stiffness: 120 };
   const smoothMouseX = useSpring(mouseX, springConfig);
   const smoothMouseY = useSpring(mouseY, springConfig);
 
-  const carParallaxX = useTransform(smoothMouseX, [-500, 500], [-15, 15]);
-  const carParallaxY = useTransform(smoothMouseY, [-500, 500], [-10, 10]);
+  const bgParallaxX = useTransform(smoothMouseX, [-500, 500], [-18, 18]);
+  const bgParallaxY = useTransform(smoothMouseY, [-500, 500], [-12, 12]);
 
   const [isDesktop, setIsDesktop] = useState(true);
 
@@ -34,7 +34,23 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="hero" id="home" onMouseMove={handleMouseMove}>
+    <section className="hero hero-cinematic-bg" id="home" onMouseMove={handleMouseMove}>
+      {/* Background Taxi Car Image Layer with Dynamic Parallax & Multi-layer Vignette */}
+      <motion.div
+        style={{ x: bgParallaxX, y: bgParallaxY, scale: 1.05 }}
+        className="hero-car-bg-backdrop"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1556122071-e404eaedb77f?auto=format&fit=crop&w=1920&q=85"
+          alt="Urgimchak Taxi Fleet Background"
+          className="hero-bg-img"
+        />
+      </motion.div>
+
+      {/* Atmospheric Overlays for maximum text clarity & luxury look */}
+      <div className="hero-backdrop-overlay"></div>
+      <div className="hero-gradient-mask"></div>
+
       {/* Ambient Lighting & Trail Network */}
       <div className="hero-bg-network">
         <div className="hero-radial-glow primary-glow"></div>
@@ -46,9 +62,8 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="container hero-container">
-        {/* Left Column: Premium Typography & Project CTAs */}
-        <div className="hero-content">
+      <div className="container hero-container-centered">
+        <div className="hero-content-heroic">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,9 +80,10 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="hero-title"
           >
-            {t('hero.title_prefix')} <br />
-            {t('hero.title_mid')} <br />
+            {t('hero.title_prefix')}{' '}
             <span className="gradient-text-gold">{t('hero.title_accent')}</span>
+            <br />
+            {t('hero.title_mid')}
           </motion.h1>
 
           <motion.p
@@ -87,9 +103,9 @@ export const Hero: React.FC = () => {
           >
             <motion.a
               href="#about"
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.98 }}
-              className="btn btn-primary"
+              className="btn btn-primary btn-large"
             >
               <span>{t('hero.cta_about')}</span>
               <ArrowRight size={18} />
@@ -97,35 +113,15 @@ export const Hero: React.FC = () => {
 
             <motion.a
               href="#tech"
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="btn btn-glass"
+              className="btn btn-glass btn-large"
             >
-              <Layers size={16} />
+              <Layers size={17} />
               <span>{t('hero.cta_tech')}</span>
             </motion.a>
           </motion.div>
         </div>
-
-        {/* Right Column: Clean Standalone Modern Taxi Car Visual */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92, x: 30 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="hero-visual-column"
-        >
-          <motion.div
-            style={{ x: carParallaxX, y: carParallaxY }}
-            className="hero-standalone-car-wrap"
-          >
-            <div className="hero-car-underglow"></div>
-            <img
-              src="https://images.unsplash.com/photo-1556122071-e404eaedb77f?auto=format&fit=crop&w=1200&q=85"
-              alt="Urgimchak Taxi Car"
-              className="hero-standalone-car-img"
-            />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
