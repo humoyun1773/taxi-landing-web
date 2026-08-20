@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { TaxiMarquee } from './components/TaxiMarquee';
 import { StatsCounter } from './components/StatsCounter';
 import { AboutProject } from './components/AboutProject';
 import { TechArchitecture } from './components/TechArchitecture';
@@ -20,6 +21,7 @@ export const App: React.FC = () => {
       <Navbar />
       <main>
         <Hero />
+        <TaxiMarquee />
         <StatsCounter />
         <AboutProject />
         <TechArchitecture />
@@ -31,6 +33,7 @@ export const App: React.FC = () => {
         <DriverSection />
         <AppDownload />
         <FinalCTA />
+        <TaxiMarquee />
       </main>
       <Footer />
     </div>

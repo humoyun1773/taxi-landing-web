@@ -994,6 +994,57 @@ html.light .hero-directional-overlay {
 }
 
 /* ==========================================================================
+   TAXI CHECKERBOARD LOOP RIBBON (BLACK & YELLOW SHASHKA KATAKLARI)
+   ========================================================================== */
+.taxi-marquee-section {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.taxi-checkerboard-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #080808;
+  border-top: 1px solid rgba(255, 210, 31, 0.25);
+  border-bottom: 1px solid rgba(255, 210, 31, 0.25);
+  box-shadow: 0 0 20px rgba(255, 210, 31, 0.12);
+  display: flex;
+  align-items: center;
+}
+
+.taxi-checkerboard-track {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  animation: taxiCheckerLoop 18s linear infinite;
+  will-change: transform;
+}
+
+.taxi-checker-strip {
+  width: 50%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, #080808 25%, transparent 25%), 
+    linear-gradient(-45deg, #080808 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #080808 75%), 
+    linear-gradient(-45deg, transparent 75%, #080808 75%);
+  background-size: 22px 22px;
+  background-position: 0 0, 0 11px, 11px -11px, -11px 0px;
+  background-color: #FFD21F;
+}
+
+@keyframes taxiCheckerLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================================================
    ABOUT PROJECT SECTION
    ========================================================================== */
 .about-project {
