@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight, ShieldCheck, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
 
@@ -28,7 +27,7 @@ export const Hero: React.FC = () => {
       {/* 3. Hero Foreground Content */}
       <div className="container hero-fullbleed-container">
         <div className="hero-text-column">
-          {/* Monumental Hero Headline */}
+          {/* Monumental Hero Headline — Exactly 2 Clean Unbroken Lines */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,7 +37,6 @@ export const Hero: React.FC = () => {
             <span className="hero-title-line text-white">
               {t('hero.title_line1')}
             </span>
-            <br />
             <span className="hero-title-line hero-title-yellow">
               {t('hero.title_line2')}
             </span>
