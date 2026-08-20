@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ArrowUp, Send, ShieldCheck, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { SpiderLogo } from './ui/SpiderLogo';
 
 export const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -16,13 +17,7 @@ export const Footer: React.FC = () => {
         <div className="footer-col brand-col">
           <a href="#home" className="logo footer-logo">
             <div className="logo-icon-wrapper">
-              <div className="logo-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="#FACC15" strokeWidth="1.8" strokeDasharray="3 3"/>
-                  <path d="M5 10L19 14M5 14L19 10M12 4V20" stroke="#FACC15" strokeWidth="1.5" strokeLinecap="round"/>
-                  <circle cx="12" cy="12" r="4" fill="#FACC15"/>
-                </svg>
-              </div>
+              <SpiderLogo size={32} />
             </div>
             <div className="logo-title-group">
               <span className="logo-brand">URGIMCHAK<span className="brand-accent">TAXI</span></span>

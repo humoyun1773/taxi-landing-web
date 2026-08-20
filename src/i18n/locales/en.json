@@ -13,25 +13,12 @@
     "lang_en": "English"
   },
   "hero": {
-    "badge": "Uzbekistan's #1 Intelligent Taxi Mobility Ecosystem",
-    "title_prefix": "Next-Gen",
-    "title_mid": "Taxi Platform —",
-    "title_accent": "Urgimchak Taxi",
-    "desc": "AI-powered dynamic routing, 100% ride safety, and a unified smart mobility network connecting every region in Uzbekistan.",
-    "cta_about": "Explore Project",
-    "cta_tech": "Technology",
-    "trust_count": "+500K",
-    "trust_desc": "Over 500,000 satisfied passengers and drivers",
-    "card_badge": "Premium VIP Ecosystem",
-    "card_eta": "~3 min average arrival",
-    "pill_route": "Intelligent Routing",
-    "pill_route_sub": "Bypass city traffic",
-    "pill_region": "12 Regions Coverage",
-    "pill_region_sub": "Intercity travel network",
-    "pill_comm": "5% Lowest Commission",
-    "pill_comm_sub": "Best rates for drivers",
-    "pill_safety": "100% Safety & SOS",
-    "pill_safety_sub": "24/7 live telemetry"
+    "badge": "URGIMCHAK TAXI",
+    "title_line1": "AT EVERY STEP",
+    "title_line2": "BY YOUR SIDE.",
+    "desc": "Fast, safe, and affordable taxi platform. Travel seamlessly to any destination across Uzbekistan.",
+    "cta_driver": "Become a Driver",
+    "cta_info": "About Project"
   },
   "stats": {
     "users": "Active Users",

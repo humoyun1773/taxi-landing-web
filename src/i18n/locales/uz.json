@@ -13,25 +13,12 @@
     "lang_en": "English"
   },
   "hero": {
-    "badge": "O'zbekiston Bo'ylab №1 Intellektual Taksi Ekotizimi",
-    "title_prefix": "Yangi Avlod",
-    "title_mid": "Taksi Platformasi —",
-    "title_accent": "Urgimchak Taxi",
-    "desc": "Sun'iy intellekt asosida ishlovchi aqlli marshrutlash, 100% xavfsiz safarlar va butun O'zbekistonni birlashtiruvchi yagona zamonaviy transport ekotizimi.",
-    "cta_about": "Loyiha Bilan Tanishish",
-    "cta_tech": "Texnologiyalar",
-    "trust_count": "+500K",
-    "trust_desc": "500 000 dan ortiq mamnun yo'lovchilar va haydovchilar",
-    "card_badge": "Premium VIP Ekotizim",
-    "card_eta": "~3 daqiqada yetib kelish",
-    "pill_route": "Intellektual Marshrut",
-    "pill_route_sub": "Tirbandlikni chetlab o'tish",
-    "pill_region": "12 Viloyat Qamrovi",
-    "pill_region_sub": "Shaharlararo qulay safarlar",
-    "pill_comm": "5% Eng Past Komissiya",
-    "pill_comm_sub": "Haydovchilar uchun qulay shart",
-    "pill_safety": "100% Xavfsizlik & SOS",
-    "pill_safety_sub": "24/7 jonli telemetriya"
+    "badge": "URGIMCHAK TAXI",
+    "title_line1": "HAR QADAMDA",
+    "title_line2": "SIZGA HAMDAM.",
+    "desc": "Tezkor, xavfsiz va hamyonbop taksi xizmati. O'zbekiston bo'ylab istalgan nuqtaga oson yetib boring.",
+    "cta_driver": "Haydovchi bo'lish",
+    "cta_info": "Batafsil ma'lumot"
   },
   "stats": {
     "users": "Faol Foydalanuvchilar",

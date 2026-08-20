@@ -670,141 +670,324 @@ button, input, select {
 /* ==========================================================================
    2. HERO SECTION — CINEMATIC BACKGROUND TAXI & CLEAN TYPOGRAPHY
    ========================================================================== */
-.hero {
-  padding-top: 170px;
-  padding-bottom: 120px;
+/* ==========================================================================
+   2. HERO SECTION — PREMIUM AUTOMOTIVE ADVERTISING + STARTUP STYLE
+   ========================================================================== */
+.hero-automotive-section {
+  min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   overflow: hidden;
-  min-height: 92vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-top: 130px;
+  padding-bottom: 70px;
+  background-color: #080808;
 }
 
-.hero-cinematic-bg {
-  position: relative;
+html.light .hero-automotive-section {
+  background-color: #F8FAFC;
 }
 
-.hero-car-bg-backdrop {
+.hero-city-ambient-backdrop {
   position: absolute;
-  inset: -5%;
+  inset: 0;
+  pointer-events: none;
   z-index: 0;
+}
+
+.city-radial-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
   pointer-events: none;
 }
 
-.hero-bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 45%;
-  filter: brightness(0.35) contrast(1.15) saturate(1.1);
-  transform: scale(1.04);
+.primary-glow {
+  top: 15%;
+  right: 15%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 210, 31, 0.16) 0%, transparent 70%);
 }
 
-html.light .hero-bg-img {
-  filter: brightness(0.88) contrast(1.05) opacity(0.22);
+.secondary-glow {
+  bottom: 10%;
+  left: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(30, 58, 138, 0.12) 0%, transparent 70%);
 }
 
-.hero-backdrop-overlay {
+.hero-directional-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(3, 7, 18, 0.45) 0%, rgba(3, 7, 18, 0.94) 80%);
-  z-index: 1;
+  background: linear-gradient(90deg, rgba(8, 8, 8, 0.95) 0%, rgba(8, 8, 8, 0.75) 45%, rgba(8, 8, 8, 0.25) 80%, rgba(8, 8, 8, 0.85) 100%);
   pointer-events: none;
-}
-
-html.light .hero-backdrop-overlay {
-  background: radial-gradient(circle at center, rgba(248, 250, 252, 0.6) 0%, rgba(248, 250, 252, 0.96) 80%);
-}
-
-.hero-gradient-mask {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(3, 7, 18, 0.8) 0%, transparent 40%, rgba(3, 7, 18, 0.98) 100%);
   z-index: 1;
-  pointer-events: none;
 }
 
-html.light .hero-gradient-mask {
-  background: linear-gradient(180deg, rgba(248, 250, 252, 0.85) 0%, transparent 40%, rgba(248, 250, 252, 0.98) 100%);
+html.light .hero-directional-overlay {
+  background: linear-gradient(90deg, rgba(248, 250, 252, 0.96) 0%, rgba(248, 250, 252, 0.8) 45%, rgba(248, 250, 252, 0.3) 80%, rgba(248, 250, 252, 0.9) 100%);
 }
 
-.hero-container-centered {
-  max-width: 960px;
-  margin: 0 auto;
+.hero-master-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
   position: relative;
   z-index: 2;
+}
+
+.hero-text-column {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  max-width: 640px;
 }
 
-.hero-content-heroic {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.hero-eyebrow-wrapper {
+  margin-bottom: 22px;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(234, 179, 8, 0.1);
-  border: 1px solid var(--border-gold);
-  color: var(--gold-400);
-  font-size: 0.825rem;
-  font-weight: 700;
-  padding: 8px 20px;
-  border-radius: var(--radius-full);
-  margin-bottom: 28px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+.hero-brand-badge {
+  background: rgba(255, 210, 31, 0.1) !important;
+  border: 1px solid rgba(255, 210, 31, 0.35) !important;
+  color: #FFD21F !important;
+  font-size: 0.825rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.5px !important;
+  padding: 6px 16px !important;
+  border-radius: var(--radius-full) !important;
+  text-transform: uppercase !important;
+  backdrop-filter: blur(12px) !important;
 }
 
-.hero-title {
-  font-size: 4rem;
+.hero-main-title {
+  font-size: clamp(3rem, 5.2vw, 4.8rem);
   font-weight: 900;
-  line-height: 1.25;
-  letter-spacing: -1.2px;
-  color: var(--text-white);
-  margin-bottom: 26px;
-  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+  line-height: 1.06;
+  letter-spacing: -1.8px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
 }
 
-.hero-desc {
-  font-size: 1.2rem;
+.hero-title-line {
+  display: inline-block;
+}
+
+.hero-title-yellow {
+  color: #FFD21F;
+  text-shadow: 0 0 35px rgba(255, 210, 31, 0.35);
+}
+
+.hero-subtext {
+  font-size: 1.15rem;
+  line-height: 1.75;
   color: var(--text-secondary);
-  line-height: 1.85;
-  margin-bottom: 40px;
-  max-width: 680px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 34px;
+  max-width: 520px;
 }
 
-.hero-buttons {
+.hero-actions-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
+  gap: 16px;
+  margin-bottom: 36px;
   flex-wrap: wrap;
 }
 
-.btn-large {
-  padding: 16px 36px;
-  font-size: 1.05rem;
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #FFD21F;
+  color: #080808;
+  font-size: 1.02rem;
+  font-weight: 800;
+  padding: 16px 34px;
   border-radius: var(--radius-full);
+  box-shadow: 0 8px 28px rgba(255, 210, 31, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
 }
 
-.hero-pill-item strong {
-  display: block;
-  font-size: 0.85rem;
+.hero-btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: #FFE052;
+  box-shadow: 0 14px 38px rgba(255, 210, 31, 0.45);
+}
+
+.hero-btn-primary:hover .hero-btn-arrow {
+  transform: translateX(4px);
+}
+
+.hero-btn-arrow {
+  transition: transform 0.25s ease;
+}
+
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+  font-size: 1.02rem;
+  font-weight: 700;
+  padding: 15px 28px;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.hero-btn-secondary:hover {
+  border-color: rgba(255, 210, 31, 0.5);
+  background: rgba(255, 210, 31, 0.08);
   color: var(--text-white);
+  transform: translateY(-2px);
 }
 
-.hero-pill-item span {
-  font-size: 0.725rem;
+.hero-perks-inline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
   color: var(--text-muted);
+  font-weight: 600;
+}
+
+.perk-inline-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.perk-dot {
+  color: var(--border-glass-hover);
+}
+
+/* Right Column: High-End Yellow Taxi Car Visual */
+.hero-visual-column {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-taxi-frame-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+}
+
+.taxi-golden-underglow {
+  position: absolute;
+  bottom: -20px;
+  left: 10%;
+  right: 10%;
+  height: 60px;
+  background: rgba(255, 210, 31, 0.28);
+  filter: blur(45px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-taxi-image-container {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.85), 0 0 45px rgba(255, 210, 31, 0.18);
+  z-index: 1;
+  background: #080808;
+}
+
+.hero-taxi-photograph {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-taxi-frame-wrapper:hover .hero-taxi-photograph {
+  transform: scale(1.03);
+}
+
+.hero-taxi-vignette-blend {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.15) 0%, transparent 50%, rgba(8, 8, 8, 0.75) 100%);
+  pointer-events: none;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .hero-automotive-section {
+    padding-top: 110px;
+    padding-bottom: 60px;
+  }
+
+  .hero-master-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-text-column {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .hero-main-title {
+    font-size: clamp(2.5rem, 7vw, 3.6rem);
+  }
+
+  .hero-subtext {
+    max-width: 100%;
+  }
+
+  .hero-actions-row {
+    justify-content: center;
+  }
+
+  .hero-perks-inline {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-taxi-frame-wrapper {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-main-title {
+    font-size: 2.3rem;
+    letter-spacing: -1px;
+  }
+
+  .hero-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-btn-primary, .hero-btn-secondary {
+    width: 100%;
+  }
+
+  .hero-taxi-frame-wrapper {
+    max-width: 100%;
+  }
 }
 
 /* ==========================================================================
