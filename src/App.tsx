@@ -11,7 +11,6 @@ import { HowItWorks } from './components/HowItWorks';
 import { RegionsMap } from './components/RegionsMap';
 import { DriverSection } from './components/DriverSection';
 import { AppDownload } from './components/AppDownload';
-import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
@@ -30,7 +29,6 @@ export const App: React.FC = () => {
         <RegionsMap />
         <DriverSection />
         <AppDownload />
-        <FinalCTA />
         <TaxiMarquee />
       </main>
       <Footer />
