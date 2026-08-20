@@ -148,9 +148,11 @@ button, input, select {
 /* Layout Utilities */
 .container {
   width: 100%;
-  max-width: 1260px;
-  margin: 0 auto;
-  padding: 0 24px;
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 4vw, 44px);
+  padding-right: clamp(20px, 4vw, 44px);
 }
 
 .section {
@@ -733,11 +735,12 @@ html.light .hero-directional-overlay {
 
 .hero-master-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(32px, 5vw, 64px);
   align-items: center;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .hero-text-column {
