@@ -10,12 +10,10 @@ export const TaxiCheckerboard: React.FC<TaxiCheckerboardProps> = ({
   height = 24,
 }) => {
   return (
-    <div className={`taxi-checkerboard-wrapper ${className}`} style={{ height: `${height}px` }}>
-      <div className="taxi-checkerboard-track">
-        {/* Repeating checker units to ensure infinite seamless loop */}
-        <div className="taxi-checker-strip"></div>
-        <div className="taxi-checker-strip"></div>
-      </div>
-    </div>
+    <div
+      className={`taxi-checkerboard-wrapper ${className}`}
+      style={{ height: `${height}px` }}
+      aria-hidden="true"
+    />
   );
 };
