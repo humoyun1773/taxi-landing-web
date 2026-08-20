@@ -65,7 +65,6 @@ export const Footer: React.FC = () => {
           <h4 className="footer-heading">{t('footer.col2')}</h4>
           <ul className="footer-links">
             <li><a href="#driver">{t('driver.subtitle')}</a></li>
-            <li><a href="#faq">{t('nav.faq')}</a></li>
             <li><a href="#app">{t('app.subtitle')}</a></li>
             <li><a href="#about">{t('about.subtitle')}</a></li>
           </ul>

@@ -11,7 +11,6 @@ import { RegionsMap } from './components/RegionsMap';
 import { Safety } from './components/Safety';
 import { DriverSection } from './components/DriverSection';
 import { AppDownload } from './components/AppDownload';
-import { FAQ } from './components/FAQ';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 
@@ -31,7 +30,6 @@ export const App: React.FC = () => {
         <Safety />
         <DriverSection />
         <AppDownload />
-        <FAQ />
         <FinalCTA />
       </main>
       <Footer />
