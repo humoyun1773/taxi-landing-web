@@ -12,9 +12,9 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
-    const saved = localStorage.getItem('urgimchak_theme') as Theme;
+    const saved = localStorage.getItem('urgimchak_theme_v2') as Theme;
     if (saved === 'dark' || saved === 'light') return saved;
-    return 'light'; // default to luxury light/white
+    return 'light'; // Always start with clean white theme
   });
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       root.classList.add('light');
       root.classList.remove('dark');
     }
-    localStorage.setItem('urgimchak_theme', theme);
+    localStorage.setItem('urgimchak_theme_v2', theme);
   }, [theme]);
 
   const toggleTheme = () => {
