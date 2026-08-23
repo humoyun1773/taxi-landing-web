@@ -14,7 +14,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [theme, setThemeState] = useState<Theme>(() => {
     const saved = localStorage.getItem('urgimchak_theme') as Theme;
     if (saved === 'dark' || saved === 'light') return saved;
-    return 'dark'; // default to luxury dark
+    return 'light'; // default to luxury light/white
   });
 
   useEffect(() => {
