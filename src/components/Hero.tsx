@@ -112,23 +112,6 @@ export const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* 4. Interactive Scene Thumbnail Switcher Bar */}
-      <div className="hero-scene-thumbnail-bar">
-        <div className="hero-scenes-container">
-          {backgroundImages.map((item, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIdx(idx)}
-              className={`hero-scene-btn ${currentIdx === idx ? 'active' : ''}`}
-              title={item.title}
-            >
-              <img src={item.url} alt={item.title} className="hero-scene-thumb-img" />
-              <span className="hero-scene-thumb-number">{idx + 1}</span>
-            </button>
-          ))}
-        </div>
-      </div>
     </section>
   );
 };
