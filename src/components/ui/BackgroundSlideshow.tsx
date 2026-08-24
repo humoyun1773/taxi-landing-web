@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import bg1 from '../../assets/taxi-bg-1.jpg';
+import bg2 from '../../assets/taxi-bg-2.jpg';
+import bg3 from '../../assets/taxi-bg-3.jpg';
+import bg4 from '../../assets/taxi-bg-4.jpg';
+import bg5 from '../../assets/taxi-bg-5.jpg';
+
 const bgImages = [
-  {
-    src: '/assets/taxi-bg-1.jpg',
-    alt: "Urgimchak Taxi — Shahar bo'ylab qulay sayohat",
-  },
-  {
-    src: '/assets/taxi-bg-2.jpg',
-    alt: "Urgimchak Taxi — Har doim eng yaqin avtomobil",
-  },
-  {
-    src: '/assets/taxi-bg-3.jpg',
-    alt: "Urgimchak Taxi — Qadimiy va zamonaviy ko'chalar",
-  },
-  {
-    src: '/assets/taxi-bg-4.jpg',
-    alt: "Urgimchak Taxi — 24/7 Tungi xavfsiz qatnovlar",
-  },
-  {
-    src: '/assets/taxi-bg-5.jpg',
-    alt: "Urgimchak Taxi — Bayramona va quvnoq kayfiyat",
-  },
+  { src: bg1, alt: "Urgimchak Taxi — Shahar bo'ylab qulay sayohat" },
+  { src: bg2, alt: "Urgimchak Taxi — Har doim eng yaqin avtomobil" },
+  { src: bg3, alt: "Urgimchak Taxi — Qadimiy va zamonaviy ko'chalar" },
+  { src: bg4, alt: "Urgimchak Taxi — 24/7 Tungi xavfsiz qatnovlar" },
+  { src: bg5, alt: "Urgimchak Taxi — Bayramona va quvnoq kayfiyat" },
 ];
 
 export const BackgroundSlideshow: React.FC = () => {
@@ -30,7 +21,7 @@ export const BackgroundSlideshow: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % bgImages.length);
-    }, 4800);
+    }, 4000);
 
     return () => clearInterval(timer);
   }, []);
@@ -40,10 +31,10 @@ export const BackgroundSlideshow: React.FC = () => {
       <AnimatePresence mode="popLayout">
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, scale: 1.04 }}
+          initial={{ opacity: 0, scale: 1.03 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
           className="body-background-slide-layer"
         >
           <img
@@ -55,13 +46,10 @@ export const BackgroundSlideshow: React.FC = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Layered Luxury Light Frosted Glass Overlays */}
+      {/* Light subtle overlay so text is crisp and readable */}
       <div className="body-background-gradient-overlay"></div>
-      <div className="body-background-blur-overlay"></div>
-      <div className="body-background-vignette-top"></div>
-      <div className="body-background-vignette-bottom"></div>
 
-      {/* Floating Indicator Dots for Slide Switch */}
+      {/* Floating indicator dots */}
       <div className="slideshow-indicators-row">
         {bgImages.map((_, idx) => (
           <button

@@ -208,10 +208,9 @@
   width: 100vw;
   height: 100vh;
   height: 100svh;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background: #FFFFFF;
 }
 
 .body-background-slide-layer {
@@ -232,7 +231,7 @@
 .body-background-gradient-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
   pointer-events: none;
 }
 
@@ -245,8 +244,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, transparent 100%);
+  height: 80px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
   pointer-events: none;
 }
 
@@ -255,8 +254,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6) 0%, transparent 100%);
+  height: 80px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
   pointer-events: none;
 }
 
@@ -298,11 +297,12 @@
 .app-root {
   position: relative;
   min-height: 100vh;
+  z-index: 1;
 }
 
 main {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Reset & Global */
@@ -315,7 +315,7 @@ main {
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
-  background-color: var(--bg-black);
+  background-color: transparent;
   color: var(--text-primary);
   color-scheme: light;
 }
@@ -323,7 +323,7 @@ html {
 body {
   line-height: 1.6;
   overflow-x: hidden;
-  background-color: var(--bg-black);
+  background-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
