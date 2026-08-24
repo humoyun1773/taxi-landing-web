@@ -1,14 +1,49 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronRight, ShieldCheck, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
+const backgroundImages = [
+  '/assets/taxi-bg-1.jpg',
+  '/assets/taxi-bg-2.jpg',
+  '/assets/taxi-bg-3.jpg',
+  '/assets/taxi-bg-4.jpg',
+  '/assets/taxi-bg-5.jpg',
+];
+
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  // Auto-switch background image every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="hero hero-fullbleed-bg-section" id="home">
-      {/* Directional Cinematic Gradient Mask */}
+      {/* 1. Dynamic Rotating Background Slider */}
+      <div className="hero-bg-photo-layer">
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentIdx}
+            src={backgroundImages[currentIdx]}
+            alt={`Urgimchak Taxi Illustration Scene ${currentIdx + 1}`}
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="hero-full-bg-image"
+            loading="eager"
+            decoding="async"
+          />
+        </AnimatePresence>
+      </div>
+
+      {/* 2. Directional Cinematic Gradient Mask (Clean text readability on white theme) */}
       <div className="hero-full-directional-overlay"></div>
       <div className="hero-top-vignette"></div>
       <div className="hero-bottom-vignette"></div>
@@ -16,7 +51,7 @@ export const Hero: React.FC = () => {
       {/* 3. Hero Foreground Content */}
       <div className="container hero-fullbleed-container">
         <div className="hero-text-column">
-          {/* Monumental Hero Headline — Exactly 2 Clean Unbroken Lines */}
+          {/* Monumental Hero Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,7 +94,7 @@ export const Hero: React.FC = () => {
             </a>
           </motion.div>
 
-          {/* Subtle Key Highlights Bar */}
+          {/* Key Highlights Bar */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -78,6 +113,19 @@ export const Hero: React.FC = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* 4. Interactive Scene Switcher Indicators */}
+      <div className="hero-bg-indicators">
+        {backgroundImages.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentIdx(idx)}
+            className={`hero-bg-dot ${currentIdx === idx ? 'active' : ''}`}
+            aria-label={`Rasm ${idx + 1} ga o'tish`}
+          />
+        ))}
+      </div>
     </section>
   );
 };
+
