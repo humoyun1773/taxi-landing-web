@@ -1,5 +1,6 @@
 import React from 'react';
 import { LoadingScreen } from './components/ui/LoadingScreen';
+import { BodyBackgroundSlideshow } from './components/ui/BodyBackgroundSlideshow';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutProject } from './components/AboutProject';
@@ -13,6 +14,9 @@ export const App: React.FC = () => {
   return (
     <div className="app-root">
       <LoadingScreen />
+      {/* 1. Global Body-Level Fixed Rotating Background Images */}
+      <BodyBackgroundSlideshow />
+      
       <Navbar />
       <main>
         <Hero />
