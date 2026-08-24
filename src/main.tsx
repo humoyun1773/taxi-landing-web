@@ -1,7 +1,6 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { ThemeProvider } from './context/ThemeContext';
 import './i18n/config';
 import './index.css';
 
@@ -32,8 +31,8 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div style={{
-          backgroundColor: '#080C14',
-          color: '#F8FAFC',
+          backgroundColor: '#FFFFFF',
+          color: '#0F172A',
           minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
@@ -43,13 +42,13 @@ class ErrorBoundary extends Component<Props, State> {
           padding: '20px',
           textAlign: 'center'
         }}>
-          <h2 style={{ color: '#F59E0B', marginBottom: '12px' }}>O'rgimchak Taxi — Qayta Yuklanmoqda</h2>
-          <p style={{ color: '#94A3B8', marginBottom: '24px' }}>Kichik texnik uzilish yuz berdi. Sahifani yangilang.</p>
+          <h2 style={{ color: '#D97706', marginBottom: '12px' }}>O'rgimchak Taxi — Qayta Yuklanmoqda</h2>
+          <p style={{ color: '#64748B', marginBottom: '24px' }}>Kichik texnik uzilish yuz berdi. Sahifani yangilang.</p>
           <button
             onClick={() => window.location.reload()}
             style={{
-              background: '#F59E0B',
-              color: '#080C14',
+              background: '#FFD21F',
+              color: '#080808',
               border: 'none',
               padding: '12px 24px',
               borderRadius: '8px',
@@ -72,9 +71,7 @@ if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
       <ErrorBoundary>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
+        <App />
       </ErrorBoundary>
     </React.StrictMode>
   );

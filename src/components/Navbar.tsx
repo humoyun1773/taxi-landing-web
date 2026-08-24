@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { LanguageSelector } from './ui/LanguageSelector';
-import { ThemeToggle } from './ui/ThemeToggle';
 import { SpiderLogo } from './ui/SpiderLogo';
 
 export const Navbar: React.FC = () => {
@@ -59,11 +58,10 @@ export const Navbar: React.FC = () => {
           </ul>
         </nav>
 
-        {/* Right Side: Language Selector, Theme Toggle, Phone */}
+        {/* Right Side: Language Selector & Phone */}
         <div className="nav-actions">
           <div className="desktop-controls">
             <LanguageSelector />
-            <ThemeToggle />
           </div>
 
           <a href="tel:+998919517335" className="call-btn">
@@ -96,7 +94,6 @@ export const Navbar: React.FC = () => {
             <div className="container mobile-drawer-content">
               <div className="mobile-controls-row">
                 <LanguageSelector />
-                <ThemeToggle />
               </div>
               <ul className="mobile-nav-list">
                 {navLinks.map((link) => (
