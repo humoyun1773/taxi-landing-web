@@ -1,5 +1,6 @@
 import React from 'react';
 import { LoadingScreen } from './components/ui/LoadingScreen';
+import { BackgroundSlideshow } from './components/ui/BackgroundSlideshow';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutProject } from './components/AboutProject';
@@ -13,6 +14,7 @@ export const App: React.FC = () => {
   return (
     <div className="app-root">
       <LoadingScreen />
+      <BackgroundSlideshow />
       <Navbar />
       <main>
         <Hero />

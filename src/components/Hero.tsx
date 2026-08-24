@@ -8,18 +8,7 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="hero hero-fullbleed-bg-section" id="home">
-      {/* 1. Full-Bleed Background Taxi Photography (100% Original, Static, No Flip/Mirror) */}
-      <div className="hero-bg-photo-layer">
-        <img
-          src="/assets/urgimchak_yellow_taxi.jpg"
-          alt="Urgimchak Taxi — Bright Yellow Modern Sedan"
-          className="hero-full-bg-image"
-          loading="eager"
-          decoding="async"
-        />
-      </div>
-
-      {/* 2. Directional Cinematic Gradient Mask (Dark Left for Text, Clear Right for Taxi) */}
+      {/* Directional Cinematic Gradient Mask */}
       <div className="hero-full-directional-overlay"></div>
       <div className="hero-top-vignette"></div>
       <div className="hero-bottom-vignette"></div>
