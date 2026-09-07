@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ArrowUp, Send, Instagram, Globe, Sparkles, ShieldCheck } from 'lucide-react';
+import { Phone, ArrowUp, Send, Instagram, Globe, Sparkles, ShieldCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { SpiderLogo } from './ui/SpiderLogo';
 
@@ -93,30 +93,6 @@ export const Footer: React.FC = () => {
                   +998 (91) 951-73-35
                 </a>
                 <span className="contact-sub-text">24/7 Qo'llab-quvvatlash</span>
-              </div>
-            </li>
-
-            <li className="contact-item">
-              <div className="contact-icon-bubble">
-                <Mail size={14} />
-              </div>
-              <div className="contact-details">
-                <a href="mailto:info@urgimchaktaxi.uz" className="contact-main-text">
-                  info@urgimchaktaxi.uz
-                </a>
-                <span className="contact-sub-text">Hamkorlik & Aloqa</span>
-              </div>
-            </li>
-
-            <li className="contact-item">
-              <div className="contact-icon-bubble">
-                <MapPin size={14} />
-              </div>
-              <div className="contact-details">
-                <span className="contact-main-text">
-                  Toshkent sh., Amir Temur shox ko'chasi, 107-B
-                </span>
-                <span className="contact-sub-text">Bosh ofis</span>
               </div>
             </li>
           </ul>
