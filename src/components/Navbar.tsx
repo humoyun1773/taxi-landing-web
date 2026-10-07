@@ -64,7 +64,7 @@ export const Navbar: React.FC = () => {
             <LanguageSelector />
           </div>
 
-          <a href="tel:+998919517335" className="call-btn">
+          <a href="tel:+998712000000" className="call-btn">
             <div className="call-pulse">
               <Phone size={14} />
             </div>
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
                 ))}
               </ul>
               <div className="mobile-drawer-footer">
-                <a href="tel:+998919517335" onClick={() => setIsMenuOpen(false)} className="btn btn-outline btn-block">
+                <a href="tel:+998712000000" onClick={() => setIsMenuOpen(false)} className="btn btn-outline btn-block">
                   <Phone size={16} /> {t('nav.call')}
                 </a>
               </div>
